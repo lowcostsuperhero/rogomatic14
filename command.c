@@ -18,27 +18,23 @@
 static int cmdonscreen = 0, comcount = 0;
 
 /* Move one square in direction 'd' */
-int move1 (d)
-int   d;
+void move1(int d)
 { command (T_MOVING, "%c", keydir[d]);
 }
 
 /* Move in direction 'd' until we find something */
-int fmove (d)
-int   d;
+void fmove(int d)
 { if (version < RV53A)	command (T_MOVING, "f%c", keydir[d]);
   else			command (T_MOVING, "%c", ctrl (keydir[d]));
 }
 
 /* Move 'count' squares in direction 'd', with time use mode 'mode' */
-int rmove (count, d, mode)
-int   count, d, mode;
+void rmove(int count, int d, int mode)
 { command (mode, "%d%c", count, keydir[d]);
 }
 
 /* Move one square in direction 'd' without picking anything up */
-int mmove (d, mode)
-int   d, mode;
+void mmove(int d, int mode)
 { command (mode, "m%c", keydir[d]);
 }
 
@@ -49,9 +45,9 @@ int   d, mode;
  */
 
 /* VARARGS2 */
-int command (int tmode, char *f, ...)
+void command (int tmode, char *f, ...)
 { int times;
-  char cmd[128], functionchar (); 
+  char cmd[128];
   static char lastcom[32] = "";
   va_list ap;
 
@@ -119,8 +115,7 @@ int command (int tmode, char *f, ...)
  * commandcount: Return the number of a times a command is to happen.
  */
 
-int commandcount (cmd)
-char *cmd;
+int commandcount(char *cmd)
 { register int times = atoi (cmd);
 
   return (max (times, 1));
@@ -130,9 +125,7 @@ char *cmd;
  * functionchar: return the function character of a command.
  */
 
-char
-functionchar (cmd)
-char *cmd;
+char functionchar(char *cmd)
 { register char *s = cmd;
 
   while (ISDIGIT (*s) || *s == 'f') s++;
@@ -143,10 +136,7 @@ char *cmd;
  * commandarg: return the nth argument of a command.
  */
 
-char
-commandarg (cmd, n)
-char *cmd;
-int n;
+char commandarg(char *cmd, int n)
 { register char *s = cmd;
 
   while (ISDIGIT (*s) || *s == 'f') s++;
@@ -157,10 +147,9 @@ int n;
  * adjustpack: adjust pack in accordance with command.
  */
 
-int adjustpack (cmd)
-char *cmd;
-{ char functionchar(), commandarg();
-  int neww, obj;
+void adjustpack(char *cmd)
+{
+  int obj;
 
   switch (functionchar (cmd))
   { case 'd':	break;
@@ -268,7 +257,7 @@ char *cmd;
  * bumpsearchcount: Note that we just searched this square.
  */
 
-int bumpsearchcount ()
+void bumpsearchcount(void)
 { register int dr, dc;
   for (dr = -1; dr <= 1; dr++)
     for (dc = -1; dc <= 1; dc++)
@@ -281,7 +270,7 @@ int bumpsearchcount ()
  * replaycommand: Find the old command in the log file and send it.
  */
 
-int replaycommand ()
+int replaycommand(void)
 { char oldcmd[128];
 
   getoldcommand (oldcmd);
@@ -294,8 +283,7 @@ int replaycommand ()
  * clearcommand:	Remove the command we showed.
  */
 
-int showcommand (cmd)
-char *cmd;
+void showcommand(char *cmd)
 { register char *s;
   at (23,72); standout (); printw (" ");
   for (s=cmd; *s; s++) printw ("%s", unctrl (*s));
@@ -303,7 +291,7 @@ char *cmd;
   cmdonscreen = 1;
 }
 
-int clearcommand ()
+void clearcommand(void)
 { at (23,72); clrtoeol (); at (row, col);
   cmdonscreen = 0;
 }
@@ -311,9 +299,7 @@ int clearcommand ()
  * usemsg: About to use an item, tell the user.
  */
 
-int usemsg (str, obj)
-char *str;
-int obj;
+void usemsg(char *str, int obj)
 { if (! dwait (D_INFORM, "%s (%s", str, itemstr (obj)))
     saynow ("%s (%s", str, itemstr (obj));
 }

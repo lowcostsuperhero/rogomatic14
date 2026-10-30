@@ -22,8 +22,7 @@
 # define TEMPFL "/tmp/RscoreXXXXXX"
 # define ISDIGIT(c) ((c) >= '0' && (c) <= '9')
 
-int findscore (rogue, roguename)
-register char *rogue, *roguename;
+int findscore(char *rogue, char *roguename)
 { register int score, best = -1;
   char cmd[100], buffer[BUFSIZ];
   register char *s;
@@ -37,7 +36,7 @@ register char *rogue, *roguename;
   {
   /* Run 'rogue -s', and put the scores into a temp file */
   sprintf (cmd, "%s -s >%s", rogue, tmpfname);
-  system (cmd); 
+  if (system (cmd) == -1) perror ("system"); 
   }
 
   /* If no temp file created, return default score */

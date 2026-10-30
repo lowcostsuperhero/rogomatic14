@@ -21,7 +21,8 @@
  * All other rights, including those of publication and sale, are reserved.
  *========================================================================/
 
-/*****************************************************************
+ *
+ *****************************************************************
  * EDITLOG
  *	LastEditDate = Sat Mar  7 12:48:36 1987 - Michael Mauldin
  *	LastFileName = /usre3/mlm/src/rog/ver14/main.c
@@ -245,8 +246,6 @@ int   zonemap[9][9];		/* Map of zones connections */
 /* Functions */
 void (*istat)(int);
 void onintr (int);
-char getroguetoken (), *getname();
-FILE *openlog();
 
 /* Stuff list, list of objects on this level */
 stuffrec slist[MAXSTUFF]; 	int slistlen=0;
@@ -344,11 +343,9 @@ jmp_buf  commandtop;
  * Main program
  */
 
-int main (argc, argv)
-int   argc;
-char *argv[];
-{ char  ch, *s, *getenv(), *statusline(), msg[350];
-  int startingup = 1;
+int main(int argc, char *argv[])
+{ char  ch, *s, msg[350];
+  volatile int startingup = 1;
   register int  i;
 
   /*
@@ -407,7 +404,7 @@ char *argv[];
   /* If we are in one-line mode, then squirrel away stdout */
   if (emacs || terse)
   { realstdout = fdopen (dup (fileno (stdout)), "w");
-    freopen ("/dev/null", "w", stdout);
+    if (freopen ("/dev/null", "w", stdout) == NULL) perror ("/dev/null");
   }
 
   initscr (); crmode (); noecho ();	/* Initialize the Curses package */
@@ -737,9 +734,8 @@ char *argv[];
  * and reset some goal variables.
  */
 
-void onintr (signum)
-int signum;
-{ sendnow ("n\033");            /* Tell Rogue we don't want to quit */
+void onintr(int signum)
+{ (void) signum; sendnow ("n\033");            /* Tell Rogue we don't want to quit */
   if (logging) fflush (fecho);  /* Print out everything */
   refresh ();                   /* Clear terminal output */
   clearsendqueue ();            /* Clear command queue */
@@ -755,12 +751,12 @@ int signum;
  * test this game, and set the parameters (or "knobs") accordingly.
  */
 
-int startlesson ()
+void startlesson(void)
 { sprintf (genelog, "%s/GeneLog%d", RGMDIR, version);
   sprintf (genepool, "%s/GenePool%d", RGMDIR, version);
   sprintf (genelock, "%s/GeneLock%d", RGMDIR, version);
 
-  srand (0);				/* Start random number generator */
+  rogo_srand (0);				/* Start random number generator */
   critical ();				/* Disable interrupts */
 
   /* Serialize access to the gene pool */
@@ -791,7 +787,7 @@ int startlesson ()
  * evaluate the performance of this genotype and save in genepool.
  */
 
-int endlesson ()
+void endlesson(void)
 { if (geneid > 0 &&
       (stlmatch (termination, "perditus") ||
        stlmatch (termination, "victorius") ||

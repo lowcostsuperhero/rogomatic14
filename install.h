@@ -68,7 +68,9 @@
  * defined.
  */
 
-# define NEWROGUE	"/usr/mlm/bin/rogue" 
+# ifndef NEWROGUE
+# define NEWROGUE	"/usr/mlm/bin/rogue"
+# endif
 
 /* 
  * This is the location of the player executable, which is the main
@@ -78,7 +80,9 @@
  * directory).
  */
 
+# ifndef PLAYER
 # define PLAYER		"/usr/mlm/bin/player"
+# endif
 
 /* 
  * This is the version of the "current" Rog-O-Matic, and is an uppercase
@@ -94,7 +98,9 @@
  * current directory.
  */
 
+# ifndef ROGUE
 # define ROGUE		"/usr/games/rogue"
+# endif
 
 /* 
  * This file is created in the current directory if the logging option is
@@ -113,7 +119,9 @@
  * directory.
  */
 
+# ifndef RGMDIR
 # define RGMDIR		"/usr/mlm/lib/rogomatic"
+# endif
 
 /* 
  * This file is created in the current directory if the snapshot command

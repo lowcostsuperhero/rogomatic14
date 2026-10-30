@@ -105,7 +105,7 @@ int dwait(int msgtype, char *f, ...)
  * promptforflags: Prompt the user for a location and dump its flags.
  */
 
-int promptforflags ()
+void promptforflags(void)
 { int r, c;
 
   if (getscrpos ("flags", &r, &c))
@@ -130,8 +130,7 @@ char *fnames[] =
   "boundry", "sleeper",  "everclr"
 };
 
-int dumpflags (r, c)
-int   r, c;
+void dumpflags(int r, int c)
 { char **f; int b;
 
     printw (":");
@@ -144,12 +143,10 @@ int   r, c;
  * Timehistory: print a time analysis of the game.
  */
 
-int timehistory (f, sep)
-FILE *f;
-int sep;
+void timehistory(FILE *f, int sep)
 { register int i, j;
   char s[2048];
-  char s2[20];
+  char s2[40];
 
   timespent[0].timestamp = 0;
 
@@ -180,7 +177,7 @@ int sep;
  * toggledebug: Set the value of the debugging word.
  */
 
-int toggledebug ()
+void toggledebug(void)
 { char debugstr[100];
   int type = debugging & ~(D_FATAL | D_ERROR | D_WARNING);
 
@@ -217,9 +214,7 @@ int toggledebug ()
  * getscrpos: Prompt the user for an x,y coordinate on the screen.
  */
 
-int getscrpos (msg, r, c)
-char *msg;
-int *r, *c;
+int getscrpos(char *msg, int *r, int *c)
 { char buf[256];
 
   saynow ("At %d,%d: enter 'row,col' for %s: ", atrow, atcol, msg);

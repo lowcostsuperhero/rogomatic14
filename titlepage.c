@@ -67,8 +67,7 @@ NULL};
  * greater than 2400).
  */
 
-void animate (movie)
-char *movie[];
+void animate(char *movie[])
 { int baud;
   register int r, c, count = 0, delaychars;
   register char *cbf = "";
@@ -111,8 +110,7 @@ char *movie[];
  * 'nohalf' is true if the user does not want to see a halftime show.
  */
 
-int halftimeshow (level)
-int level;
+void halftimeshow(int level)
 { static int nextshow = 1;
 
   if (!nohalf && level >= nextshow)

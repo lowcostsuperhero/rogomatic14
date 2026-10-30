@@ -21,8 +21,7 @@ static char *stuffmess [] = {
  * itemstr: print the inventory message for a single item.
  */
 
-char *itemstr (i)
-register int i;
+char *itemstr(int i)
 { static char ispace[128];
   register char *item = ispace;
 
@@ -35,15 +34,15 @@ register int i;
              inven[i].count, stuffmess[(int)inven[i].type]);
 
     if (inven[i].phit != UNKNOWN && inven[i].pdam == UNKNOWN)
-      sprintf (item, "%s (%d)", item, inven[i].phit);
+      sprintf (item + strlen (item), " (%d)", inven[i].phit);
     else if (inven[i].phit != UNKNOWN)
-      sprintf (item, "%s (%d,%d)", item, inven[i].phit, inven[i].pdam);
+      sprintf (item + strlen (item), " (%d,%d)", inven[i].phit, inven[i].pdam);
 
     if (inven[i].charges != UNKNOWN)
-      sprintf (item, "%s [%d]", item, inven[i].charges);
+      sprintf (item + strlen (item), " [%d]", inven[i].charges);
 
-    sprintf (item, "%s %s%s%s%s%s%s%s%s%s.",	  /* DR UTexas */
-            item, inven[i].str, 
+    sprintf (item + strlen (item), " %s%s%s%s%s%s%s%s%s.",	  /* DR UTexas */
+             inven[i].str, 
              (itemis (i, KNOWN) ? "" : ", unknown"),
              (used (inven[i].type, inven[i].str) ? ", tried" : ""),
              (itemis (i, CURSED) ? ", cursed" : ""),
@@ -63,8 +62,7 @@ register int i;
  * dumpinv: print the inventory. calls itemstr.
  */
 
-int dumpinv (f)
-register FILE *f;
+void dumpinv(FILE *f)
 { register int i; 
 
   if (f == NULL)
@@ -84,8 +82,7 @@ register FILE *f;
  * removeinv: remove an item from the inventory.
  */
 
-int removeinv (pos)
-int pos;
+void removeinv(int pos)
 { 
   if (--(inven[pos].count) == 0)
   { clearpack  (pos);		/* Assure nothing at that spot  DR UT */
@@ -102,8 +99,7 @@ int pos;
  * things can be dropped all at once.
  */
 
-int deleteinv (pos)
-int pos;
+void deleteinv(int pos)
 { 
   if (--(inven[pos].count) == 0 || inven[pos].type == missile)
   { clearpack  (pos);		/* Assure nothing at that spot  DR UT */
@@ -118,8 +114,7 @@ int pos;
  * clearpack: zero out slot in pack.  DR UTexas 01/05/84
  */
 
-void clearpack (pos)
-int pos;
+void clearpack(int pos)
 {
   if (pos >= MAXINV) return;
   inven[pos].count = 0;
@@ -137,8 +132,7 @@ int pos;
  * the pack.
  */
 
-void rollpackup (pos)
-register int pos;
+void rollpackup(int pos)
 { register char *savebuf;
   register int i;
 
@@ -170,8 +164,7 @@ register int pos;
  * objects behind that position.
  */
 
-void rollpackdown (pos)
-register int pos;
+void rollpackdown(int pos)
 { register char *savebuf;
   register int i;
 
@@ -202,7 +195,7 @@ register int pos;
  * doresetinv, which is called by a demon in the command handler.
  */
 
-int resetinv()
+void resetinv(void)
 { 
   if (!replaying) command (T_OTHER, "i");
 }
@@ -211,7 +204,7 @@ int resetinv()
  * doresetinv: reset the inventory.  DR UTexas 01/05/84
  */
 
-int doresetinv ()
+void doresetinv(void)
 { int i;
   static char space[MAXINV][80]; 
 
@@ -235,10 +228,9 @@ int doresetinv ()
 
 # define xtr(w,b,e,k) {what=(w);xbeg=mess+(b);xend=mend-(e);xknow|=(k);}
 
-int inventory (msgstart, msgend)
-char *msgstart, *msgend;
+int inventory(char *msgstart, char *msgend)
 { register char *p, *q, *mess = msgstart, *mend = msgend;
-  char objname[100], *realname();
+  char objname[100];
   int  n, ipos, xknow = 0, newitem = 0, inuse = 0, printed = 0;
   int  plushit = UNKNOWN, plusdam = UNKNOWN, charges = UNKNOWN;
   stuff what; 
@@ -289,7 +281,8 @@ char *msgstart, *msgend;
 
   /* Read any parenthesized strings at the end of the message */
   while (mend[-1]==')')
-  { while (*--mend != '(') ;		/* on exit mend -> '(' */
+  { while (*--mend != '(')
+      ;				/* on exit mend -> '(' */
     if (stlmatch(mend,"(being worn)") )
     { currentarmor = ipos; inuse = INUSE; }
     else if (stlmatch(mend,"(weapon in hand)") )
@@ -304,7 +297,8 @@ char *msgstart, *msgend;
 
   /* Read the charges on a wand (or armor class or ring bonus) */
   if (mend[-1] == ']')
-  { while (*--mend != '[');		/* on exit mend -> '[' */
+  { while (*--mend != '[')
+      ;				/* on exit mend -> '[' */
     if (mend[1] == '+')	charges = atoi(mend+2);
     else		charges = atoi(mend+1);
     xknow = KNOWN;
@@ -412,7 +406,7 @@ char *msgstart, *msgend;
     inven[ipos].count = n;
     /* Work around problem with multiple object groups for missiles */
     /* If we have 11 darts at position r) in the pack and find */
-    /* 12 extra darts at position r), the pack ist out of sync,
+    /* 12 extra darts at position r), the pack ist out of sync, */
     /* as the extra darts are not added to the pack. */
     /* Resync inventory for missiles as a workaorund. */
     if (what == missile)
@@ -464,7 +458,7 @@ char *msgstart, *msgend;
  * countpack: Count objects, missiles, and food in the pack.
  */
  
-int countpack ()
+void countpack(void)
 { register int i, cnt;
 
   for (objcount=0, larder=0, ammo=0, i=0; i<invcount; i++)

@@ -30,9 +30,7 @@ static char lokfil[100];
  * score file and catching interrupts and things.
  */
 
-void add_score (new_line, vers, ntrm)
-char *new_line, *vers;
-int ntrm;
+void add_score(char *new_line, char *vers, int ntrm)
 { 
   int   wantscore = 1;
   char  ch;
@@ -80,13 +78,11 @@ int ntrm;
  * dumpscore: Print out the scoreboard.
  */
 
-int dumpscore (vers)
-char *vers;
+int dumpscore(char *vers)
 { 
   char  ch, scrfil[100], delfil[100], newfil[100], allfil[100], cmd[550];
   FILE *scoref, *deltaf;
   int   oldmask;
-  void intrupscore ();
 
   sprintf (lokfil, "%s %s", LOCKFILE, vers);
   sprintf (scrfil, "%s/rgmscore%s", RGMDIR, vers);
@@ -118,9 +114,9 @@ char *vers;
     /* If we have an old file and a delta file, merge them */
     if (scoref != NULL)
     { fclose (scoref);
-      sprintf (cmd, "sort +4nr -o %s %s; sort -m +4nr -o %s %s %s", 
+      sprintf (cmd, "sort -k5,5nr -o %s %s; sort -m -k5,5nr -o %s %s %s", 
                newfil, delfil, allfil, newfil, scrfil);
-      system (cmd);
+      if (system (cmd) == -1) perror ("system");
       if (filelength (allfil) != filelength (delfil) + filelength (scrfil))
       { fprintf (stderr, "Error, new file is wrong length!\n");
         unlink (newfil); unlink (allfil);
@@ -130,14 +126,16 @@ char *vers;
       else
       { /* New file is okay, unlink old files and pointer swap score file */
         unlink (delfil); unlink (newfil);
-	unlink (scrfil); link (allfil, scrfil); unlink (allfil);
+	unlink (scrfil);
+	if (link (allfil, scrfil) != 0) perror (allfil);
+	unlink (allfil);
       }      
       scoref = fopen (scrfil, "r");
     }
     else
     /* Only have delta file, sort into scorefile and unlink delta */
-    { sprintf (cmd, "sort +4nr -o %s %s", scrfil, delfil);
-      system (cmd);
+    { sprintf (cmd, "sort -k5,5nr -o %s %s", scrfil, delfil);
+      if (system (cmd) == -1) perror ("system");
       unlink (delfil);
       scoref = fopen (scrfil, "r");
     }
@@ -173,8 +171,9 @@ char *vers;
  * intrupscore: We have an interrupt, clean up and unlock the score file.
  */
 
-void intrupscore ()
-{ unlock_file (lokfil);
+void intrupscore(int signum)
+{ (void) signum;
+  unlock_file (lokfil);
   exit (1);
 }
 

@@ -14,11 +14,8 @@
 
 # include "install.h"
 
-# if defined(BSD41) || !defined(BSD42)
-#     include <time.h>
-# else
-#     include <sys/time.h>
-# endif
+# include <time.h>
+# include <sys/time.h>
 
 # include "types.h"
 # include "globals.h"
@@ -57,16 +54,17 @@ int   head = 0, tail = 0;
  * implies that we have synchronized with Rogue.
  */
 
-void getrogue (waitstr, onat)
-char *waitstr;                          /* String to synchronize with */
-int   onat;                             /* 0 ==> Wait for waitstr 
-                                           1 ==> Cursor on @ sufficient 
-                                           2 ==> [1] + send ';' when ever
-                                           we eat a --More-- message */
-{ int   botprinted = 0, wasmapped = didreadmap, r, c, pending ();
+/*
+ * waitstr - String to synchronize with
+ * onat - 0 ==> Wait for waitstr
+ *	  1 ==> Cursor on @ sufficient
+ *	  2 ==> [1] + send ';' when ever we eat a --More-- message
+ */
+void getrogue(char *waitstr, int onat)
+{ int   botprinted = 0, wasmapped = didreadmap, r, c;
   register int i, j;
   char  *s, *m, *q, *d, *call;
-  int *doors, ch, getroguetoken();
+  int *doors, ch;
   static int moved = 0;
 
   newdoors = doorlist;			/* no new doors found yet */
@@ -311,7 +309,7 @@ int   onat;                             /* 0 ==> Wait for waitstr
  * the status line looks like.
  */
 
-int terpbot ()
+void terpbot(void)
 { char sstr[30], modeline[256];
   int oldlev = Level, oldgold = Gold, oldhp = Hp, Str18 = 0;
   extern int geneid;
@@ -376,8 +374,9 @@ int terpbot ()
     /* Handle Emacs and Terse mode */
     if (emacs || terse)
     { /* Skip backward over blanks and nulls */
-      for (i = 79; screen[23][i] == ' ' || screen[23][i] == '\0'; i--);
-      screen[23][++i] = '\0';
+      for (i = 79; i >= 0 && (screen[23][i] == ' ' || screen[23][i] == '\0'); i--)
+        ;
+      if (i < 79) screen[23][i+1] = '\0';
 
       if (emacs)
       { sprintf (modeline, " %s (%%b)", screen[23]);
@@ -397,7 +396,7 @@ int terpbot ()
  * dumpwalls: Dump the current screen map
  */
 
-int dumpwalls ()
+void dumpwalls(void)
 { register int   r, c, S;
   char ch;
 
@@ -416,13 +415,13 @@ int dumpwalls ()
            (TRAP&S)                    ? '^' :
            (STAIRS&S)                  ? '>' :
            (RUNOK&S)                   ? '%' :
-           ((DOOR+BEEN&S)==DOOR+BEEN)  ? 'D' :
+           (((DOOR+BEEN)&S)==DOOR+BEEN)  ? 'D' :
            (DOOR&S)                    ? 'd' :
-           ((BOUNDARY+BEEN&S)==BOUNDARY+BEEN) ? 'B' :
-           ((ROOM+BEEN&S)==ROOM+BEEN)  ? 'R' :
+           (((BOUNDARY+BEEN)&S)==BOUNDARY+BEEN) ? 'B' :
+           (((ROOM+BEEN)&S)==ROOM+BEEN)  ? 'R' :
            (BEEN&S)                    ? ':' :
            (HALL&S)                    ? '#' :
-           ((BOUNDARY+WALL&S)==BOUNDARY+WALL) ? 'W' :
+           (((BOUNDARY+WALL)&S)==BOUNDARY+WALL) ? 'W' :
            (BOUNDARY&S)                ? 'b' :
            (ROOM&S)                    ? 'r' :
            (CANGO&S)                   ? '.' :
@@ -440,7 +439,7 @@ int dumpwalls ()
  */
 
 /* VARARGS1 */
-int sendnow (char *f, ...)
+void sendnow (char *f, ...)
 { char cmd[128];
   register char *s = cmd;
   va_list ap;
@@ -457,8 +456,7 @@ int sendnow (char *f, ...)
  * the logging of characters in echo mode.
  */
 
-void sendcnow (c)
-int c;
+void sendcnow(int c)
 { if (replaying) return;
   if (logging)
   { if (cecho)
@@ -477,7 +475,7 @@ int c;
 # define bump(p,sizeq) (p)=((p)+1)%sizeq
 
 /* VARARGS1 */
-int send (char *f, ...)
+void send (char *f, ...)
 { char cmd[128];
   register char *s = cmd;
   va_list ap;
@@ -498,7 +496,7 @@ int send (char *f, ...)
  * resend: Send next block of characters from the queue
  */
 
-int resend ()
+int resend(void)
 { register char *l=lastcmd;		/* Ptr into last command */
 
   morecount = 0;			/* Clear message count */
@@ -518,7 +516,7 @@ int resend ()
  * Rogue.
  */
 
-int pending ()
+int pending(void)
 { return (head != tail);
 } 
 
@@ -527,9 +525,8 @@ int pending ()
  * cursor motion sequence).
  */
 
-int getroguetoken ()
+int getroguetoken(void)
 { int ch;
-  int getlogtoken();
 
   if (replaying)
     return (getlogtoken());
@@ -589,8 +586,7 @@ int getroguetoken ()
  * at: move the cursor. Now just a call to move();
  */
 
-int at (r, c)
-int   r, c;
+void at(int r, int c)
 { move (r, c);
 }
 
@@ -605,7 +601,7 @@ int   r, c;
 # define KILLROW 17
 # define TOMBCOL 19
 
-int deadrogue ()
+void deadrogue(void)
 { int    mh;
   char  *killer, *killend;
 
@@ -633,11 +629,10 @@ int deadrogue ()
  * the Rogue process, then wait for it to die before returning.
  */
 
-int quitrogue (reason, gld, terminationtype)
-char *reason;                   /* A reason string for the summary line */
-int gld;                       /* What is the final score */
-int terminationtype;            /* SAVED, FINSISHED, or DIED */
-{ struct tm *localtime(), *ts;
+void quitrogue(char *reason,		/* A reason string for the summary line */
+              int gld,			/* What is the final score */
+              int terminationtype)	/* SAVED, FINSISHED, or DIED */
+{ struct tm *ts;
   long clock;
   char  *k, *r;
   
@@ -660,12 +655,11 @@ int terminationtype;            /* SAVED, FINSISHED, or DIED */
            getname (), gld, cheat ? "*" : " ", reason, MaxLevel, Hpmax);
   
   if (Str % 100)
-    sprintf (sumline, "%s%2d.%2d", sumline, Str/100, Str%100);
+    sprintf (sumline + strlen (sumline), "%2d.%2d", Str/100, Str%100);
   else
-    sprintf (sumline, "%s  %2d ", sumline, Str/100);
+    sprintf (sumline + strlen (sumline), "  %2d ", Str/100);
   
-  sprintf (sumline, "%s %2d %2d/%-6d  %d", 
-           sumline, Ac, Explev, Exp, ltm.gamecnt);
+  sprintf (sumline + strlen (sumline), " %2d %2d/%-6d  %d", Ac, Explev, Exp, ltm.gamecnt);
 
   /* Now write the summary line to the log file */
   at (23, 0); clrtoeol (); refresh ();
@@ -723,8 +717,7 @@ int terminationtype;            /* SAVED, FINSISHED, or DIED */
  * MLM 8/27/82
  */
 
-int waitfor (mess)
-char *mess;
+void waitfor(char *mess)
 { register char *m = mess;
 
   while (*m)
@@ -738,7 +731,7 @@ char *mess;
  */
 
 /* VARARGS1 */
-int say (char *f, ...)
+void say (char *f, ...)
 { char buf[BUFSIZ], *b;
   va_list ap;
 
@@ -759,7 +752,7 @@ int say (char *f, ...)
  */
 
 /* VARARGS1 */
-int saynow (char *f, ...)
+void saynow (char *f, ...)
 { char buf[BUFSIZ], *b;
   va_list ap;
 
@@ -780,7 +773,7 @@ int saynow (char *f, ...)
  * Be sure to interpret a snapshot command, if given.
  */
 
-int waitforspace ()
+void waitforspace(void)
 {  char ch;
 
    refresh (); 
@@ -812,7 +805,7 @@ char *nexthelp[] =
 
 char **helpline = nexthelp;
 
-int givehelp ()
+void givehelp(void)
 { 
   if (*helpline == NULL) helpline = nexthelp;
   saynow (*helpline++);
@@ -824,7 +817,7 @@ int givehelp ()
  *             curses rather than sending a form feed to Rogue. MLM
  */
 
-int pauserogue ()
+void pauserogue(void)
 { 
   at (23, 0);
   addstr ("--press space to continue--");
@@ -848,7 +841,7 @@ int pauserogue ()
 
 # define VERMSG	"ersion "
 
-int getrogver ()
+void getrogver(void)
 { register char *vstr = versionstr, *m = VERMSG;
   register int cnt = 2000, ch;
  
@@ -888,11 +881,11 @@ int getrogver ()
  * a terminal around if the user is typing at us.
  */
 
-int charsavail ()
+int charsavail(void)
 { long n;
   int retc;
   
-  if (retc = ioctl (READ, FIONREAD, &n))
+  if ((retc = ioctl (READ, FIONREAD, &n)))
   { saynow ("Ioctl returns %d, n=%ld.\n", retc, n);
     n=0;
   }
@@ -905,7 +898,7 @@ int charsavail ()
  * redrawscreen: Make the users screen look like the Rogue screen (screen).
  */
 
-int redrawscreen ()
+void redrawscreen(void)
 { register int i, j;
   char ch;
   
@@ -924,7 +917,7 @@ int redrawscreen ()
  * roguelog file.
  */
 
-void toggleecho ()
+void toggleecho(void)
 { if (replaying) return;
   logging = !logging;
   if (logging)
@@ -956,7 +949,7 @@ void toggleecho ()
  * clearsendqueue: Throw away queued Rogue commands.
  */
 
-int clearsendqueue ()
+void clearsendqueue(void)
 { head = tail;
 }
 
@@ -964,9 +957,7 @@ int clearsendqueue ()
  * startreplay: Open the log file to replay.
  */
 
-int startreplay (logf, logfname)
-FILE **logf;
-char *logfname;
+void startreplay(FILE **logf, char *logfname)
 { if ((*logf = fopen (logfname, "r")) == NULL)
   { fprintf (stderr, "Can't open '%s'.\n", logfname);
     exit(1);
@@ -977,10 +968,7 @@ char *logfname;
  * putn: Put 'n' copies of character 'c' on file 'f'.
  */
 
-int putn (c, f, n)
-register char c;
-register FILE *f;
-register int n;
+void putn(char c, FILE *f, int n)
 {
   while (n--)
     putc (c, f);
@@ -990,11 +978,9 @@ register int n;
  * printsnap: print a snapshot to file f.
  */
 
-int printsnap (f)
-FILE *f;
+void printsnap(FILE *f)
 { register int i, j, length;
-  struct tm *localtime(), *ts;
-  char *statusline();
+  struct tm *ts;
   long clock;
 
   /* Now get the current time, so we can date the snapshot */    
@@ -1010,7 +996,8 @@ FILE *f;
   putn ('-', f, 79);
   fprintf (f, "\n");
   for (i = 0; i < 24; i++)
-  { for (length = 79; length >= 0 && charonscreen(i,length) == ' '; length--);
+  { for (length = 79; length >= 0 && charonscreen(i,length) == ' '; length--)
+      ;
     for (j=0; j <= length; j++) fprintf (f, "%c", charonscreen(i,j));
     fprintf (f, "\n");
   }
@@ -1033,7 +1020,7 @@ FILE *f;
  * Rog-O-Matic at our disposal.					LGCH.
  */
 
-int getlogtoken()
+int getlogtoken(void)
 { int acceptline;
   int ch = GETLOGCHAR;
   int ch1, ch2, dig;
@@ -1105,8 +1092,7 @@ int getlogtoken()
  * getoldcommand: retrieve the old command from a logfile we are replaying.
  */
 
-int getoldcommand (s)
-register char *s;
+void getoldcommand(char *s)
 { register int charcount = 0;
   char ch = ' ', term = '"', *startpat = "\nC: ";
 
@@ -1127,7 +1113,7 @@ register char *s;
  * dosnapshot: add a snapshot to the SHAPSHOT file.
  */
 
-int dosnapshot ()
+void dosnapshot(void)
 {
   if ((snapshot = wopen (SNAPSHOT, "a")) == NULL)
     saynow ("Cannot write file %s.", SNAPSHOT);
@@ -1144,7 +1130,7 @@ int dosnapshot ()
  * formfeed not recorded in the log file.   MLM
  */
 
-int clearscreen ()
+void clearscreen(void)
 { register int i, j;
 
   row = col = 0;
@@ -1164,8 +1150,7 @@ int clearscreen ()
  * Returns a pointer to a static area.			MLM
  */
 
-char *
-statusline ()
+char *statusline(void)
 { static char staticarea[256];
   register char *s=staticarea;
 
@@ -1186,10 +1171,9 @@ statusline ()
   if (redhands)			strcat (s, "red hands, ");
   if (Level == didreadmap)	strcat (s, "mapped, ");
 
-  if (*genocided) sprintf (s, "%sgenocided '%s', ", s, genocided);
+  if (*genocided) sprintf (s + strlen (s), "genocided '%s', ", genocided);
 
-  sprintf (s, "%s%d food%s, %d missile%s, %d turn%s, (%d,%d %d,%d) bonus",
-           s, larder, plural(larder), ammo, plural(ammo), turns, 
+  sprintf (s + strlen (s), "%d food%s, %d missile%s, %d turn%s, (%d,%d %d,%d) bonus", larder, plural(larder), ammo, plural(ammo), turns, 
            plural(turns), gplushit, gplusdam, wplushit, wplusdam);
 
   return (s);

@@ -23,8 +23,6 @@ struct levstruct {
 } levpos[MAXNUMLEV];
 int numlev = 0;
 
-extern void fillstruct (FILE *, struct levstruct *);
-extern int findlevel (FILE *, struct levstruct *, int *, int);
 
 /* 
  * positionreplay: Called when user has typed the 'R' command, it fills
@@ -32,7 +30,7 @@ extern int findlevel (FILE *, struct levstruct *, int *, int);
  * the log file to the level requested by the user.
  */
 
-void positionreplay ()
+void positionreplay(void)
 { int curlev;
   long curpos;
   char cmd;
@@ -73,11 +71,11 @@ void positionreplay ()
   switch (cmd)
   { case 'f': fseek (logfile, levpos[0].pos, 0); break;
     case 'p': if (curlev > 0) fseek (logfile, levpos[curlev-1].pos, 0);
-              else            fseek (logfile, levpos[0].pos, 0); break;
+              else            fseek (logfile, levpos[0].pos, 0);
 	      break;
     case 'c': fseek (logfile, levpos[curlev].pos, 0); break;
     case 'n': if (curlev < numlev-1) fseek (logfile, levpos[curlev+1].pos, 0);
-              else            fseek (logfile, levpos[curlev].pos, 0); break;
+              else            fseek (logfile, levpos[curlev].pos, 0);
 	      break;
     case 'l': fseek (logfile, levpos[numlev-1].pos, 0);
 	      break;
@@ -93,10 +91,7 @@ void positionreplay ()
  *             Rog-O-Matic log file.
  */
 
-int findlevel (f, lvpos, nmlev, maxnum)
-FILE *f;
-struct levstruct *lvpos;
-int *nmlev, maxnum;
+int findlevel(FILE *f, struct levstruct *lvpos, int *nmlev, int maxnum)
 { char ch;
   int l=0;
 
@@ -132,9 +127,7 @@ int *nmlev, maxnum;
  * fields of a levstruct.
  */
 
-void fillstruct (f, lev)
-FILE *f;
-struct levstruct *lev;
+void fillstruct(FILE *f, struct levstruct *lev)
 { 
   lev->level  = 0;
   lev->gold   = 0;
@@ -147,22 +140,22 @@ struct levstruct *lev;
   lev->exp    = 0;
   
   if (!findmatch (f, "Level:")) return;
-  fscanf (f, "%d", &lev->level);
+  if (fscanf (f, "%d", &lev->level) < 1) return;
 
   if (!findmatch (f, "Gold:")) return;
-  fscanf (f, "%d", &lev->gold);
+  if (fscanf (f, "%d", &lev->gold) < 1) return;
 
   if (!findmatch (f, "Hp:")) return;
-  fscanf (f, "%d(%d)", &lev->hp, &lev->hpmax);
+  if (fscanf (f, "%d(%d)", &lev->hp, &lev->hpmax) < 2) return;
 
   if (!findmatch (f, "Str:")) return;
-  fscanf (f, "%d(%d)", &lev->str, &lev->strmax);
+  if (fscanf (f, "%d(%d)", &lev->str, &lev->strmax) < 2) return;
 
   if (!findmatch (f, ":")) return;		/* Armor class */
-  fscanf (f, "%d", &lev->ac);
+  if (fscanf (f, "%d", &lev->ac) < 1) return;
 
   if (!findmatch (f, "Exp:")) return;
-  fscanf (f, "%d/%d", &lev->explev, &lev->exp);
+  if (fscanf (f, "%d/%d", &lev->explev, &lev->exp) < 2) return;
 
   saynow ("Found level %d, has %d gold...", lev->level, lev->gold);
 }
@@ -175,9 +168,7 @@ struct levstruct *lev;
  * Restriction: 's' must not contain prefix of itself as a substring.
  */
 
-int findmatch (f, s)
-FILE *f;
-char *s;
+int findmatch(FILE *f, char *s)
 { char *m = s, ch;
 
   while (*m && (int) (ch = fgetc (f)) != EOF)

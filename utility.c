@@ -9,7 +9,6 @@
  * defined here (otherwise the functions from -lcmu are used).
  */
 
-# include <sgtty.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <stdarg.h>
@@ -18,16 +17,14 @@
 # include <pwd.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <termios.h>
 # include <sys/types.h>
 # include <sys/stat.h>
 
 # include "install.h"
 
-# ifdef BSD41
-#     include <time.h>
-# else
-#     include <sys/time.h>
-# endif
+# include <time.h>
+# include <sys/time.h>
 
 # define TRUE 1
 # define FALSE 0
@@ -36,27 +33,30 @@
  * baudrate: Determine the baud rate of the terminal
  */
 
-#if defined(BSD41) || defined(BSD42)
-int baudrate ()
-{ static short  baud_convert[] =
-  { 0, 50, 75, 110, 135, 150, 200, 300, 600, 1200, 1800, 2400, 4800, 9600 };
-  static struct sgttyb  sg;
-  static short  baud_rate;
+int baudrate(void)
+{ struct termios tio;
+  speed_t sp;
 
-  gtty (fileno (stdin), &sg);
-  baud_rate = sg.sg_ospeed == 0 ? 1200
-    : sg.sg_ospeed < sizeof baud_convert / sizeof baud_convert[0]
-    ? baud_convert[sg.sg_ospeed] : 9600;
-
-  return (baud_rate);
+  if (tcgetattr (fileno (stdin), &tio) != 0) return 9600;
+  sp = cfgetospeed (&tio);
+  switch (sp)
+  { case B50: return 50;      case B75: return 75;
+    case B110: return 110;    case B134: return 134;
+    case B150: return 150;    case B200: return 200;
+    case B300: return 300;    case B600: return 600;
+    case B1200: return 1200;  case B1800: return 1800;
+    case B2400: return 2400;  case B4800: return 4800;
+    case B9600: return 9600;
+    default: return sp == B0 ? 1200 : 9600;
+  }
 }
-#endif
+
 
 /*
  * getname: get userid of player.
  */
 
-char *getname ()
+char *getname(void)
 { static char name[100] = "";
   struct passwd *pw;
 
@@ -74,8 +74,7 @@ char *getname ()
  * wopen: Open a file for world access.
  */
 
-FILE *wopen(fname, mode)
-char *fname, *mode;
+FILE *wopen(char *fname, char *mode)
 { int oldmask;
   FILE *newlog;
 
@@ -90,8 +89,7 @@ char *fname, *mode;
  * fexists: return a boolean if the named file exists
  */
 
-int fexists (fn)
-char *fn;
+int fexists(char *fn)
 { struct stat pbuf;
 
   return (stat (fn, &pbuf) == 0);
@@ -101,8 +99,7 @@ char *fn;
  * filelength: Do a stat and return the length of a file.
  */
 
-int filelength (f)
-char *f;
+int filelength(char *f)
 { struct stat sbuf;
 
   if (stat (f, &sbuf) == 0)
@@ -115,9 +112,9 @@ char *f;
  * critical: Disable interrupts
  */
 
-static void   (*hstat)(), (*istat)(), (*qstat)(), (*pstat)();
+static void   (*hstat)(int), (*istat)(int), (*qstat)(int), (*pstat)(int);
 
-int critical ()
+void critical(void)
 {
   hstat = signal (SIGHUP, SIG_IGN);
   istat = signal (SIGINT, SIG_IGN);
@@ -129,7 +126,7 @@ int critical ()
  * uncritical: Enable interrupts
  */
 
-int uncritical ()
+void uncritical(void)
 {
   signal (SIGHUP, hstat);
   signal (SIGINT, istat);
@@ -141,7 +138,7 @@ int uncritical ()
  * reset_int: Set all interrupts to default
  */
 
-int reset_int ()
+void reset_int(void)
 {
   signal (SIGHUP, SIG_DFL);
   signal (SIGINT, SIG_DFL);
@@ -153,8 +150,7 @@ int reset_int ()
  * int_exit: Set up a function to call if we get an interrupt
  */
 
-int int_exit (exitproc)
-void (*exitproc)();
+void int_exit(void (*exitproc)(int))
 {
   if (signal (SIGHUP, SIG_IGN) != SIG_IGN)  signal (SIGHUP, exitproc);
   if (signal (SIGINT, SIG_IGN) != SIG_IGN)  signal (SIGINT, exitproc);
@@ -169,12 +165,9 @@ void (*exitproc)();
 
 # define NOWRITE 0
 
-int lock_file (lokfil, maxtime)
-char *lokfil;
-int maxtime;
+int lock_file(char *lokfil, int maxtime)
 { int try;
   struct stat statbuf;
-  long time ();
 
   start:
   if (creat (lokfil, NOWRITE) > 0)
@@ -187,7 +180,7 @@ int maxtime;
   }
 
   if (stat (lokfil, &statbuf) < 0)
-  { creat (lokfil, NOWRITE);
+  { (void) creat (lokfil, NOWRITE);
     return TRUE;
   }
 
@@ -204,9 +197,8 @@ int maxtime;
  * unlock_file: Unlock a lock file.
  */
 
-int unlock_file (lokfil)
-char *lokfil;
-{ unlink (lokfil);
+void unlock_file(char *lokfil)
+{ (void) unlink (lokfil);
 }
 
 # ifndef CMU
@@ -242,8 +234,7 @@ int quit (int code, char *fmt, ...)
  *  Originally from klg (Ken Greer) on IUS/SUS UNIX
  */
 
-int stlmatch (big, small)
-char *small, *big;
+int stlmatch(char *big, char *small)
 { register char *s, *b;
   s = small;
   b = big;
@@ -256,156 +247,3 @@ char *small, *big;
 }
 # endif
 
-#if defined(BSD41) || defined(BSD42)
-/*
- *  putenv  --  put value into environment
- *
- *  Usage:  i = putenv (name,value)
- *	int i;
- *	char *name, *value;
- *
- *  Putenv associates "value" with the environment parameter "name".
- *  If "value" is 0, then "name" will be deleted from the environment.
- *  Putenv returns 0 normally, -1 on error (not enough core for malloc).
- *
- *  Putenv may need to add a new name into the environment, or to
- *  associate a value longer than the current value with a particular
- *  name.  So, to make life simpler, putenv() copies your entire
- *  environment into the heap (i.e. malloc()) from the stack
- *  (i.e. where it resides when your process is initiated) the first
- *  time you call it.
- *
- *  HISTORY
- * 25-Nov-82 Michael Mauldin (mlm) at Carnegie-Mellon University
- *      Ripped out of CMU lib for Rog-O-Matic portability
- * 20-Nov-79  Steven Shafer (sas) at Carnegie-Mellon University
- *	Created for VAX.  Too bad Bell Labs didn't provide this.  It's
- *	unfortunate that you have to copy the whole environment onto the
- *	heap, but the bookkeeping-and-not-so-much-copying approach turns
- *	out to be much hairier.  So, I decided to do the simple thing,
- *	copying the entire environment onto the heap the first time you
- *	call putenv(), then doing realloc() uniformly later on.
- *	Note that "putenv(name,getenv(name))" is a no-op; that's the reason
- *	for the use of a 0 pointer to tell putenv() to delete an entry.
- *
- */
-
-#define EXTRASIZE 5		/* increment to add to env. size */
-
-char *index (), *malloc (), *realloc ();
-int   strlen ();
-
-static int  envsize = -1;	/* current size of environment */
-extern char **environ;		/* the global which is your env. */
-
-static int  findenv ();		/* look for a name in the env. */
-static int  newenv ();		/* copy env. from stack to heap */
-static int  moreenv ();		/* incr. size of env. */
-
-int   putenv (name, value)
-char *name, *value;
-{ register int  i, j;
-  register char *p;
-
-  if (envsize < 0)
-  {				/* first time putenv called */
-    if (newenv () < 0)		/* copy env. to heap */
-      return (-1);
-  }
-
-  i = findenv (name);		/* look for name in environment */
-
-  if (value)
-  {				/* put value into environment */
-    if (i < 0)
-    {				/* name must be added */
-      for (i = 0; environ[i]; i++);
-      if (i >= (envsize - 1))
-      {				/* need new slot */
-	if (moreenv () < 0)
-	  return (-1);
-      }
-      p = malloc (strlen (name) + strlen (value) + 2);
-      if (p == 0)		/* not enough core */
-	return (-1);
-      environ[i + 1] = 0;	/* new end of env. */
-    }
-    else
-    {				/* name already in env. */
-      p = realloc (environ[i],
-	  strlen (name) + strlen (value) + 2);
-      if (p == 0)
-	return (-1);
-    }
-    sprintf (p, "%s=%s", name, value);/* copy into env. */
-    environ[i] = p;
-  }
-  else
-  {				/* delete name from environment */
-    if (i >= 0)
-    {				/* name is currently in env. */
-      free (environ[i]);
-      for (j = i; environ[j]; j++);
-      environ[i] = environ[j - 1];
-      environ[j - 1] = 0;
-    }
-  }
-
-  return (0);
-}
-
-static int  findenv (name)
-char *name;
-{ register char *namechar, *envchar;
-  register int  i, found;
-
-  found = 0;
-  for (i = 0; environ[i] && !found; i++)
-  { envchar = environ[i];
-    namechar = name;
-    while (*namechar && (*namechar == *envchar))
-    { namechar++;
-      envchar++;
-    }
-    found = (*namechar == '\0' && *envchar == '=');
-  }
-  return (found ? i - 1 : -1);
-}
-
-static int  newenv ()
-{ register char **env, *elem;
-  register int  i, esize;
-
-  for (i = 0; environ[i]; i++);
-  esize = i + EXTRASIZE + 1;
-  env = (char **) malloc (esize * sizeof (elem));
-  if (env == 0)
-    return (-1);
-
-  for (i = 0; environ[i]; i++)
-  { elem = malloc (strlen (environ[i]) + 1);
-    if (elem == 0)
-      return (-1);
-    env[i] = elem;
-    strcpy (elem, environ[i]);
-  }
-
-  env[i] = 0;
-  environ = env;
-  envsize = esize;
-  return (0);
-}
-
-static int  moreenv ()
-{ register int  esize;
-  register char **env;
-
-  esize = envsize + EXTRASIZE;
-  env = (char **) realloc (environ, esize * sizeof (*env));
-  if (env == 0)
-    return (-1);
-  environ = env;
-  envsize = esize;
-  return (0);
-}
-#endif

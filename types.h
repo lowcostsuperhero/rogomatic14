@@ -13,6 +13,14 @@
  *	Created.
  */
 
+/* Standard headers */
+
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
+# include <unistd.h>
+
+
 /* The unctrl macro for systems where curses doesn't define it */
 
 # ifndef unctrl
@@ -327,3 +335,18 @@ typedef struct { stuff type;
 
 typedef struct { int activity[T_LISTLEN];
 		 int timestamp; } timerec;
+
+/*
+ * Callbacks used by the movement searcher (search.c, explore.c)
+ *
+ *	evalinit:  prepare to search, returns zero on failure
+ *	evaluate:  rate the square (row, col) at the given search depth,
+ *		   setting *val, *avd and *cont
+ */
+
+typedef int (*evalinit_fn)(void);
+typedef int (*evaluate_fn)(int row, int col, int depth, int *val, int *avd, int *cont);
+
+/* Function prototypes */
+
+# include "protos.h"

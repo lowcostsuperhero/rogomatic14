@@ -23,12 +23,8 @@
 # define ROGUETERM "rg|rterm:am:bs:ce=^[^S:cl=^L:cm=^[a%+ %+ :co#80:li#24:so=^[D:se=^[d:pt:ta=^I:up=^[;:db:xn:"
 
 int   rfrogue, rtrogue;
-extern char *getname();
 
-int main (argc, argv)
-int   argc;
-char *argv[];
-
+int main(int argc, char *argv[])
 { int   ptc[2], ctp[2];
   int   child, score = 0, oldgame = 0;
   int   cheat = 0, noterm = 1, echo = 0, nohalf = 0, replay = 0;
@@ -106,23 +102,28 @@ char *argv[];
 
   if ((child = fork ()) == 0)
   { close (0);
-    dup (ptc[READ]);
+    if (dup (ptc[READ]) < 0) _exit (1);
     close (1);
-    dup (ctp[WRITE]);
+    if (dup (ctp[WRITE]) < 0) _exit (1);
     close (ptc[WRITE]); /* Close parent's (player's) unused end of the pipes */
     close (ctp[READ]);
 
-#if !defined(BSD41) && !defined(BSD42)
     setenv ("TERMCAP", ROGUETERM, 1);
     setenv ("TERM", "rg", 1);
+    /*
+     * Modern curses reads terminfo, not termcap.  The "rg" entry (see
+     * rterm.tic, compiled by "make terminfo") is looked for in ./terminfo
+     * and then in RGMDIR/terminfo, unless TERMINFO is already set.
+     */
+    if (getenv ("TERMINFO") == NULL)
+    { if (access ("terminfo", R_OK | X_OK) == 0)
+         setenv ("TERMINFO", "terminfo", 1);
+      else if (access (RGMDIR "/terminfo", R_OK | X_OK) == 0)
+         setenv ("TERMINFO", RGMDIR "/terminfo", 1);
+    }
     setenv ("ROGUEOPTS", ropts, 1);
     setenv ("LINES","24", 1);
     setenv ("COLUMNS","80", 1);
-#else
-    putenv ("TERMCAP", ROGUETERM);
-    putenv ("TERM", "rg");
-    putenv ("ROGUEOPTS", ropts);
-#endif
     if (oldgame)  execl (rfile, rfile, "-r", NULL);
     if (argc)     execl (rfile, rfile, argv[0], NULL);
     execl (rfile, rfile, NULL);
@@ -140,7 +141,7 @@ char *argv[];
     /* Pass the process ID of the Rogue process as an ASCII string */
     sprintf (rp, "%d", child);
 
-    if (!author ()) nice (4);
+    if (!author () && nice (4) == -1) perror ("nice");
 
     execl ("player", "player", ft, rp, options, roguename, NULL);
 # ifdef PLAYER
@@ -158,8 +159,7 @@ char *argv[];
  * given the fake value 'Z'.
  */
 
-int replaylog (fname, options)
-char *fname, *options;
+int replaylog(char *fname, char *options)
 { execl ("player", "player", "ZZ", "0", options, fname, NULL);
 # ifdef PLAYER
   execl (PLAYER, "player", "ZZ", "0", options, fname, NULL);
@@ -173,7 +173,7 @@ char *fname, *options;
  *	See if a user is an author of the program
  */
 
-int author()
+int author(void)
 {
   switch (getuid())
   { case 1337:	/* Fuzzy */

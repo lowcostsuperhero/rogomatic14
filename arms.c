@@ -19,8 +19,7 @@
 
 # define swap(x,y) {t=(x); (x)=(y); (y)=t;}
 
-int havearmor (k, print, rustproof)
-int k, print, rustproof;
+int havearmor(int k, int print, int rustproof)
 { register int i, j, w, t, n=0;
   int armind[MAXINV], armval[MAXINV];
 
@@ -54,8 +53,7 @@ int k, print, rustproof;
  * of remove curse and -2 for when we don't have a remove curse.
  */
 
-int armorclass (i)
-int i;
+int armorclass(int i)
 { int class;
 
   if (inven[i].type != armor)
@@ -92,8 +90,7 @@ int i;
  *             then NONE is returned.
  */
 
-int haveweapon (k, print)
-int k, print;
+int haveweapon(int k, int print)
 { register int i, j, w, t, n=0;
   int weapind[MAXINV], weapval[MAXINV];
   for (i=0; i<invcount; ++i)
@@ -107,20 +104,20 @@ int k, print;
       weapval[j] = w;
     }
 
-    /*
-     * Put enchanted weapons above unenchanted ones if the weapon
-     * ratings are equal.  DR UTexas 25 Jan 84 
-     */
+  /*
+   * Put enchanted weapons above unenchanted ones if the weapon
+   * ratings are equal.  DR UTexas 25 Jan 84 
+   */
 
-    for (j = n-1; j > 0; j--)
-    { if (weapval[j] == weapval[j-1])
-      { i = weapind[j];
-        w = weapind[j-1];
-        if (!itemis (w, ENCHANTED) && itemis (i, ENCHANTED) &&
-            !itemis (w, KNOWN) && !itemis (i, KNOWN))
-        { swap (weapind[j], weapind[j-1]); }
-      }
+  for (j = n-1; j > 0; j--)
+  { if (weapval[j] == weapval[j-1])
+    { i = weapind[j];
+      w = weapind[j-1];
+      if (!itemis (w, ENCHANTED) && itemis (i, ENCHANTED) &&
+          !itemis (w, KNOWN) && !itemis (i, KNOWN))
+      { swap (weapind[j], weapind[j-1]); }
     }
+  }
 
   if (print)
   { mvaddstr (1, 0, "Current Weapon Rankings");
@@ -138,8 +135,7 @@ int k, print;
  *              high numbers.
  */
 
-int weaponclass (i)
-int i;
+int weaponclass(int i)
 { int class, hitplus = 0, damplus = 0;
 
   /* Swords and maces are always valid weapons */   
@@ -205,8 +201,7 @@ int i;
  *           then NONE is returned.
  */
 
-int havering (k, print)
-int k, print;
+int havering(int k, int print)
 { register int i, j, r, t, n=0;
   int ringind[MAXINV], ringval[MAXINV];
   for (i=0; i<invcount; ++i)
@@ -248,8 +243,7 @@ int k, print;
  *            value of the ring.
  */
 
-int ringclass (i)
-int i;
+int ringclass(int i)
 { int class = 0, magicplus = 0;
 
   if (inven[i].type != ring)
@@ -439,8 +433,7 @@ int i;
  *          then NONE is returned.
  */
 
-int havebow (k, print)
-int k, print;
+int havebow(int k, int print)
 { register int i, j, w, t, n=0;
   int bowind[MAXINV], bowval[MAXINV];
   for (i=0; i<invcount; ++i)
@@ -469,8 +462,7 @@ int k, print;
  *           hit, multiplied by 10.
  */
 
-int bowclass (i)
-int i;
+int bowclass(int i)
 { int class, hitplus = 0, damplus = 0;
 
   if (inven[i].type == thrower &&
@@ -496,7 +488,7 @@ int i;
  * are cheating.  Consider arrows first if we are wielding our bow.
  */
 
-int havemissile ()
+int havemissile(void)
 { register int i, fewest = 9999, obj = NONE;
 
   if (wielding (thrower))	/* Wielding bow, use arrows */
@@ -514,8 +506,8 @@ int havemissile ()
           (inven[i].type == missile ||
            stlmatch(inven[i].str,"spear") || 
            stlmatch(inven[i].str,"dagger") || 
-           stlmatch(inven[i].str,"mace") && inven[i].phit <= 0 || 
-           stlmatch(inven[i].str,"long sword") && inven[i].phit < 0))
+           (stlmatch(inven[i].str,"mace") && inven[i].phit <= 0) || 
+           (stlmatch(inven[i].str,"long sword") && inven[i].phit < 0)))
       { obj = i; fewest = inven[i].count; }
   }
 
@@ -531,7 +523,7 @@ int havemissile ()
  * havearrow: return the index of any arrow which has count 1.
  */
 
-int havearrow ()
+int havearrow(void)
 { int arr;
 
   for (arr = 0; arr<invcount; arr++)
@@ -548,7 +540,7 @@ int havearrow ()
  *             Do a picky identify to try to find its plusses.
  */
 
-int plusweapon ()
+void plusweapon(void)
 {
   cursedweapon = 0;
   newweapon = 1;
@@ -560,8 +552,7 @@ int plusweapon ()
  * hitbonus: Return the bonus to hit.
  */
 
-int hitbonus (strength)
-int strength;
+int hitbonus(int strength)
 { int bonus = 0;
   
   if (strength < 700) bonus = strength/100 - 7;
@@ -587,8 +578,7 @@ int strength;
  * damagebonus: bonus = the damage bonus.
  */
 
-int damagebonus (strength)
-int strength;
+int damagebonus(int strength)
 { int bonus = 0;
 
   if (strength < 700) bonus = strength/100 - 7;
@@ -620,7 +610,7 @@ int strength;
  * setbonuses: Set global hit and damage pluses.
  */
 
-int setbonuses ()
+void setbonuses(void)
 {
   /* Set global Hit bonus */
   gplushit = hitbonus (Str);

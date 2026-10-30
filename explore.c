@@ -37,7 +37,7 @@ int connect[9][4] = {
  * genericinit: Initialize a 'standard' movement search.	MLM
  */
 
-int genericinit ()
+int genericinit(void)
 { expavoidval = avoid();
   return (1);
 }
@@ -83,9 +83,8 @@ static int secretcont[16] =  { 0, 16, 15, 14,
 
 int gotorow = NONE, gotocol = NONE;
 
-int gotowards (r, c, running)
-int r, c, running;
-{ int gotoinit(), gotovalue();
+int gotowards(int r, int c, int running)
+{
 
   gotorow = r; gotocol = c;
   return (makemove (running ? RUNAWAY:GOTOMOVE, gotoinit, gotovalue, REUSE));
@@ -95,7 +94,7 @@ int r, c, running;
  * gotoinit: Initialize a gotowards move.
  */
 
-int gotoinit ()
+int gotoinit(void)
 { expavoidval = avoid();
   return (1);
 }
@@ -105,9 +104,8 @@ int gotoinit ()
  */
 
 /* ARGSUSED */
-int gotovalue (r, c, depth, val, avd, cont)
-int r, c, depth, *val, *avd, *cont;
-{ 
+int gotovalue(int r, int c, int depth, int *val, int *avd, int *cont)
+{ (void) depth; (void) cont; 
   *avd = onrc (SAFE, r, c)    ? 0 :
 	 onrc (ARROW, r, c)   ? 50 :
          onrc (TRAPDOR, r, c) ? 175 :
@@ -133,9 +131,8 @@ int r, c, depth, *val, *avd, *cont;
  */
 
 /* ARGSUSED */
-int sleepvalue (r, c, depth, val, avd, cont)
-int r, c, depth, *val, *avd, *cont;
-{ 
+int sleepvalue(int r, int c, int depth, int *val, int *avd, int *cont)
+{ (void) depth; (void) cont; 
   *avd = onrc (SAFE, r, c)    ? 0 :
 	 onrc (ARROW, r, c)   ? 50 :
          onrc (TRAPDOR, r, c) ? 175 :
@@ -164,8 +161,7 @@ int r, c, depth, *val, *avd, *cont;
  *           is there. Part of doorinit   Guy Jacobson 5/82
  */
 
-int wallkind (r, c)
-int r, c;
+int wallkind(int r, int c)
 {
   switch (screen[r][c]) 
   { case '|': if (onrc (ROOM, r, c+1)) return (LEFTW);
@@ -193,8 +189,7 @@ int r, c;
   { if (timessearched[r][c] < attempttosearch) \
       timessearched[r][c] = attempttosearch; }
 
-int setpsd (print)
-int print;
+int setpsd(int print)
 { register int i, j, k, whereto, numberpsd=0;
 
   if (!print && reusepsd > 0) return (reusepsd-1);
@@ -295,9 +290,8 @@ int print;
  */
 
 /* ARGSUSED */
-int downvalue (r, c, depth, val, avd, cont)
-int r, c, depth, *val, *avd, *cont;
-{ 
+int downvalue(int r, int c, int depth, int *val, int *avd, int *cont)
+{ (void) depth; (void) cont; 
   *avd = onrc (SAFE, r, c)    ? 0 :
 	 onrc (ARROW, r, c)   ? 50 :
          onrc (TRAPDOR, r, c) ? 175 :
@@ -319,7 +313,7 @@ int r, c, depth, *val, *avd, *cont;
  * expruninit: same as expinit but don't bias against doors.
  */
 
-int expruninit ()
+int expruninit(void)
 { dwait (D_CONTROL | D_SEARCH, "expruninit called.");
   expinit();
   expDor = 0;
@@ -333,8 +327,7 @@ int expruninit ()
  * Try to see a new square when running.
  */
 
-int exprunvalue (r, c, depth, val, avd, cont)
-int r, c, depth, *val, *avd, *cont;
+int exprunvalue(int r, int c, int depth, int *val, int *avd, int *cont)
 { if (r == atrow && c == atcol)		/* Current square useless MLM */
     *val = 0;
   else if (onrc (MONSTER, r, c)) *val = 0;
@@ -352,7 +345,7 @@ int r, c, depth, *val, *avd, *cont;
  * expunpininit: same as exprunnit but try to unpin.
  */
 
-int expunpininit ()
+int expunpininit(void)
 { dwait (D_CONTROL | D_SEARCH, "expunpininit called.");
   expinit();
   expDor = 0;
@@ -366,8 +359,7 @@ int expunpininit ()
  * Try to see a new square when unpinning, but unpin anywhere if need be.
  */
 
-int expunpinvalue (r, c, depth, val, avd, cont)
-int r, c, depth, *val, *avd, *cont;
+int expunpinvalue(int r, int c, int depth, int *val, int *avd, int *cont)
 { if (r == atrow && c == atcol)		/* Current square useless MLM */
     *val = 0;
   else if (onrc (MONSTER, r, c)) *val = 0;
@@ -385,7 +377,7 @@ int r, c, depth, *val, *avd, *cont;
  * runinit:  R U N   A W A Y   S E A R C H
  */
 
-int runinit ()
+int runinit(void)
 { avoidmonsters();
   return (1);
 }
@@ -405,8 +397,7 @@ int runinit ()
  * Don't avoid Trapdoors and Teleport Traps 		WEL 12/19/84
  */
 
-int runvalue (r, c, depth, val, avd, cont)
-int r, c, depth, *val, *avd, *cont;
+int runvalue(int r, int c, int depth, int *val, int *avd, int *cont)
 { *avd = onrc (ARROW, r, c) ? 50 :
          onrc (TRAPDOR, r, c) ? 0 :
          onrc (TELTRAP, r, c) ? 0 :
@@ -456,7 +447,7 @@ int r, c, depth, *val, *avd, *cont;
  * Same as runint, but we are willing to take one hit to get away.
  */
 
-int unpininit ()
+int unpininit(void)
 { pinavoid();
   return (1);
 }
@@ -465,7 +456,7 @@ int unpininit ()
  * rundoorinit: Standard initialization routine.
  */
 
-int rundoorinit()
+int rundoorinit(void)
 { avoidmonsters();
   return (1);
 }
@@ -485,10 +476,8 @@ int rundoorinit()
  */
 
 /* ARGSUSED */
-int rundoorvalue (r, c, depth, val, avd, cont)
-int r, c, depth;
-int *val, *avd, *cont;
-{ *avd = onrc (ARROW, r, c) ? 50 :
+int rundoorvalue(int r, int c, int depth, int *val, int *avd, int *cont)
+{ (void) depth; *avd = onrc (ARROW, r, c) ? 50 :
          onrc (TRAPDOR, r, c) ? 0 :
          onrc (TELTRAP, r, c) ? 0 :
          onrc (GASTRAP, r, c) ? INFINITY :
@@ -512,14 +501,14 @@ int *val, *avd, *cont;
  *   E X P L O R A T I O N   S E A R C H
  */
 
-int expinit ()
+int expinit(void)
 { /* avoidance values for doors */
   expDor = 0;
   expavoidval = avoid();
   return (1);
 }
 
-int roominit ()
+int roominit(void)
 { expinit ();
   expDor = INFINITY;
   return (1);
@@ -542,10 +531,8 @@ int roominit ()
  */
 
 /* ARGSUSED */
-int expvalue (r, c, depth, val, avd, cont)
-int r, c, depth;
-int *val, *avd, *cont;
-{ register int k, nr, nc, l;
+int expvalue(int r, int c, int depth, int *val, int *avd, int *cont)
+{ (void) depth; register int k, nr, nc, l;
   int a, v = 0, nunseenb = 0, nseenb = 0, nearb = 0;
 
   a = onrc (SAFE|DOOR|STAIRS|HALL, r, c) ? 0 :
@@ -645,10 +632,8 @@ int *val, *avd, *cont;
  */
 
 /* ARGSUSED */
-int zigzagvalue (r, c, depth, val, avd, cont)
-int r, c, depth;
-int *val, *avd, *cont;
-{ register int k, nr, nc, a, v = 0, nunseenb = 0;
+int zigzagvalue(int r, int c, int depth, int *val, int *avd, int *cont)
+{ (void) depth; register int k, nr, nc, a, v = 0, nunseenb = 0;
 
   a = onrc (SAFE|DOOR|STAIRS|HALL, r, c) ? 0 :
       onrc (ARROW, r, c)   ? 50 :
@@ -702,7 +687,7 @@ int *val, *avd, *cont;
  *   S E C R E T   D O O R   S E A R C H
  */
 
-int secretinit ()
+int secretinit(void)
 { expinit ();
   if (setpsd (NOPRINT))
     return (1);
@@ -710,10 +695,8 @@ int secretinit ()
 }
 
 /* ARGSUSED */
-int secretvalue (r, c, depth, val, avd, cont)
-int r, c, depth;
-int *val, *avd, *cont;
-{ register int v, a, k;
+int secretvalue(int r, int c, int depth, int *val, int *avd, int *cont)
+{ (void) depth; register int v, a, k;
 
   *val=0;
   v = 0;	/* establish value of square */
@@ -771,7 +754,7 @@ int *val, *avd, *cont;
   { avdmonsters[r][c] = INFINITY; \
     if (debug (D_SCREEN | D_SEARCH)) { at((r),(c)); addch(ch); at(row,col); }}
 
-int avoidmonsters ()
+void avoidmonsters(void)
 { register int i, r, c, wearingstealth;
 
   /* Clear old avoid monster values */
@@ -821,9 +804,7 @@ int avoidmonsters ()
  * them for avoidance
  */
 
-int caddycorner (r, c, d1, d2, ch)
-int r,c,d1,d2;
-int ch;
+void caddycorner(int r, int c, int d1, int d2, int ch)
 { while (onrc (CANGO, r, c))
   { AVOID (r, c, ch);
     r += deltr[d1]; c += deltc[d1];
@@ -842,7 +823,7 @@ int ch;
  * we are pinned, but could get free if we had an extra turn.   MLM
  */
 
-int pinavoid ()
+void pinavoid(void)
 { register int i;
 
   /* Clear old avoid monster values */
@@ -876,8 +857,8 @@ int pinavoid ()
  *   S E C R E T : Search dead ends for secret doors.
  */
 
-int secret ()
-{ int secretinit(), secretvalue();
+int secret(void)
+{
   
   /* Secret passage adjacent to door? */
   if (version >= RV53A && on (DOOR) && !blinded &&
@@ -896,8 +877,8 @@ int secret ()
     return (0);
 
   /* If Level 1 or edge of screen: dead end cannot be room, mark and return */
-  if (Level == 1 && attempt == 0 ||
-      version < RV53A && (atrow<=1 || atrow>=22 || atcol<=0 || atcol>=79))
+  if ((Level == 1 && attempt == 0) ||
+      (version < RV53A && (atrow<=1 || atrow>=22 || atcol<=0 || atcol>=79)))
   { markexplored (atrow, atcol); return (0); }
 
   /* Have we mapped this level? */
@@ -905,8 +886,8 @@ int secret ()
 
   /* Found a dead end, should we search it? */
   if (nexttowall (atrow, atcol) ||
-      canbedoor (atrow, atcol) && 
-      (version >= RV53A || !isexplored (atrow, atcol)))
+      (canbedoor (atrow, atcol) && 
+       (version >= RV53A || !isexplored (atrow, atcol))))
   { setrc (DEADEND, atrow, atcol);
 
     if ((SEARCHES (atrow, atcol) - timessearched[atrow][atcol]) > 0)
@@ -929,8 +910,8 @@ int secret ()
  *   F I N D R O O M :  Try to find another room.
  */
 
-int findroom ()
-{ int expinit(), expvalue();    /* LGCH */
+int findroom(void)
+{
 
   if (new_findroom)
   { if (!on (ROOM) && secret ())			return (1);
@@ -946,8 +927,8 @@ int findroom ()
  *   E X P L O R E   R O O M :  Explore the current room.
  */
 
-int exploreroom ()
-{ int roominit(), expvalue();    /* LGCH */
+int exploreroom(void)
+{
 
   if (!on (ROOM) || isexplored (atrow, atcol)) return (0);
   if (makemove (EXPLOREROOM, roominit, expvalue, REUSE)) return (1);
@@ -961,10 +942,9 @@ int exploreroom ()
  *   D O O R E X P L O R E : look for secret doors
  */
 
-int doorexplore()
+int doorexplore(void)
 { static int searchcount = 0;
   char msg[128];
-  int secretinit(), secretvalue();
 
   /* If no new squares or read map, dont bother */
   if (! new_search || Level == didreadmap)
@@ -1001,9 +981,8 @@ int doorexplore()
  */
 
 /* ARGSUSED */
-int safevalue (r, c, depth, val, avd, cont)
-int r, c, depth, *val, *avd, *cont;
-{ register int k, v;
+int safevalue(int r, int c, int depth, int *val, int *avd, int *cont)
+{ (void) depth; (void) cont; register int k, v;
 
   *avd = onrc (SAFE, r, c)    ? 0 :
 	 onrc (TRAPDOR | BEARTRP | GASTRAP, r, c) ? INFINITY :
@@ -1032,14 +1011,14 @@ int r, c, depth, *val, *avd, *cont;
 
 /* findsafe: find a spot with 2 or fewer moves, for when blinded */
 
-int findsafe()
+int findsafe(void)
 { 
   return (makemove (FINDSAFE, genericinit, safevalue, REEVAL));
 }
 
 /* How scared are we of hitting a trap? */
 
-int avoid ()
+int avoid(void)
 { if (cheat && !foundarrowtrap && !usingarrow) return (0);
   else if (Level < 5) return (0);       /* Don't bother */
   else return (2);                      /* Avoid a little */
@@ -1053,10 +1032,9 @@ int avoid ()
 
 static int archrow = NONE, archcol = NONE, archturns = NONE, archval[24][80];
 
-int archmonster (m, trns)
-register int m;		/* Monster to attack */
-register int trns;	/* Minimum number of arrows to make it worthwhile */
-{ int archeryinit(), archeryvalue();
+int archmonster(int m,		/* Monster to attack */
+                int trns)	/* Minimum number of arrows to make it worthwhile */
+{
   register int mr, mc;
 
   dwait (D_CONTROL | D_BATTLE, "archmonster: m=%d, turns=%d", m, trns);
@@ -1104,7 +1082,7 @@ register int trns;	/* Minimum number of arrows to make it worthwhile */
  * waking our potential victim up.
  */
 
-int archeryinit ()
+int archeryinit(void)
 { register int dir, r, c, dr, dc, dist;
 
    /* Clear the archery value array */
@@ -1139,9 +1117,8 @@ int archeryinit ()
  */
 
 /* ARGSUSED */
-int archeryvalue (r, c, depth, val, avd, cont)
-int r, c, depth, *val, *avd, *cont;
-{ 
+int archeryvalue(int r, int c, int depth, int *val, int *avd, int *cont)
+{ (void) depth; 
   *avd = (onrc (SAFE, r, c)	? 0 :
 	  onrc (TRAPDOR, r, c)	? INFINITY :
 	  onrc (HALL, r, c)	? INFINITY :
@@ -1172,13 +1149,13 @@ static int restinroom = 0;			/* True only in a room */
 static int restr = NONE, restc = NONE;	/* Square to rest on */
 
 /* Set new resting goal */
-int unrest ()
+void unrest(void)
 { restr = restc = NONE;
 }
 
 /* Move to a good square to rest up on */
-int movetorest ()
-{ int restinit(), restvalue();    /* LGCH */
+int movetorest(void)
+{
 
   if (markcycles (NOPRINT))
     unrest ();
@@ -1201,7 +1178,7 @@ int movetorest ()
   return (0);
 }
 
-int restinit ()
+int restinit(void)
 { expavoidval = avoid();
   restinlight = (on (ROOM) && !darkroom ());
   restinroom = on (ROOM);
@@ -1209,10 +1186,8 @@ int restinit ()
 }
 
 /* ARGSUSED */
-int restvalue (r, c, depth, val, avd, cont)
-register int r, c;
-int depth, *val, *avd, *cont;
-{ register int dr, dc, ar, ac;
+int restvalue(int r, int c, int depth, int *val, int *avd, int *cont)
+{ (void) depth; register int dr, dc, ar, ac;
   int count, dir, rm;
 
   /* Find room number for diagonal selection */

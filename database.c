@@ -32,15 +32,13 @@ int datalen = 0;
  * findentry: find the database entry for 'string'
  */
 
-int findentry (s, string)
-stuff s;
-char *string;
+int findentry(stuff s, char *string)
 { register int i;
 
   for (i = 0; i < datalen; i++)
     if (s == dbase[i].st &&
         (streq (dbase[i].fakename, string) ||
-         *dbase[i].roguenam && streq (dbase[i].roguenam, string)))
+         (*dbase[i].roguenam && streq (dbase[i].roguenam, string))))
       return (i);
 
   return (NOTFOUND);
@@ -51,9 +49,7 @@ char *string;
  *         object with name 'oldname'.
  */
 
-int useobj (s, oldname)
-stuff s;
-char *oldname;
+void useobj(stuff s, char *oldname)
 { if (findentry (s, oldname) == NOTFOUND)
   { dbase[datalen].st = s;
     dbase[datalen].used = 1;
@@ -68,11 +64,7 @@ char *oldname;
  * light).
  */
 
-int infername (s, used, oldname, name)
-stuff s;
-int used;
-char *oldname;
-char *name;
+void infername(stuff s, int used, char *oldname, char *name)
 { register int i;
 
   i = findentry (s, oldname);
@@ -96,9 +88,7 @@ char *name;
  * used: Return true if we have marked 'oldname' as used.
  */
 
-int used (s, oldname)
-stuff s;
-char *oldname;
+int used(stuff s, char *oldname)
 { register int i;
 
   for (i = 0; i < datalen; i++)
@@ -112,9 +102,7 @@ char *oldname;
  * know: Return true if we know what the fake name for 'name' is.
  */
 
-int know (s, name)
-stuff s;
-char *name;
+int know(stuff s, char *name)
 { register int i;
 
   for (i = 0; i < datalen; i++)
@@ -129,9 +117,7 @@ char *name;
  * realname: Returns the real name of an object nmed 'oldname'.
  */
 
-char *realname (s, oldname)
-stuff s;
-char *oldname;
+char *realname(stuff s, char *oldname)
 { register int i;
 
   for (i = 0; i < datalen; i++)
@@ -146,7 +132,7 @@ char *oldname;
  * dumpdatabase: Debugging, dump the database one the screen.
  */
 
-int dumpdatabase ()
+void dumpdatabase(void)
 { register int i;
 
   for (i = 0; i < datalen; i++)

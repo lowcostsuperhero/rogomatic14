@@ -1,10 +1,10 @@
+%option noyywrap nounput noinput
 %{
 /*
  * datesub.l: Rog-O-Matic XIV (CMU) Fri Feb  1 10:23:56 1985 - mlm
  * Copyright (C) 1985 by A. Appel, G. Jacobson, L. Hamey, and M. Mauldin
  */
 
-int yywrap(void) { return 1; }
 %}
 %%
 "Jan"				printf ("1"); 
@@ -21,9 +21,8 @@ int yywrap(void) { return 1; }
 "Dec"				printf ("12"); 
 %%
 
-int main (argc, argv)
-int argc;
-char *argv[];
+int main(void)
 { while (yylex ())
-    ; 
+    ;
+  return 0;
 }
