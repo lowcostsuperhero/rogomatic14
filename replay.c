@@ -92,7 +92,7 @@ void positionreplay(void)
  */
 
 int findlevel(FILE *f, struct levstruct *lvpos, int *nmlev, int maxnum)
-{ char ch;
+{ int ch;
   int l=0;
 
   *nmlev = 0;
@@ -169,7 +169,8 @@ void fillstruct(FILE *f, struct levstruct *lev)
  */
 
 int findmatch(FILE *f, char *s)
-{ char *m = s, ch;
+{ char *m = s;
+  int ch;
 
   while (*m && (int) (ch = fgetc (f)) != EOF)
     if (ch != *(m++)) m = s;

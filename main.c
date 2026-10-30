@@ -353,7 +353,8 @@ sigjmp_buf commandtop;
  */
 
 int main(int argc, char *argv[])
-{ char  ch, *s, msg[350];
+{ int   ch;
+  char *s, msg[350];
   volatile int startingup = 1;
   register int  i;
 
@@ -797,8 +798,11 @@ void showtombstone(void)
 { int r, c, first = -1, last = -1, rest = 0, peace = 0;
 
   for (r = 0; r < 24; r++)
-  { if (strstr (screen[r], "REST")) rest = 1;
-    if (strstr (screen[r], "PEACE")) peace = 1;
+  { char line[81];
+    memcpy (line, screen[r], 80);	/* screen rows are not NUL terminated */
+    line[80] = '\0';
+    if (strstr (line, "REST")) rest = 1;
+    if (strstr (line, "PEACE")) peace = 1;
   }
   if (!rest || !peace) return;		/* the game did not end in death */
 

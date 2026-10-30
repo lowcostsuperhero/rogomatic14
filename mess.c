@@ -575,8 +575,8 @@ void dropreply(void)
 
 void wieldreply(void)
 {
-  int neww = wieldid;
-  usemsg ("About to wield", OBJECT(neww));
+  int neww = OBJECT (wieldid);		/* Inventory index of the weapon */
+  usemsg ("About to wield", neww);
 
   if (!replaying &&
       (wieldid < LETTER (0) || wieldid > LETTER (invcount)))

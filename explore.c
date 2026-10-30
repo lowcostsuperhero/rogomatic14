@@ -1039,6 +1039,8 @@ int archmonster(int m,		/* Monster to attack */
 
   dwait (D_CONTROL | D_BATTLE, "archmonster: m=%d, turns=%d", m, trns);
 
+  if (m < 0 || m >= mlistlen) return (0);	/* No such monster */
+
   if (! new_arch) return (0);
 
   /* Useless without arrows */

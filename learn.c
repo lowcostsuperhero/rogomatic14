@@ -297,7 +297,7 @@ int readgenes(char *genepool)
   }
 
   fclose (gfil);
-  return (1);
+  return (length > 0);		/* An empty file is no gene pool */
 }
 
 /*

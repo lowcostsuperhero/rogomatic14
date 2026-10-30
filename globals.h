@@ -192,3 +192,11 @@ extern int k_run;		/* Propensity for retreating */
 extern int k_wake;		/* Propensity for waking things up */
 extern int k_food;		/* Propensity for hoarding food (rings) */
 
+/* Bounds-checked square tests (arguments are evaluated once) */
+static inline int onrc_func (int type, int r, int c)
+{ return (r >= 0 && r < 24 && c >= 0 && c < 80) ? (type & scrmap[r][c]) : 0;
+}
+
+static inline int seerc_func (int ch, int r, int c)
+{ return (r >= 0 && r < 24 && c >= 0 && c < 80) ? (ch == screen[r][c]) : 0;
+}

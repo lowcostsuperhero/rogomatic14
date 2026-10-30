@@ -934,7 +934,7 @@ void getrogver(void)
     { if (fgetc (logfile) == *m) m++; else m = VERMSG;}
   
     if (*m == '\0')			/* Found VERMSG, get version string */
-    { while ((ch = fgetc (logfile)) != ' ') *(vstr++) = ch;
+    { while ((ch = fgetc (logfile)) != ' ' && ch != EOF) *(vstr++) = ch;
       *--vstr = '\0';
     }
     else				/* Use default version */
@@ -1178,7 +1178,8 @@ int getlogtoken(void)
 
 void getoldcommand(char *s)
 { register int charcount = 0;
-  char ch = ' ', term = '"', *startpat = "\nC: ";
+  int  ch = ' ', term = '"';
+  char *startpat = "\nC: ";
 
   while (*startpat && (int) ch != EOF)
   { if ((ch = GETLOGCHAR) != *(startpat++)) startpat = "\nC: "; }

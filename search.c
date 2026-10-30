@@ -159,8 +159,11 @@ int followmap(int movetype)
   /* Can we move more than one square at a time? Dont count scare monsters! */
   if (compression)
   { while (mvdir[r][c]-FROM==dir &&
-           (onrc (SAFE|SCAREM, r+=dr, c+=dc) == SAFE || !searchit))
+           r+dr >= 0 && r+dr < 24 && c+dc >= 0 && c+dc < 80 &&
+           (onrc (SAFE|SCAREM, r+dr, c+dc) == SAFE || !searchit))
+    { r += dr; c += dc;
       count++;
+    }
   }
 
   /* Maybe search unsafe square before moving onto it */

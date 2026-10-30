@@ -133,6 +133,11 @@ void markchokepts(void)
   { if (*Scr & DOOR) *Scr |= CHOKE;
     else if (*Scr & HALL)
     { register int nbrs = 0, k;
+      int idx = (int) (Scr - scrmap[0]);
+
+      /* Squares on the map edge have no full ring of neighbours */
+      if (idx < 80 || idx >= 1920-80 || idx % 80 == 0 || idx % 80 == 79)
+      { *Scr |= CHOKE; continue; }
 
       for (k=0; k<8; k++)
       { if (Scr[deltrc[k]] & CANGO) nbrs++; }

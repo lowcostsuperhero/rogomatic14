@@ -33,7 +33,7 @@ static char lokfil[100];
 void add_score(char *new_line, char *vers, int ntrm)
 { 
   int   wantscore = 1;
-  char  ch;
+  int   ch;
   char  newfil[100];
   FILE *newlog;
 
@@ -52,7 +52,7 @@ void add_score(char *new_line, char *vers, int ntrm)
   while (lock_file (lokfil, MAXLOCK) == 0)
     if (--wantscore < 1 && !ntrm)
     { printf ("The score file is busy, do you wish to wait? [y/n] ");
-      while ((ch = getchar ()) != 'y' && ch != 'n');
+      while ((ch = getchar ()) != 'y' && ch != 'n' && ch != EOF);
       if (ch == 'y')
         wantscore = 5;
       else
@@ -80,7 +80,8 @@ void add_score(char *new_line, char *vers, int ntrm)
 
 int dumpscore(char *vers)
 { 
-  char  ch, scrfil[100], delfil[100], newfil[100], allfil[100], cmd[550];
+  int   ch;
+  char  scrfil[100], delfil[100], newfil[100], allfil[100], cmd[550];
   FILE *scoref, *deltaf;
   int   oldmask;
 

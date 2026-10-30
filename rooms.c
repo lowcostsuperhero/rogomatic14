@@ -469,7 +469,15 @@ void updateat(void)
  * updatepos: Something changed on the screen, update the screen map
  */
 
+static void updatepos_in(int ch, int row, int col);
+
 void updatepos(int ch, int row, int col)
+{ /* Rogue may draw at the right edge, leaving the cursor off screen */
+  if (row < 0 || row >= 24 || col < 0 || col >= 80) return;
+  updatepos_in (ch, row, col);
+}
+
+static void updatepos_in(int ch, int row, int col)
 { char  oldch = screen[row][col], *monster;
   int   seenbefore = onrc (EVERCLR, row, col);
   int   couldgo = onrc (CANGO, row, col);
