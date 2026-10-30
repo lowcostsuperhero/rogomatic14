@@ -251,13 +251,3 @@ Questions, comments, gripes, and ephemera to
     Computer Recreations column of Scientific American, page 18-21.
 
 ---end of Rog-O-Matic XIV description---
-
-Building on current systems
----------------------------
-Requires a C compiler (gcc or clang, C99 through C23), ncurses, flex and
-tic.  Run "make"; "make install PREFIX=/usr/local" installs the programs
-and man page.  The "rg" terminal that Rog-O-Matic gives to Rogue is built
-as a terminfo entry (rterm.tic) into ./terminfo; copy it to
-RGMDIR/terminfo (default /usr/mlm/lib/rogomatic/terminfo) to install it.
-Compile-time locations (RGMDIR, ROGUE, PLAYER, NEWROGUE) can be overridden,
-e.g.:  make CPPFLAGS='-DRGMDIR=\"/var/games/rogomatic\"'
