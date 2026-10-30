@@ -20,8 +20,14 @@ LIBS_CURSES = -lncurses
 LIBS_MATH   = -lm
 
 PREFIX    ?= /usr/local
+RGMDIR    ?= $(PREFIX)/share/rogomatic
 BINDIR    ?= $(PREFIX)/bin
 MANDIR    ?= $(PREFIX)/share/man/man6
+
+# Locations compiled into the programs (see install.h).  Changing PREFIX,
+# BINDIR or RGMDIR requires "make clean" first.
+PATHDEFS  = -DRGMDIR=\"$(RGMDIR)\" -DPLAYER=\"$(BINDIR)/player\" \
+	-DROGUE=\"$(BINDIR)/rogue\" -DNEWROGUE=\"$(BINDIR)/rogue\"
 
 BINARIES  = rogomatic player rgmplot datesub histplot gene
 
@@ -43,7 +49,7 @@ terminfo: rterm.tic
 	touch terminfo
 
 %.o: %.c $(HDRS)
-	$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
+	$(CC) $(PATHDEFS) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
 
 player: $(PLAYER_OBJS)
 	$(CC) $(LDFLAGS) -o $@ $(PLAYER_OBJS) $(LIBS_CURSES) $(LIBS_MATH)
@@ -65,7 +71,7 @@ datesub.c: datesub.l
 	$(LEX) -t datesub.l > $@
 
 datesub.o: datesub.c
-	$(CC) $(CPPFLAGS) $(CFLAGS) -Wno-unused-function -c -o $@ datesub.c
+	$(CC) $(PATHDEFS) $(CPPFLAGS) $(CFLAGS) -Wno-unused-function -c -o $@ datesub.c
 
 datesub: datesub.o
 	$(CC) $(LDFLAGS) -o $@ datesub.o
@@ -82,3 +88,6 @@ install: all
 		install -m 755 $$b $(DESTDIR)$(BINDIR)/$$b; \
 	done
 	install -m 644 rogomatic.6 $(DESTDIR)$(MANDIR)/rogomatic.6
+	mkdir -p $(DESTDIR)$(RGMDIR)
+	chmod 1777 $(DESTDIR)$(RGMDIR)
+	tic -x -o $(DESTDIR)$(RGMDIR)/terminfo rterm.tic

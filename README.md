@@ -43,46 +43,40 @@ Override tools and flags on the command line:
 make CC=clang CFLAGS='-O2 -g'
 ```
 
-### Compile-time paths
+### Install locations
 
-The locations built into the programs live in `install.h` and can be
-overridden without editing it:
+The locations built into the programs follow `PREFIX` (default
+`/usr/local`):
 
-| Macro | Meaning | Default |
+| Make variable | Meaning | Default |
 | --- | --- | --- |
-| `RGMDIR` | data directory (score, gene pool, long-term memory) | `/usr/mlm/lib/rogomatic` |
-| `PLAYER` | full path of the `player` binary | `/usr/mlm/bin/player` |
-| `ROGUE` | full path of the `rogue` binary | `/usr/games/rogue` |
-| `NEWROGUE` | preferred `rogue` binary, tried before `ROGUE` | `/usr/mlm/bin/rogue` |
+| `BINDIR` | where `rogomatic`, `player` and `rogue` are found | `$(PREFIX)/bin` |
+| `RGMDIR` | data directory (scores, gene pool, long-term memory, terminfo) | `$(PREFIX)/share/rogomatic` |
 
-For example:
+`rogomatic` looks for Rogue in this order: the `-f` argument, `./rogue`,
+`$(BINDIR)/rogue`, then each directory of `$PATH`.  It finds `player` in
+`./player`, `$(BINDIR)/player`, then `$PATH`.  If you change `PREFIX`,
+`BINDIR` or `RGMDIR`, run `make clean` before `make`:
 
 ```sh
 make clean
-make CPPFLAGS='-DRGMDIR=\"/var/games/rogomatic\" \
-  -DPLAYER=\"/usr/local/bin/player\" -DROGUE=\"/usr/local/bin/rogue\"'
+make PREFIX=/opt/games RGMDIR=/var/games/rogomatic
 ```
+
+The names can also be set directly in `install.h`.
 
 ## Install
 
 ```sh
-sudo make install PREFIX=/usr/local
+sudo make install PREFIX=/usr/local      # same PREFIX/RGMDIR as used to build
 ```
 
 Installs `rogomatic`, `player`, `rgmplot`, `datesub`, `histplot` and `gene`
-into `$(PREFIX)/bin` (`BINDIR` to change) and `rogomatic.6` into
-`$(PREFIX)/share/man/man6`.  Use `DESTDIR=/stage` for packaging.
-
-Then create the data directory and install the terminal entry:
-
-```sh
-sudo mkdir -p /var/games/rogomatic            # your RGMDIR
-sudo cp -r terminfo /var/games/rogomatic/
-sudo chmod -R a+rwX /var/games/rogomatic      # or restrict to a games group
-```
-
-`rogomatic` looks for the terminal entry in `./terminfo` first, then in
-`RGMDIR/terminfo`, unless `TERMINFO` is already set.
+into `$(BINDIR)`, `rogomatic.6` into `$(PREFIX)/share/man/man6`, and creates
+the world-writable (sticky) data directory `RGMDIR` containing the `rg`
+terminfo entry.  Use `DESTDIR=/stage` for packaging.  Rogue itself must be
+installed separately (see the rogue5.4 repository); if it is not in
+`$(BINDIR)` or on `$PATH`, run `rogomatic -f /path/to/rogue`.
 
 ## Run
 

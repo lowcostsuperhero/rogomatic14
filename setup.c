@@ -18,6 +18,26 @@
 # define READ    0
 # define WRITE   1
 
+/*
+ * find_in_path: look for an executable called name in each directory of
+ * $PATH.  On success the full path is stored in buf and 1 is returned.
+ */
+static int find_in_path(const char *name, char *buf, size_t size)
+{ const char *path = getenv ("PATH"), *end;
+  size_t len;
+
+  if (path == NULL) return 0;
+  for (; *path; path = *end ? end + 1 : end)
+  { end = path;
+    while (*end && *end != ':') end++;
+    len = (size_t) (end - path);
+    if (len == 0) snprintf (buf, size, "./%s", name);
+    else          snprintf (buf, size, "%.*s/%s", (int) len, path, name);
+    if (access (buf, X_OK) == 0) return 1;
+  }
+  return 0;
+}
+
 /* Define the Rog-O-Matic pseudo-terminal (Concept Based) */
 
 # define ROGUETERM "rg|rterm:am:bs:ce=^[^S:cl=^L:cm=^[a%+ %+ :co#80:li#24:so=^[D:se=^[d:pt:ta=^I:up=^[;:db:xn:"
@@ -30,7 +50,7 @@ int main(int argc, char *argv[])
   int   cheat = 0, noterm = 1, echo = 0, nohalf = 0, replay = 0;
   int   emacs = 0, rf = 0, terse = 0, user = 0, quitat = 2147483647;
   char  *rfile = "", *rfilearg = "", options[32];
-  char  ropts[256], roguename[128];
+  char  ropts[256], roguename[128], rpath[1024];
 
   while (--argc > 0 && (*++argv)[0] == '-')
   { while (*++(*argv))
@@ -75,8 +95,17 @@ int main(int argc, char *argv[])
 # ifdef ROGUE
   else if (access (ROGUE, 1) == 0)	rfile = ROGUE;
 # endif
+  else if (find_in_path ("rogue", rpath, sizeof rpath))
+					rfile = rpath;
   else
-  { perror ("rogue");
+  { fprintf (stderr, "rogomatic: cannot find the rogue program (tried ./rogue"
+# ifdef NEWROGUE
+             ", " NEWROGUE
+# endif
+# ifdef ROGUE
+             ", " ROGUE
+# endif
+             " and $PATH); use -f /path/to/rogue\n");
     exit (1);
   }
 
@@ -147,6 +176,7 @@ int main(int argc, char *argv[])
 # ifdef PLAYER
     execl (PLAYER, "player", ft, rp, options, roguename, NULL);
 # endif
+    execlp ("player", "player", ft, rp, options, roguename, NULL);
     printf ("Rogomatic not available, 'player' binary missing.\n");
     kill (child, SIGKILL);
   }
