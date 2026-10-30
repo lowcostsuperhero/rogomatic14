@@ -715,11 +715,11 @@ int main(int argc, char *argv[])
   else
   { showtombstone ();			/* Leave the tombstone on the screen */
     if (*sumline)
-    { printf ("%s\n",
+    { printf ("%s\r\n",
               "Date         User       Gold  Killed by         Lvl  HP  Str  AC XL/Exp     Gms");
-      printf ("%s\n", sumline);
+      printf ("%s\r\n", sumline);
     }
-    printf ("%s %s est.\n", gamename, termination);
+    printf ("%s %s est.\r\n", gamename, termination);
   }
 
   /* 
@@ -764,7 +764,10 @@ static void restoreorigtty(void)
 
 static void saveorigtty(void)
 { if (!haveorigtty && isatty (0) && tcgetattr (0, &origtty) == 0)
-  { haveorigtty = 1;
+  { /* Never restore a broken state left behind by an earlier crash */
+    origtty.c_oflag |= OPOST | ONLCR;
+    origtty.c_lflag |= ECHO | ICANON | ISIG;
+    haveorigtty = 1;
     atexit (restoreorigtty);
   }
 }
@@ -805,7 +808,7 @@ void showtombstone(void)
         last = r; break; }
 
   if (first < 0) return;
-  printf ("\n");
+  printf ("\r\n");
   for (r = first; r <= last; r++)
   { int end = 79;
     while (end >= 0 && (screen[r][end] <= ' ' || screen[r][end] >= 0x7f))
@@ -813,9 +816,9 @@ void showtombstone(void)
     for (c = 0; c <= end; c++)
       putchar ((screen[r][c] >= ' ' && screen[r][c] < 0x7f) ?
                screen[r][c] : ' ');
-    putchar ('\n');
+    fputs ("\r\n", stdout);
   }
-  printf ("\n");
+  printf ("\r\n");
 }
 
 /*
