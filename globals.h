@@ -117,6 +117,7 @@ extern int replaying;		/* True if replaying old game */
 extern int revvideo;		/* True if in rev. video mode */
 extern int rightring;		/* Index of our right ring */
 extern int rogpid;		/* Process id of Rogue process */
+extern time_t starttime;		/* Start time of this player process */
 extern int room[];		/* Flags for each room */
 extern int row,col;		/* where is the cursor? */
 extern int scrmap[24][80];	/* attribute flags for squares */

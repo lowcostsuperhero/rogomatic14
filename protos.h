@@ -49,6 +49,7 @@ extern void dumpdatabase(void);
 /* debug.c */
 extern int dwait(int msgtype, char *f, ...);
 extern void promptforflags(void);
+extern void showseed(void);
 extern void dumpflags(int r, int c);
 extern void timehistory(FILE *f, int sep);
 extern void toggledebug(void);

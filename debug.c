@@ -89,7 +89,7 @@ int dwait(int msgtype, char *f, ...)
   { refresh ();
     switch (getch())
     { case '?': 
-        say ("i=inv, d=debug !=stf, @=mon, #=wls, $=id, ^=flg, &=chr");
+        say ("i=inv d=dbg !=stf @=mon #=wls ^=flg &=chr Z=seed");
         break;
       case 'i': at (1,0); dumpinv ((FILE *) NULL); at (row, col); break;
       case 'd': toggledebug (); 	break;
@@ -104,11 +104,31 @@ int dwait(int msgtype, char *f, ...)
         break;
       case '(': dumpdatabase (); at (row, col); break;
       case ')': new_mark++; markcycles (DOPRINT); at (row, col); break;
+      case 'Z': showseed (); break;
       case '~': saynow ("Version %d, quit at %d", version, quitat); break;
       case '/': dosnapshot (); break;
       default: at (row, col); return (1);
     }
   }
+}
+
+/*
+ * showseed: Show the seed of the current Rogue game.  If rogomatic was
+ * run with -S (or SEED is set) it is exact; otherwise Rogue used
+ * time(NULL) + its pid, so print the two likeliest values.
+ */
+
+void showseed (void)
+{ char *env = getenv ("SEED");
+  long base = (long) starttime + (long) rogpid;
+
+  if (env && *env)
+    saynow ("Seed %s (fixed by -S/SEED)", env);
+  else if (rogpid > 0)
+    saynow ("Seed about %ld or %ld (exact: gdb -p rogpid, print dnum)",
+	    base - 1, base);
+  else
+    saynow ("Seed unknown (no rogue pid)");
 }
 
 /* 

@@ -97,6 +97,7 @@
  *****************************************************************/
 
 # include <curses.h>
+# include <time.h>
 # include <ctype.h>
 # include <signal.h>
 # include <setjmp.h>  
@@ -222,6 +223,7 @@ int   replaying = 0;		/* True if replaying old game */
 int   revvideo = 0;		/* True if in rev. video mode */
 int   rightring = NONE;		/* Index of our right ring */
 int   rogpid = 0;		/* Pid of rogue process */
+time_t starttime = 0;		/* When this player process started */
 int   room[9];			/* Flags for each room */
 int   row, col;			/* Current cursor position */
 int   scrmap[24][80];		/* Flags bits for level map */
@@ -382,6 +384,7 @@ int main(int argc, char *argv[])
 
   /* The second argument to player is the process id of Rogue */
   if (argc > 2) rogpid = atoi (argv[2]);                  
+  starttime = time ((time_t *) NULL);
 
   /* The third argument is an option list */
   if (argc > 3) sscanf (argv[3], "%d,%d,%d,%d,%d,%d,%d,%d", 
@@ -577,6 +580,8 @@ int main(int argc, char *argv[])
         case ':': chicken = !chicken;
                   say (chicken ? "chicken" : "aggressive");
                   break;
+
+        case 'Z': showseed (); break;
 
         case '~': if (replaying)
 		    saynow ("Replaying log file %s, version %s.", 
