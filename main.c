@@ -104,6 +104,9 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <termios.h>
+# include <errno.h>
+# include <sys/wait.h>
 # include "types.h"
 # include "globals.h"
 # include "termtokens.h"
@@ -248,6 +251,9 @@ int   zonemap[9][9];		/* Map of zones connections */
 /* Functions */
 void (*istat)(int);
 void onintr (int);
+static void saveorigtty (void);
+static void restoreorigtty (void);
+static void reaprogue (void);
 
 /* Stuff list, list of objects on this level */
 stuffrec slist[MAXSTUFF]; 	int slistlen=0;
@@ -410,6 +416,7 @@ int main(int argc, char *argv[])
     if (freopen ("/dev/null", "w", stdout) == NULL) perror ("/dev/null");
   }
 
+  saveorigtty ();				/* Remember the terminal modes */
   initscr (); crmode (); noecho ();	/* Initialize the Curses package */
   if (startecho) toggleecho ();		/* Start logging? */
   clear ();				/* Clear the screen */
@@ -694,7 +701,9 @@ int main(int argc, char *argv[])
 
   /* Print termination messages */
   at (23, 0); clrtoeol (); refresh ();
+  reaprogue ();				/* Rogue must not touch the tty later */
   nocrmode (); noraw (); echo (); endwin ();
+  restoreorigtty ();
   
   if (emacs)  
   { if (*sumline) fprintf (realstdout, " %s", sumline);
@@ -736,6 +745,41 @@ int main(int argc, char *argv[])
   }
 
   exit (0);
+}
+
+/*
+ * Terminal protection.  Rogue's own curses saves the terminal modes when
+ * it starts (rogomatic's cbreak/noecho/nonl state) and puts them back when
+ * it exits, so if Rogue outlives rogomatic's endwin() the user's terminal is
+ * left with echo off and no carriage returns.  Save the original modes, make
+ * sure Rogue is gone first, and restore the original modes at exit.
+ */
+
+static struct termios origtty;
+static int haveorigtty = 0;
+
+static void restoreorigtty(void)
+{ if (haveorigtty) tcsetattr (0, TCSADRAIN, &origtty);
+}
+
+static void saveorigtty(void)
+{ if (!haveorigtty && isatty (0) && tcgetattr (0, &origtty) == 0)
+  { haveorigtty = 1;
+    atexit (restoreorigtty);
+  }
+}
+
+static void reaprogue(void)
+{ int i, st;
+
+  if (replaying || rogpid <= 0) return;
+  for (i = 0; i < 30; i++)		/* wait up to 3 seconds */
+  { pid_t w = waitpid (rogpid, &st, WNOHANG);
+    if (w == rogpid || (w < 0 && errno != EINTR)) return;
+    usleep (100000);
+  }
+  kill (rogpid, SIGKILL);
+  waitpid (rogpid, &st, 0);
 }
 
 /*
