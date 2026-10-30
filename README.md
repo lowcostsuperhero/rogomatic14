@@ -91,6 +91,8 @@ See `rogomatic.6` (`man rogomatic`) for all options.
 
 ## Reporting a freeze (finding the game seed)
 
+`rogomatic -h` lists all options (the old no-halftime flag is now `-H`).
+
 Rogomatic pauses 14 ms after each character it sends to Rogue so the game
 can be watched.  `rogomatic -U usec` changes that pause in microseconds
 (`-U 0` is full speed; `make USLEEP=...` changes the default).

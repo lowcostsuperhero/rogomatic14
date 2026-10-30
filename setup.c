@@ -44,6 +44,32 @@ static int find_in_path(const char *name, char *buf, size_t size)
 
 int   rfrogue, rtrogue;
 
+static void usage(FILE *f)
+{ fprintf (f,
+"Usage: rogomatic [options] [-f rogue] [-S seed] [-U usec]\n"
+"       rogomatic -p [logfile]        replay a log file\n"
+"       rogomatic [saved-game-file]\n"
+"\n"
+"  -c        cheat: use trap arrows\n"
+"  -e        echo the game to the log file (roguelog)\n"
+"  -E        Emacs mode\n"
+"  -f file   use this Rogue program\n"
+"  -h, -?    show this help and exit\n"
+"  -H        no halftime show\n"
+"  -p        play back the log file\n"
+"  -r        restore a saved game\n"
+"  -s        show the scores only\n"
+"  -S seed   make Rogue build the same dungeon every time (no scoring)\n"
+"  -t        terse: print status lines only\n"
+"  -u        start in user mode\n"
+"  -U usec   pause usec microseconds after each character sent to Rogue\n"
+"            (default %d; 0 = full speed)\n"
+"  -w        watched mode\n"
+"\n"
+"While playing: ^C enters interactive mode (? lists commands, Z shows the\n"
+"seed, Q quits).\n", (int) USLEEP);
+}
+
 int main(int argc, char *argv[])
 { int   ptc[2], ctp[2];
   int   child, score = 0, oldgame = 0;
@@ -64,7 +90,9 @@ int main(int argc, char *argv[])
         case 'f': rf++;           break; /* Next arg is the rogue file */
         case 'S': sf++;           break; /* Next arg is the dungeon seed */
         case 'U': uf++;           break; /* Next arg is usec between sends */
-        case 'h': nohalf++;       break; /* No halftime show */
+        case 'H': nohalf++;       break; /* No halftime show */
+        case 'h': case '?':
+                  usage (stdout); exit (0); /* Help */
         case 'p': replay++;       break; /* Play back roguelog */
         case 'r': oldgame++;      break; /* Use saved game */
         case 's': score++;        break; /* Give scores only */
@@ -72,8 +100,7 @@ int main(int argc, char *argv[])
         case 'u': user++;         break; /* Start up in user mode */
         case 'w': noterm = 0;     break; /* Watched mode */
         case 'E': emacs++;        break; /* Emacs mode */
-        default:  printf 
-                  ("Usage: rogomatic [-cefhprstuwE] [-S seed] [-U usec] or rogomatic [file]\n");
+        default:  usage (stderr);
                   exit (1);
       }
     }
@@ -114,7 +141,7 @@ int main(int argc, char *argv[])
   }
 
   if (argc > 1)
-  { printf ("Usage: rogomatic [-cefhprstuwE] [-S seed] [-U usec] or rogomatic <file>\n");
+  { usage (stderr);
     exit (1);
   }
 
