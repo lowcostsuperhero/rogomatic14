@@ -707,7 +707,7 @@ int main(int argc, char *argv[])
   { showtombstone ();			/* Leave the tombstone on the screen */
     if (*sumline)
     { printf ("%s\n",
-              "Date         User       Gold  Killed by         Lvl  HP  Str  AC XL/Exp     Games");
+              "Date         User       Gold  Killed by         Lvl  HP  Str  AC XL/Exp     Gms");
       printf ("%s\n", sumline);
     }
     printf ("%s %s est.\n", gamename, termination);
