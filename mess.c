@@ -809,6 +809,7 @@ void didhit(void)
 
   /* Record our hit */
   if (!cosmic) m = lastmonster;
+  if (m < 0 || m > 26) m = 0;
 
   hits++; hitstokill++;
   addprob (&monhist[monindex[m]].wehit, SUCCESS);
@@ -828,6 +829,7 @@ void didmiss(void)
 
   /* Record our miss */
   if (!cosmic) m = lastmonster;
+  if (m < 0 || m > 26) m = 0;
 
   misses++;
   addprob (&monhist[monindex[m]].wehit, FAILURE);

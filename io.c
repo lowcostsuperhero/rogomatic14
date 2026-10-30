@@ -752,6 +752,7 @@ void quitrogue(char *reason,		/* A reason string for the summary line */
 
   /* Restore interrupt status */
   reset_int ();
+  signal (SIGPIPE, SIG_IGN);	/* Rogue may already be gone */
 
   /* Set the termination message based on the termination method */
   if (stlmatch (reason, "total winner"))

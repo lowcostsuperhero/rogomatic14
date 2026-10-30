@@ -648,6 +648,7 @@ static int unique(int new)
 static int untested(void)
 { register int g, y= -1, trials=1e9, newtrials, count=length;
   
+  if (length <= 0) return (-1);
   for (g = randint (length); count-- > 0; g = (g+1) % length)
   { if (TRIALS (genes[g]) >= trials) continue;
 

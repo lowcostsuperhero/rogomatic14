@@ -253,13 +253,13 @@ extern char	*_unctrl[];
 /* Utility Macros */
 
 /* onrc - tell if row and col have the proper attributes */
-# define onrc(type,r,c) ((type)&scrmap[r][c])
+# define onrc(type,r,c) (((r)>=0 && (r)<24 && (c)>=0 && (c)<80) ? ((type)&scrmap[r][c]) : 0)
 
 /* on - tell if current position has correct attributes */
 # define on(type) onrc(type,atrow,atcol)
 
 /* seerc - is this character at row,col */
-# define seerc(ch,r,c) ((ch)==screen[r][c])
+# define seerc(ch,r,c) (((r)>=0 && (r)<24 && (c)>=0 && (c)<80) ? ((ch)==screen[r][c]) : 0)
 
 /* see - is this character at current position */
 # define see(ch) seerc(atrow,atcol)

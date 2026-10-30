@@ -424,6 +424,7 @@ int searchto(int row, int col, evaluate_fn evaluate, char dir[24][80], int *trow
 	/* examine adjacent squares. */
 	nr = r + sdeltr[k];
 	nc = c + sdeltc[k];
+	if (nr < 0 || nr >= 24 || nc < 0 || nc >= 80) continue;
 	S = scrmap[nr][nc];
 
 	/* IF we have not considered stepping on the square yet */
