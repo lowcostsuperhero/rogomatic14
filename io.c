@@ -86,6 +86,17 @@ static void on_alarm(int sig)
 
 static void getrogue_body(char *waitstr, int onat);
 
+/*
+ * getrogue_abort: called when a longjmp (interrupt) abandons getrogue, so
+ * a pending alarm cannot jump into a stack frame that no longer exists.
+ */
+
+void getrogue_abort(void)
+{ alarm (0);
+  jmp_ready = 0;
+  in_getrogue = 0;
+}
+
 void getrogue(char *waitstr, int onat)
 { static int handler_set = 0;
 

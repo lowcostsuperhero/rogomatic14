@@ -339,7 +339,7 @@ char *gamename = "Rog-O-Matic";
 char roguename[241] = "Rog-O-Matic                             ";
 
 /* Used by onintr() to restart Rgm at top of command loop */
-jmp_buf  commandtop;
+sigjmp_buf commandtop;
 
 /*
  * Main program
@@ -481,7 +481,7 @@ int main(int argc, char *argv[])
    */
 
   istat = signal (SIGINT, SIG_IGN); /* save original status */
-  setjmp (commandtop);              /* save stack position */
+  sigsetjmp (commandtop, 1);              /* save stack position */
   if (istat != SIG_IGN)
     signal (SIGINT, onintr);
 
@@ -704,7 +704,8 @@ int main(int argc, char *argv[])
     fprintf (realstdout, "%s %s est.\n", gamename, termination);
   }
   else
-  { if (*sumline) printf ("%s\n",sumline);
+  { showtombstone ();			/* Leave the tombstone on the screen */
+    if (*sumline) printf ("%s\n",sumline);
     printf ("%s %s est.\n", gamename, termination);
   }
 
@@ -734,6 +735,42 @@ int main(int argc, char *argv[])
 }
 
 /*
+ * showtombstone: endwin() restores the terminal's original screen, which
+ * (depending on the terminal) wipes out the tombstone Rogue drew.  If the
+ * last Rogue screen holds a tombstone, print it again on the restored
+ * terminal so that it is always left on the screen.
+ */
+
+void showtombstone(void)
+{ int r, c, first = -1, last = -1, rest = 0, peace = 0;
+
+  for (r = 0; r < 24; r++)
+  { if (strstr (screen[r], "REST")) rest = 1;
+    if (strstr (screen[r], "PEACE")) peace = 1;
+  }
+  if (!rest || !peace) return;		/* the game did not end in death */
+
+  for (r = 0; r < 24; r++)
+    for (c = 0; c < 80; c++)
+      if (screen[r][c] > ' ' && screen[r][c] < 0x7f)
+      { if (first < 0) first = r;
+        last = r; break; }
+
+  if (first < 0) return;
+  printf ("\n");
+  for (r = first; r <= last; r++)
+  { int end = 79;
+    while (end >= 0 && (screen[r][end] <= ' ' || screen[r][end] >= 0x7f))
+      end--;
+    for (c = 0; c <= end; c++)
+      putchar ((screen[r][c] >= ' ' && screen[r][c] < 0x7f) ?
+               screen[r][c] : ' ');
+    putchar ('\n');
+  }
+  printf ("\n");
+}
+
+/*
  * onintr: The SIGINT handler. Pass interrupts to main loop, setting
  * transparent mode. Also send some synchronization characters to Rogue,
  * and reset some goal variables.
@@ -748,7 +785,8 @@ void onintr(int signum)
   transparent = 1;              /* Drop into transprent mode */
   interrupted = 1;              /* Mark as an interrupt */
   noterm = 0;                   /* Allow commands */
-  longjmp (commandtop, 1);      /* Back to command Process */
+  getrogue_abort ();            /* Cancel freeze-protection alarm */
+  siglongjmp (commandtop, 1);   /* Back to command Process */
 }
 
 /*

@@ -50,6 +50,8 @@ extern void dumpdatabase(void);
 extern int dwait(int msgtype, char *f, ...);
 extern void promptforflags(void);
 extern void showseed(void);
+extern void showtombstone(void);
+extern void getrogue_abort(void);
 extern void dumpflags(int r, int c);
 extern void timehistory(FILE *f, int sep);
 extern void toggledebug(void);

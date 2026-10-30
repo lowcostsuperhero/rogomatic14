@@ -172,6 +172,7 @@ int main(int argc, char *argv[])
     setenv ("LINES","24", 1);
     setenv ("COLUMNS","80", 1);
     signal (SIGWINCH, SIG_IGN);	/* rogue talks over pipes; ignore resizes */
+    signal (SIGINT, SIG_IGN);	/* ^C is for rogomatic, not for rogue */
     if (oldgame)  execl (rfile, rfile, "-r", NULL);
     if (argc)     execl (rfile, rfile, argv[0], NULL);
     execl (rfile, rfile, NULL);

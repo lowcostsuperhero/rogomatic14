@@ -58,11 +58,12 @@ int dwait(int msgtype, char *f, ...)
   }
 
   if (msgtype & D_FATAL)
-  { extern jmp_buf commandtop;			/* From play */
+  { extern sigjmp_buf commandtop;			/* From play */
     saynow (msg);
     playing = 0;
     quitrogue ("fatal error trap", Gold, SAVED);
-    longjmp (commandtop, 1);
+    getrogue_abort ();
+    siglongjmp (commandtop, 1);
   }
 
   /*

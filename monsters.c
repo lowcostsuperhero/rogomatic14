@@ -20,7 +20,8 @@
  */
 
 char *monname(char m)
-{ return (monhist[monindex[m-'A'+1]].m_name);
+{ if (m < 'A' || m > 'Z') return ("unknown");	/* not a monster letter */
+  return (monhist[monindex[m-'A'+1]].m_name);
 }
 
 /*

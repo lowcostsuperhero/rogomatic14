@@ -99,6 +99,9 @@ Try different seeds in a loop to find one that freezes:
 for s in $(seq 1 200); do timeout 120 rogomatic -S $s >/dev/null || echo "seed $s"; done
 ```
 
+Press `^C` to drop into interactive mode, then `Z` to show the seed (exact
+with `-S`, otherwise start time + Rogue pid, give or take a second).
+
 If a game without `-S` freezes, its seed can still be recovered while it is
 stuck.  Rogue's seed is the start time (seconds since 1970) plus Rogue's
 process id.  Either read it from the running Rogue with gdb:
