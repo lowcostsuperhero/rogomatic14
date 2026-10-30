@@ -71,8 +71,8 @@ The names can also be set directly in `install.h`.
 sudo make install PREFIX=/usr/local      # same PREFIX/RGMDIR as used to build
 ```
 
-Installs `rogomatic`, `player`, `rgmplot`, `datesub`, `histplot` and `gene`
-into `$(BINDIR)`, `rogomatic.6` into `$(PREFIX)/share/man/man6`, and creates
+Installs `rogomatic`, `player`, `rgmplot`, `datesub`, `histplot`, `gene` and
+the `autorogomatic` script into `$(BINDIR)`, `rogomatic.6` into `$(PREFIX)/share/man/man6`, and creates
 the world-writable (sticky) data directory `RGMDIR` containing the `rg`
 terminfo entry.  Use `DESTDIR=/stage` for packaging.  Rogue itself must be
 installed separately (see the rogue5.4 repository); if it is not in
@@ -88,6 +88,24 @@ rogomatic -s              # show scores
 ```
 
 See `rogomatic.6` (`man rogomatic`) for all options.
+
+### Playing many games: autorogomatic
+
+```sh
+autorogomatic                  # play game after game until a win (^C stops)
+autorogomatic -r 20 -s 3       # at most 20 games, 3 seconds between games
+autorogomatic -H               # bring back the halftime show
+autorogomatic -U 0 -a 2        # full speed, 2 s silence timeout
+```
+
+It runs `rogomatic -H -U 1000 -a 1` repeatedly: `-U` is the pause in
+microseconds after each character sent to Rogue, `-a` is the seconds of
+silence from Rogue before rogomatic resynchronizes.  `autorogomatic -H`
+leaves out rogomatic's `-H`, so the halftime show plays.  It stops after a
+win, and gives up after 10 failed games in a row.  Wins are looked for in
+the score files in `RGMDIR` (set the `RGMDIR` environment variable if the
+data directory is not the installed one); `ROGOMATIC` selects the
+rogomatic program.
 
 ## Reporting a freeze (finding the game seed)
 

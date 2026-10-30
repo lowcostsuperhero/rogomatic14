@@ -89,6 +89,9 @@ install: all
 	for b in $(BINARIES); do \
 		install -m 755 $$b $(DESTDIR)$(BINDIR)/$$b; \
 	done
+	sed -e 's|@RGMDIR@|$(RGMDIR)|' autorogomatic.sh > autorogomatic.inst
+	install -m 755 autorogomatic.inst $(DESTDIR)$(BINDIR)/autorogomatic
+	rm -f autorogomatic.inst
 	install -m 644 rogomatic.6 $(DESTDIR)$(MANDIR)/rogomatic.6
 	mkdir -p $(DESTDIR)$(RGMDIR)
 	chmod 1777 $(DESTDIR)$(RGMDIR)
