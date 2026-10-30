@@ -325,7 +325,14 @@ void currentrectangle(void)
     }
     for (r = curt; r <= curb; r++)
       for (c = curl; c <= curr; c++)
-      { setrc (ROOM + CANGO, r, c);
+      { /*
+         * Standing in a doorway, the inferred rectangle can include the wall
+         * row or column that holds the door.  Never mark a known wall as
+         * walkable room floor, or the explorer chases an unreachable square
+         * forever.
+         */
+        if (onrc (WALL, r, c) && !onrc (DOOR, r, c)) continue;
+        setrc (ROOM + CANGO, r, c);
         unsetrc	 (HALL, r, c);
       }
 

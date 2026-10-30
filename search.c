@@ -86,6 +86,38 @@ int findmove(int movetype, evalinit_fn evalinit, evaluate_fn evaluate, int reeva
  * May 13, MLM
  */
 
+/*
+ * movestuck: guard against endless "move that never happens" loops.
+ *
+ * If we keep trying the same step from the same square and never get
+ * anywhere (and no monster, trap or hold explains it), the target square
+ * cannot really be entered: mark it impassable and report failure so that
+ * the caller picks a different goal.
+ */
+# define STUCK_LIMIT (12)
+
+static int movestuck(int dir)
+{ static int lastr = -1, lastc = -1, lastdir = -1, tries = 0;
+  int r = atrow + deltr[dir];
+  int c = atcol + deltc[dir];
+
+  if (atrow != lastr || atcol != lastc || dir != lastdir)
+  { lastr = atrow; lastc = atcol; lastdir = dir; tries = 0;
+    return (0);
+  }
+
+  if (++tries < STUCK_LIMIT) return (0);
+  tries = 0;
+
+  if (r < 1 || r > 22 || c < 0 || c > 79 ||
+      onrc (MONSTER, r, c) || beingheld || onrc (BEARTRP, atrow, atcol))
+    return (0);
+
+  unsetrc (CANGO | SAFE | ROOM, r, c);
+  setnewgoal ();
+  return (1);
+}
+
 int followmap(int movetype)
 { register int dir, dr, dc, r, c;
   int timemode, searchit, count=1;
@@ -144,6 +176,9 @@ int followmap(int movetype)
   /* If we are about to step onto a scare monster scroll, use the 'm' cmd */
   if (version >= RV53A && onrc (SCAREM, atrow+dr, atcol+dc))
   { mmove (dir, timemode); return (1); }
+
+  /* Give up if we keep trying a move that never succeeds */
+  if (movestuck (dir)) return (0);
 
   /* Send the movement command and return success */
   rmove (count, dir, timemode); return (1);

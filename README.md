@@ -89,6 +89,35 @@ rogomatic -s              # show scores
 
 See `rogomatic.6` (`man rogomatic`) for all options.
 
+## Reporting a freeze (finding the game seed)
+
+`rogomatic -S seed` makes Rogue build the same dungeon every time, so a
+freeze can be reproduced.  (Rogue does not record scores for seeded games.)
+Try different seeds in a loop to find one that freezes:
+
+```sh
+for s in $(seq 1 200); do timeout 120 rogomatic -S $s >/dev/null || echo "seed $s"; done
+```
+
+If a game without `-S` freezes, its seed can still be recovered while it is
+stuck.  Rogue's seed is the start time (seconds since 1970) plus Rogue's
+process id.  Either read it from the running Rogue with gdb:
+
+```sh
+gdb -p $(pgrep -n rogue) -batch -ex 'print dnum'
+```
+
+or compute it:  `echo $(( $(date -d "$(ps -o lstart= -p ROGUEPID)" +%s) + ROGUEPID ))`
+(it can be off by a second; try the neighbouring values).  Also useful for
+a report is what the stuck `player` is doing:
+
+```sh
+top -b -n1 | grep -E 'player|rogue'      # 100% CPU = busy loop, 0% = waiting on a pipe
+gdb -p $(pgrep -n player) -batch -ex bt  # where it is stuck
+```
+
+and the last line shown at the top of the screen.
+
 ## Clean
 
 ```sh

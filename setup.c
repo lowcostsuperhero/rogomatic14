@@ -49,6 +49,8 @@ int main(int argc, char *argv[])
   int   child, score = 0, oldgame = 0;
   int   cheat = 0, noterm = 1, echo = 0, nohalf = 0, replay = 0;
   int   emacs = 0, rf = 0, terse = 0, user = 0, quitat = 2147483647;
+  int   sf = 0;
+  char  *seedarg = "";
   char  *rfile = "", *rfilearg = "", options[32];
   char  ropts[256], roguename[128], rpath[1024];
 
@@ -58,6 +60,7 @@ int main(int argc, char *argv[])
       { case 'c': cheat++;        break; /* Will use trap arrows! */
         case 'e': echo++;         break; /* Echo file to roguelog */
         case 'f': rf++;           break; /* Next arg is the rogue file */
+        case 'S': sf++;           break; /* Next arg is the dungeon seed */
         case 'h': nohalf++;       break; /* No halftime show */
         case 'p': replay++;       break; /* Play back roguelog */
         case 'r': oldgame++;      break; /* Use saved game */
@@ -67,7 +70,7 @@ int main(int argc, char *argv[])
         case 'w': noterm = 0;     break; /* Watched mode */
         case 'E': emacs++;        break; /* Emacs mode */
         default:  printf 
-                  ("Usage: rogomatic [-cefhprstuwE] or rogomatic [file]\n");
+                  ("Usage: rogomatic [-cefhprstuwE] [-S seed] or rogomatic [file]\n");
                   exit (1);
       }
     }
@@ -76,10 +79,25 @@ int main(int argc, char *argv[])
     { if (--argc) rfilearg = *++argv;
       rf = 0;
     }
+    if (sf)
+    { if (--argc) seedarg = *++argv;
+      sf = 0;
+    }
+  }
+
+  /* -S seed: make Rogue build the same dungeon every time (and not score) */
+  if (*seedarg)
+  { char *end;
+    unsigned long sv = strtoul (seedarg, &end, 0);
+    if (*end) { fprintf (stderr, "rogomatic: bad seed '%s'\n", seedarg); exit (1); }
+    { char sbuf[32];
+      snprintf (sbuf, sizeof sbuf, "%lu", sv);
+      setenv ("SEED", sbuf, 1);
+    }
   }
 
   if (argc > 1)
-  { printf ("Usage: rogomatic [-cefhprstuwE] or rogomatic <file>\n");
+  { printf ("Usage: rogomatic [-cefhprstuwE] [-S seed] or rogomatic <file>\n");
     exit (1);
   }
 
