@@ -5,6 +5,16 @@ gcc or clang (C99 through C23), ncurses and flex.  It drives a separate
 `rogue` binary (see the companion rogue5.4 repository).  The original
 documentation is in `README`.
 
+## Heritage
+
+This is a modernized continuation of Rog-O-Matic XIV, derived from
+[rogueforge/rogomatic14](https://github.com/rogueforge/rogomatic14)
+(snapshot 06e103a3c2c11acc6c4351f650d6cd137cb59aac).  It is not a GitHub
+fork, but the original authors' copyright and licence (`COPYING`,
+`LICENSE`) apply unchanged.  It plays the Rogue built from the companion
+[rogue5.4](https://github.com/lowcostsuperhero/rogue5.4) repository.
+
+
 ## Prerequisites
 
 - `gcc` or `clang`, `make`
