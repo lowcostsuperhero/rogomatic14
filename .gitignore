@@ -1,0 +1,11 @@
+*.o
+datesub.c
+datesub
+gene
+histplot
+player
+rgmplot
+rogomatic
+tf
+terminfo/
+core
