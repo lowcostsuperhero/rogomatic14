@@ -217,6 +217,24 @@ int main(int argc, char *argv[])
     setenv ("LINES","24", 1);
     setenv ("COLUMNS","80", 1);
     signal (SIGWINCH, SIG_IGN);	/* rogue talks over pipes; ignore resizes */
+    /*
+     * Rogue talks over pipes, but its curses falls back to stderr to set
+     * terminal modes.  Rogue calls raw(), which turns off ISIG on the
+     * user's terminal (so ^C stops reaching rogomatic) and scrambles echo,
+     * and puts the modes back at exit.  Keep Rogue off the terminal by
+     * sending its stderr to a file instead.
+     */
+    { char errname[512]; int errfd;
+      char *tmp = getenv ("TMPDIR");
+      snprintf (errname, sizeof errname, "%s/rogomatic-rogue.%d.err",
+                (tmp && *tmp) ? tmp : "/tmp", (int) getuid ());
+      errfd = open (errname, O_WRONLY | O_CREAT | O_TRUNC | O_NOFOLLOW, 0600);
+      if (errfd < 0) errfd = open ("/dev/null", O_WRONLY);
+      if (errfd >= 0)
+      { dup2 (errfd, 2);
+        if (errfd > 2) close (errfd);
+      }
+    }
     signal (SIGINT, SIG_IGN);	/* ^C is for rogomatic, not for rogue */
     if (oldgame)  execl (rfile, rfile, "-r", NULL);
     if (argc)     execl (rfile, rfile, argv[0], NULL);

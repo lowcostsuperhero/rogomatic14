@@ -91,6 +91,10 @@ See `rogomatic.6` (`man rogomatic`) for all options.
 
 ## Reporting a freeze (finding the game seed)
 
+Rogue's error output goes to `$TMPDIR/rogomatic-rogue.UID.err` (`/tmp` if
+TMPDIR is unset) so that Rogue cannot change your terminal modes; look
+there if Rogue fails to start.
+
 `rogomatic -h` lists all options (the old no-halftime flag is now `-H`).
 
 Rogomatic pauses 14 ms after each character it sends to Rogue so the game
