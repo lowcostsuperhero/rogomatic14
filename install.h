@@ -129,3 +129,9 @@
  */
 
 # define SNAPSHOT	"snapshot.rgm"
+
+/* Pause after each character sent to Rogue, so the game can be watched.
+ * Override at run time with rogomatic -U usec (0 = full speed). */
+# ifndef USLEEP
+# define USLEEP 14000
+# endif

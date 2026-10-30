@@ -91,6 +91,10 @@ See `rogomatic.6` (`man rogomatic`) for all options.
 
 ## Reporting a freeze (finding the game seed)
 
+Rogomatic pauses 14 ms after each character it sends to Rogue so the game
+can be watched.  `rogomatic -U usec` changes that pause in microseconds
+(`-U 0` is full speed; `make USLEEP=...` changes the default).
+
 `rogomatic -S seed` makes Rogue build the same dungeon every time, so a
 freeze can be reproduced.  (Rogue does not record scores for seeded games.)
 Try different seeds in a loop to find one that freezes:

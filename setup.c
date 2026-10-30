@@ -49,9 +49,11 @@ int main(int argc, char *argv[])
   int   child, score = 0, oldgame = 0;
   int   cheat = 0, noterm = 1, echo = 0, nohalf = 0, replay = 0;
   int   emacs = 0, rf = 0, terse = 0, user = 0, quitat = 2147483647;
-  int   sf = 0;
+  int   sf = 0, uf = 0;
+  char  *usleeparg = "";
+  long  usleep_usec = USLEEP;
   char  *seedarg = "";
-  char  *rfile = "", *rfilearg = "", options[32];
+  char  *rfile = "", *rfilearg = "", options[96];
   char  ropts[256], roguename[128], rpath[1024];
 
   while (--argc > 0 && (*++argv)[0] == '-')
@@ -61,6 +63,7 @@ int main(int argc, char *argv[])
         case 'e': echo++;         break; /* Echo file to roguelog */
         case 'f': rf++;           break; /* Next arg is the rogue file */
         case 'S': sf++;           break; /* Next arg is the dungeon seed */
+        case 'U': uf++;           break; /* Next arg is usec between sends */
         case 'h': nohalf++;       break; /* No halftime show */
         case 'p': replay++;       break; /* Play back roguelog */
         case 'r': oldgame++;      break; /* Use saved game */
@@ -70,7 +73,7 @@ int main(int argc, char *argv[])
         case 'w': noterm = 0;     break; /* Watched mode */
         case 'E': emacs++;        break; /* Emacs mode */
         default:  printf 
-                  ("Usage: rogomatic [-cefhprstuwE] [-S seed] or rogomatic [file]\n");
+                  ("Usage: rogomatic [-cefhprstuwE] [-S seed] [-U usec] or rogomatic [file]\n");
                   exit (1);
       }
     }
@@ -82,6 +85,20 @@ int main(int argc, char *argv[])
     if (sf)
     { if (--argc) seedarg = *++argv;
       sf = 0;
+    }
+    if (uf)
+    { if (--argc) usleeparg = *++argv;
+      uf = 0;
+    }
+  }
+
+  /* -U usec: delay after each character sent, so the game can be watched */
+  if (*usleeparg)
+  { char *end;
+    usleep_usec = strtol (usleeparg, &end, 0);
+    if (*end || usleep_usec < 0)
+    { fprintf (stderr, "rogomatic: -U needs an integer >= 0 (microseconds)\n");
+      exit (1);
     }
   }
 
@@ -97,7 +114,7 @@ int main(int argc, char *argv[])
   }
 
   if (argc > 1)
-  { printf ("Usage: rogomatic [-cefhprstuwE] [-S seed] or rogomatic <file>\n");
+  { printf ("Usage: rogomatic [-cefhprstuwE] [-S seed] [-U usec] or rogomatic <file>\n");
     exit (1);
   }
 
@@ -129,8 +146,9 @@ int main(int argc, char *argv[])
 
   if (!replay && !score) quitat = findscore (rfile, "Rog-O-Matic");
 
-  sprintf (options, "%d,%d,%d,%d,%d,%d,%d,%d",
-           cheat, noterm, echo, nohalf, emacs, terse, user,quitat);
+  sprintf (options, "%d,%d,%d,%d,%d,%d,%d,%d,%ld",
+           cheat, noterm, echo, nohalf, emacs, terse, user,quitat,
+           usleep_usec);
   sprintf (roguename, "Rog-O-Matic %s for %s", RGMVER, getname ());
   sprintf (ropts, "name=%s,%s,%s,%s,%s,%s,%s,%s,%s,%s",
            roguename, "fruit=apricot", "terse", "noflush", "noask",

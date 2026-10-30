@@ -530,6 +530,7 @@ void sendnow (char *f, ...)
 
 void sendcnow(int c)
 { if (replaying) return;
+  if (usleep_usec > 0 && !terse && !emacs) usleep (usleep_usec);
   if (logging)
   { if (cecho)
       { fprintf (fecho, "\nC: \"%c", c); cecho = !cecho; }

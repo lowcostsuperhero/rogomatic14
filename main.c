@@ -213,6 +213,7 @@ int  *newdoors = NULL;		/* New doors on screen */
 int   newring = 1;              /* Change in ring status? */
 int   newweapon = 1;            /* Change in weapon status? */
 int   nohalf = 0;		/* True ==> no halftime show */
+long  usleep_usec = USLEEP;	/* Microseconds to pause after each sent char */
 int   noterm = 0;		/* True ==> no user watching */
 int   objcount = 0;             /* Number of objects */
 int   ourscore = 0;		/* Final score when killed */
@@ -393,9 +394,9 @@ int main(int argc, char *argv[])
   starttime = time ((time_t *) NULL);
 
   /* The third argument is an option list */
-  if (argc > 3) sscanf (argv[3], "%d,%d,%d,%d,%d,%d,%d,%d", 
+  if (argc > 3) sscanf (argv[3], "%d,%d,%d,%d,%d,%d,%d,%d,%ld", 
 			&cheat, &noterm, &startecho, &nohalf,
-			&emacs, &terse, &transparent, &quitat);
+			&emacs, &terse, &transparent, &quitat, &usleep_usec);
 
   /* The fourth argument is the Rogue name */
   if (argc > 4)	strcpy (roguename, argv[4]);

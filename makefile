@@ -21,12 +21,13 @@ LIBS_MATH   = -lm
 
 PREFIX    ?= /usr/local
 RGMDIR    ?= $(PREFIX)/share/rogomatic
+USLEEP    ?= 14000
 BINDIR    ?= $(PREFIX)/bin
 MANDIR    ?= $(PREFIX)/share/man/man6
 
 # Locations compiled into the programs (see install.h).  Changing PREFIX,
 # BINDIR or RGMDIR requires "make clean" first.
-PATHDEFS  = -DRGMDIR=\"$(RGMDIR)\" -DPLAYER=\"$(BINDIR)/player\" \
+PATHDEFS  = -DUSLEEP=$(USLEEP) -DRGMDIR=\"$(RGMDIR)\" -DPLAYER=\"$(BINDIR)/player\" \
 	-DROGUE=\"$(BINDIR)/rogue\" -DNEWROGUE=\"$(BINDIR)/rogue\"
 
 BINARIES  = rogomatic player rgmplot datesub histplot gene
