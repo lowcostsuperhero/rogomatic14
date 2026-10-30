@@ -38,7 +38,7 @@ int dwait(int msgtype, char *f, ...)
 
   /* Build the actual message */
   va_start(ap,f);
-  vsprintf (msg, f, ap);
+  vsnprintf (msg, sizeof msg, f, ap);
   va_end(ap);
   /* Log the message if the error is severe enough */
   if (!replaying && (msgtype & (D_FATAL | D_ERROR | D_WARNING)))
@@ -64,6 +64,16 @@ int dwait(int msgtype, char *f, ...)
     quitrogue ("fatal error trap", Gold, SAVED);
     longjmp (commandtop, 1);
   }
+
+  /*
+   * Unless the user turned on extra interactive debugging, never stop and
+   * wait for a key.  An internal D_ERROR (for example a potion whose name
+   * was inferred two different ways) used to drop into the keyboard
+   * debugging loop below and froze the game until a key was pressed.  The
+   * error has already been written to the error file; keep playing.
+   */
+  if ((msgtype & D_ERROR) && (debugging & ~(D_FATAL | D_ERROR)) == 0)
+    return (0);
 
   if (! debug (msgtype | D_INFORM))		/* If debugoff */
   { if (msgtype & D_SAY)			  /* Echo? */

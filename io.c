@@ -11,6 +11,9 @@
 # include <stdlib.h>
 # include <sys/ioctl.h>
 # include <sys/wait.h>
+# include <setjmp.h>
+# include <signal.h>
+# include <unistd.h>
 
 # include "install.h"
 
@@ -60,10 +63,51 @@ int   head = 0, tail = 0;
  *	  1 ==> Cursor on @ sufficient
  *	  2 ==> [1] + send ';' when ever we eat a --More-- message
  */
+/*
+ * Freeze protection.  Rogue is expected to echo the "illegal command"
+ * marker (see "ill") after every command we send, and getrogue waits for
+ * it.  But curses writes nothing when a message repaints exactly what is
+ * already on the screen, so the marker can be missing and both programs
+ * then wait on each other forever.  If Rogue stays silent for
+ * ROGUE_TIMEOUT seconds we resynchronize: dismiss any --More--, escape
+ * any prompt, force a redraw, and send fresh markers.
+ */
+# define ROGUE_TIMEOUT       5	/* seconds of silence before recovery */
+# define MAX_CONSEC_TIMEOUTS 10	/* silent this many times in a row: give up */
+
+static sigjmp_buf jmp_point;
+static volatile sig_atomic_t jmp_ready = 0;
+static int in_getrogue = 0, consec_timeouts = 0;
+
+static void on_alarm(int sig)
+{ (void) sig;
+  if (jmp_ready) { jmp_ready = 0; siglongjmp (jmp_point, 1); }
+}
+
+static void getrogue_body(char *waitstr, int onat);
+
 void getrogue(char *waitstr, int onat)
-{ int   botprinted = 0, wasmapped = didreadmap, r, c;
+{ static int handler_set = 0;
+
+  if (!handler_set && !replaying)
+  { struct sigaction sa;
+    sa.sa_handler = on_alarm;
+    sigemptyset (&sa.sa_mask);
+    sa.sa_flags = 0;			/* do not restart the read */
+    sigaction (SIGALRM, &sa, NULL);
+    handler_set = 1;
+  }
+  in_getrogue++;
+  getrogue_body (waitstr, onat);
+  in_getrogue--;
+}
+
+static void getrogue_body(char *waitstr, int onat)
+{ volatile int botprinted = 0;
+  int   wasmapped = didreadmap, r, c;
   register int i, j;
-  char  *s, *m, *q, *d, *call;
+  char  * volatile s, * volatile m, * volatile q, * volatile d;
+  char  * volatile call;
   int *doors, ch;
   static int moved = 0;
 
@@ -82,7 +126,24 @@ void getrogue(char *waitstr, int onat)
   /* characters from Rogue and figure out what they mean.       */
   while ((*s) ||
          ((!hasted || version != RV36A) && onat && screen[row][col] != '@'))
-  { ch = getroguetoken ();
+  {
+    if (!replaying && sigsetjmp (jmp_point, 1) != 0)
+    { /* Rogue has been silent too long: resynchronize */
+      jmp_ready = 0;
+      if (rogpid > 0) kill (rogpid, SIGCONT);
+      if (++consec_timeouts >= MAX_CONSEC_TIMEOUTS)
+      { endwin ();
+        fprintf (stderr, "rogomatic: rogue is not responding, giving up.\n");
+        if (rogpid > 0) kill (rogpid, SIGKILL);
+        exit (1);
+      }
+      head = tail = 0;			/* forget queued commands */
+      m = "More--"; call = "Call it:"; q = "(* for list): ";
+      s = waitstr;			/* start matching the marker again */
+      if (version < RV53A) sendnow (" %c;%c//;", ESC, 0x0c);
+      else                 sendnow (" %c;%c;", ESC, 0x12);
+    }
+    ch = getroguetoken ();
 
     /* If message ends in "(* for list): ", call terpmes */
     if (ch == *q) { if (*++q == 0) terpmes (); }
@@ -531,7 +592,17 @@ int getroguetoken(void)
   if (replaying)
     return (getlogtoken());
 
+  /* Only the first character is timed; the rest of a token follows at once */
+  if (in_getrogue && !replaying)
+  { jmp_ready = 1;
+    alarm (ROGUE_TIMEOUT);
+  }
   ch = GETROGUECHAR;
+  if (jmp_ready)
+  { alarm (0);
+    jmp_ready = 0;
+    consec_timeouts = 0;
+  }
 
   /* Convert escape sequences into tokens (negative numbers) */
   if (ch == ESC)
