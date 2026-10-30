@@ -92,6 +92,24 @@ static void on_alarm(int sig)
   if (jmp_ready) { jmp_ready = 0; siglongjmp (jmp_point, 1); }
 }
 
+/*
+ * sendesc: send an ESC, then (optionally) more characters.  Rogue's input
+ * routine treats an ESC that is immediately followed by another character
+ * as one two-character key (Alt-key), so "ESC ;" was swallowed whole and the
+ * ';' marker we wait for never came back.  Give Rogue a moment to see the
+ * ESC by itself.
+ */
+
+# define ESC_GAP_US 10000	/* pause between an ESC and what follows */
+
+void sendesc(char *after)
+{ sendnow ("%c", ESC);
+  if (*after)
+  { if (!replaying) usleep (ESC_GAP_US);
+    sendnow ("%s", after);
+  }
+}
+
 static void getrogue_body(char *waitstr, int onat);
 
 /*
@@ -159,8 +177,10 @@ static void getrogue_body(char *waitstr, int onat)
       head = tail = 0;			/* forget queued commands */
       m = "More--"; call = "Call it:"; q = "(* for list): ";
       s = waitstr;			/* start matching the marker again */
-      if (version < RV53A) sendnow (" %c;%c//;", ESC, 0x0c);
-      else                 sendnow (" %c;%c;", ESC, 0x12);
+      sendnow (" ");
+      sendesc (";");
+      if (version < RV53A) sendnow ("%c//;", 0x0c);
+      else                 sendnow ("%c;", 0x12);
     }
     ch = getroguetoken ();
 
@@ -206,8 +226,8 @@ static void getrogue_body(char *waitstr, int onat)
     if (ch == *call)
     { if (*++call == 0)
       { /* Send an escape (and possibly a semicolon) to clear the message */
-        if (onat == 2) sendnow ("%c;", ESC);
-        else           sendnow ("%c", ESC);
+        if (onat == 2) sendesc (";");
+        else           sendesc ("");
       }
     }
     else call = "Call it:";

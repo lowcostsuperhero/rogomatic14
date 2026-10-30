@@ -644,7 +644,8 @@ void rampage(void)
   }
   else
   { dwait (D_ERROR, "Out of monsters to genocide!");
-    sendnow (" %c;", ESC);	/* Cancel the command */
+    sendnow (" ");
+    sendesc (";");		/* Cancel the command */
   }
 }
 
