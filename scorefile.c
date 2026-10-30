@@ -150,9 +150,11 @@ int dumpscore(char *vers)
 
   /* Now any new scores have been put into scrfil, read it */
   if (scoref == NULL)
-  { printf ("Can't find %s\nBest score was %d.\n", scrfil, BEST);
+  { printf ("No scores recorded yet for Rogue version %s (no %s).\n",
+            vers, scrfil);
+    printf ("Play a game first, or give a version: rogomatic -s 5.4.5\n");
     unlock_file (lokfil);
-    exit (1);
+    exit (0);
   }
 
   printf ("Rog-O-Matic Scores against version %s:\n\n", vers);

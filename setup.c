@@ -11,6 +11,9 @@
 # include <fcntl.h>
 # include <sys/ioctl.h>
 # include <unistd.h>
+# include <dirent.h>
+# include <string.h>
+# include <sys/stat.h>
 # include "types.h"
 # include "globals.h"
 # include "install.h"
@@ -70,6 +73,38 @@ static void usage(FILE *f)
 "\n"
 "While playing: ^C enters interactive mode (? lists commands, Z shows the\n"
 "seed, Q quits).\n", ROGTIMEOUT / 1000.0, (int) USLEEP);
+}
+
+/*
+ * scoreversion: Which Rogue version's scores should "rogomatic -s" show?
+ * Rogomatic keeps rgmscoreVERS / rgmdeltaVERS files in RGMDIR, one set per
+ * Rogue version (for example 5.4.5).  Use the version of the most recently
+ * changed one; with no score files yet, the Rogue version this branch plays.
+ */
+
+static char *scoreversion(void)
+{ static char best[64] = "5.4.5";
+  DIR *d = opendir (RGMDIR);
+  struct dirent *e;
+  time_t newest = 0;
+
+  if (d == NULL) return (best);
+  while ((e = readdir (d)) != NULL)
+  { char *v = NULL, path[1024];
+    struct stat sb;
+
+    if (strncmp (e->d_name, "rgmscore", 8) == 0) v = e->d_name + 8;
+    else if (strncmp (e->d_name, "rgmdelta", 8) == 0) v = e->d_name + 8;
+    /* a version looks like 5.4.5: digits and dots, ending in a digit */
+    if (v == NULL || *v < '0' || *v > '9' || strlen (v) >= sizeof best ||
+        strspn (v, "0123456789.") != strlen (v) || v[strlen (v) - 1] == '.')
+      continue;
+    snprintf (path, sizeof path, "%s/%s", RGMDIR, e->d_name);
+    if (stat (path, &sb) == 0 && sb.st_mtime >= newest)
+    { newest = sb.st_mtime; strcpy (best, v); }
+  }
+  closedir (d);
+  return (best);
 }
 
 int main(int argc, char *argv[])
@@ -201,7 +236,7 @@ int main(int argc, char *argv[])
            roguename, "fruit=apricot", "terse", "noflush", "noask",
            "jump", "step", "nopassgo", "inven=slow", "seefloor");
 
-  if (score)  { dumpscore (argc==1 ? argv[0] : DEFVER); exit (0); }
+  if (score)  { dumpscore (argc==1 ? argv[0] : scoreversion ()); exit (0); }
   if (replay) { replaylog (argc==1 ? argv[0] : ROGUELOG, options); exit (0); }
 
   if ((pipe (ptc) < 0) || (pipe (ctp) < 0))
