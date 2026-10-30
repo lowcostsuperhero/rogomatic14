@@ -1,0 +1,907 @@
+Rogomatic Game Log
+
+
+C: " ;"
+R: {cr}You faint{ce}{cm(20,31)}{cm(0,9)}--More--
+C: " ;"
+R: {cr}The aquator hit  {bs}{bs}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(20,31)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(20,31)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(20,31)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(20,31)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(20,31)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(20,31)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(20,31)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(20,31)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator misses{ce}{cm(20,31)}{cm(0,18)}--More--
+C: " ;"
+R: {cm(0,12)}hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(20,31)}{cm(0,27)}--More--
+C: " ;"
+R: {cr}You can move again{ce}--More--
+C: " ;"
+R: {cr}The aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(20,31)}{cm(0,0)}Illegal command ';'{ce}{cm(20,31)}
+C: "v;"
+R: {cm(0,0)}Version 5.4.5. (mctesq was here){cm(20,31)}{cm(0,0)}Illegal command ';'{ce}{cm(20,31)}
+C: "1y;"
+R: {cm(0,0)}{ce}{cm(19,29)}.@A {cm(20,29)}... {cm(21,30)}   {cm(19,30)}{cm(0,0)}Illegal command ';'{cm(19,30)}
+C: "1k;"
+R: {cm(0,0)}{ce}{cm(17,30)}#{do}{bs}@{do}{bs}A.{cm(20,29)}   {cm(18,30)}{cm(0,0)}Illegal command ';'{cm(18,30)}
+C: "1k;"
+R: {cm(0,0)}{ce}{cm(16,30)}##{cm(17,30)}@{do}{bs}A{cm(19,29)}   {cm(17,30)}{cm(0,0)}Illegal command ';'{cm(17,30)}
+C: "1k;"
+R: {cm(0,0)}{ce}{cm(16,30)}@{do}{bs}A{do}{bs}+{cm(16,30)}{cm(0,0)}Illegal command ';'{cm(16,30)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(16,30)}A@#{cm(17,30)}#{up}{cm(0,0)}Illegal command ';'{cm(16,31)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(16,30)}#A@#{cm(23,28)}5{cm(16,32)}{cm(0,0)}Illegal command ';'{cm(16,32)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(16,31)}#A@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(16,33)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(16,32)}#A@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(16,34)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(16,33)}#A@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(16,35)}
+C: "1l;"
+R: {cm(0,0)}{ce}You faint{cm(16,34)}#A{cm(0,9)}{cm(16,36)}@#{bs}{bs}{cm(0,9)}--More--
+C: " ;"
+R: {cr}The aquator hit  {bs}{bs}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,36)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator misses{ce}{cm(16,36)}{cm(0,18)}--More--
+C: " ;"
+R: {cm(0,18)}{ce}{cm(16,36)}{cm(0,18)}--More--
+C: " ;"
+R: {cm(0,12)}hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,36)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,36)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,36)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator misses{ce}{cm(16,36)}{cm(0,18)}--More--
+C: " ;"
+R: {cr}You can move again{ce}--More--
+C: " ;"
+R: {cr}The aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly--More--
+C: " ;"
+R: {cr}You faint{ce}{cm(16,36)}{cm(0,9)}--More--
+C: " ;"
+R: {cr}The aquator hit  {bs}{bs}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,36)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,36)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,36)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator misses{ce}{cm(16,36)}{cm(0,18)}--More--
+C: " ;"
+R: {cr}You can move again{ce}--More--
+C: " ;"
+R: {cr}The aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,36)}{cm(0,0)}Illegal command ';'{ce}{cm(16,36)}
+C: "1l;"
+R: {cm(0,0)}{ce}You faint{cm(16,35)}#A{cm(0,9)}{cm(16,37)}@#{bs}{bs}{cm(0,9)}--More--
+C: " ;"
+R: {cr}The aquator hit  {bs}{bs}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,37)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator misses{ce}{cm(16,37)}{cm(0,18)}--More--
+C: " ;"
+R: {cm(0,18)}{ce}{cm(16,37)}{cm(0,18)}--More--
+C: " ;"
+R: {cm(0,12)}hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,37)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,37)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator misses{ce}{cm(16,37)}{cm(0,18)}--More--
+C: " ;"
+R: {cm(0,12)}hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,37)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator misses{ce}{cm(16,37)}{cm(0,18)}--More--
+C: " ;"
+R: {cr}You can move again{ce}--More--
+C: " ;"
+R: {cr}The aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,37)}{cm(0,0)}Illegal command ';'{ce}{cm(16,37)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(16,36)}#A@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(16,38)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(16,37)}#A@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(16,39)}
+C: "1l;"
+R: {cm(0,0)}{ce}You faint{cm(16,38)}#A{cm(0,9)}{cm(16,40)}@#{bs}{bs}{cm(0,9)}--More--
+C: " ;"
+R: {cr}The aquator hit  {bs}{bs}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,40)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,40)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,40)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator misses{ce}{cm(16,40)}{cm(0,18)}--More--
+C: " ;"
+R: {cr}You can move again{ce}--More--
+C: " ;"
+R: {cr}The aquator misses{ce}--More--
+C: " ;"
+R: {cr}You fain{cm(0,9)}{ce}{cm(16,40)}{cm(0,9)}--More--
+C: " ;"
+R: {cr}The aquator misses{cm(16,40)}{cm(0,18)}--More--
+C: " ;"
+R: {cm(0,12)}hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,40)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator misses{ce}{cm(16,40)}{cm(0,18)}--More--
+C: " ;"
+R: {cm(0,18)}{ce}{cm(16,40)}{cm(0,18)}--More--
+C: " ;"
+R: {cm(0,12)}hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,40)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,40)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,40)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,40)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,40)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,40)}{cm(0,27)}--More--
+C: " ;"
+R: {cr}You can move again{ce}--More--
+C: " ;"
+R: {cr}The aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(16,40)}{cm(0,0)}Illegal command ';'{ce}{cm(16,40)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(16,39)}#A@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(16,41)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(15,43)}#{cm(16,40)}#A@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(16,42)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(16,41)}#A@{bs}{cm(0,0)}Illegal command ';'{cm(16,43)}
+C: "1k;"
+R: {cm(0,0)}{ce}{cm(14,43)}#{do}{bs}@{cm(16,42)}#A{up}{bs}{cm(0,0)}Illegal command ';'{cm(15,43)}
+C: "1k;"
+R: {cm(0,0)}{ce}You faint{cm(15,43)}A{do}{bs}#{cm(0,9)}{cm(13,43)}#{do}{bs}@{bs}{cm(0,9)}--More--
+C: " ;"
+R: {cr}The aquator hit  {bs}{bs}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(14,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator misses{ce}{cm(14,43)}{cm(0,18)}--More--
+C: " ;"
+R: {cm(0,12)}hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(14,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(14,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(14,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(14,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(14,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(14,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(14,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(14,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cr}You can move again{ce}--More--
+C: " ;"
+R: {cr}The aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(14,43)}{cm(0,0)}Illegal command ';'{ce}{cm(14,43)}
+C: "1k;"
+R: {cm(0,0)}{ce}{cm(12,43)}#{do}{bs}@{do}{bs}A{do}{bs}#{cm(13,43)}{cm(0,0)}Illegal command ';'{cm(13,43)}
+C: "1k;"
+R: {cm(0,0)}{ce}You faint{cm(13,43)}A{do}{bs}#{cm(0,9)}{cm(11,43)}#{do}{bs}@{bs}{cm(0,9)}--More--
+C: " ;"
+R: {cr}The aquator hit  {bs}{bs}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(12,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(12,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(12,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(12,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(12,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator misses{ce}{cm(12,43)}{cm(0,18)}--More--
+C: " ;"
+R: {cm(0,12)}hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(12,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(12,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(12,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cr}You can move again{ce}--More--
+C: " ;"
+R: {cr}The aquator misses{ce}--More--
+C: " ;"
+R: {cr}You fain{cm(0,9)}{ce}{cm(12,43)}{cm(0,9)}--More--
+C: " ;"
+R: {cr}The aquator hit  {bs}{bs}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(12,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(12,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(12,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(12,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(12,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator misses{ce}{cm(12,43)}{cm(0,18)}--More--
+C: " ;"
+R: {cm(0,12)}hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(12,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(12,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator misses{ce}{cm(12,43)}{cm(0,18)}--More--
+C: " ;"
+R: {cm(0,12)}hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(12,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cr}You can move again{ce}--More--
+C: " ;"
+R: {cr}The aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(12,43)}{cm(0,0)}Illegal command ';'{ce}{cm(12,43)}
+C: "1k;"
+R: {cm(0,0)}{ce}{cm(10,43)}#{do}{bs}@{do}{bs}A{do}{bs}#{cm(11,43)}{cm(0,0)}Illegal command ';'{cm(11,43)}
+C: "1k;"
+R: {cm(0,0)}{ce}{cm(10,43)}@{do}{bs}A{do}{bs}#{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "1j;"
+R: {cm(0,0)}{ce}You miss.  The aquator hit--More--
+C: " ;"
+R: {cr}The rust vanishes instantly{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{ce}{cm(10,43)}
+C: "1j;"
+R: {cm(0,0)}{ce}You miss.  The aquator hit--More--
+C: " ;"
+R: {cr}The rust vanishes instantly{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{ce}{cm(10,43)}
+C: "1j;"
+R: {cm(0,0)}{ce}You hit.  The aquator hit--More--
+C: " ;"
+R: {cr}The rust vanishes instantly{ce}--More--
+C: " ;"
+R: {cr}You faint{ce}{cm(10,43)}{cm(0,9)}--More--
+C: " ;"
+R: {cr}The aquator misses{cm(10,43)}{cm(0,18)}--More--
+C: " ;"
+R: {cm(0,12)}hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(10,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(10,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cr}You can move again{ce}--More--
+C: " ;"
+R: {cr}The aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly--More--
+C: " ;"
+R: {cr}You faint{ce}{cm(10,43)}{cm(0,9)}--More--
+C: " ;"
+R: {cr}The aquator hit  {bs}{bs}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(10,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(10,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(10,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(10,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cm(0,4)}aquator misses{ce}{cm(10,43)}{cm(0,18)}--More--
+C: " ;"
+R: {cm(0,12)}hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(10,43)}{cm(0,27)}--More--
+C: " ;"
+R: {cr}You can move again{ce}--More--
+C: " ;"
+R: {cr}The aquator hit{ce}--More--
+C: " ;"
+R: {cm(0,4)}rust vanishes instantly{cm(10,43)}{cm(0,0)}Illegal command ';'{ce}{cm(10,43)}
+C: "1j;"
+R: {cm(0,0)}{ce}You miss.  The aquator hit--More--
+C: " ;"
+R: {cr}The rust vanishes instantly{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{ce}{cm(10,43)}
+C: "1j;"
+R: {cm(0,0)}{ce}You hit.  The aquator hit--More--
+C: " ;"
+R: {cr}The rust vanishes instantly{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{ce}{cm(10,43)}
+C: "1j;"
+R: {cm(0,0)}{ce}You hit.  The aquator misses{cm(10,43)}{cm(0,0)}Illegal command ';'{ce}{cm(10,43)}
+C: "1j;"
+R: {cm(0,0)}{ce}You hit.  Defeated the aquator{cm(11,43)}#{cm(0,30)}{cm(23,65)}84{cm(10,43)}{cm(0,0)}Illegal command ';'{ce}{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}You faint{ce}{cm(10,43)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(0,4)}faint{ce}{cm(23,28)}6{cm(10,43)}{cm(23,28)}7{cm(10,43)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}You faint{ce}{cm(10,43)}{cm(23,28)}8{cm(10,43)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(23,28)}9{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}You faint{ce}{cm(10,43)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(23,27)}30{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}You faint{ce}{cm(10,43)}{cm(23,28)}1{cm(10,43)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(23,28)}2{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}You faint{ce}{cm(10,43)}{cm(23,28)}3{cm(10,43)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(0,4)}faint{ce}{cm(10,43)}{cm(23,28)}4{cm(10,43)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(23,28)}5{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}You faint{ce}{cm(10,43)}{cm(23,28)}6{cm(10,43)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}You faint{ce}{cm(23,28)}7{cm(10,43)}{cm(23,28)}8{cm(10,43)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}You faint{ce}{cm(10,43)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}You faint{ce}{cm(10,43)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "s;"
+R: {cm(0,0)}You faint{ce}{cm(10,43)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(10,43)}{cm(0,0)}Illegal command ';'{cm(10,43)}
+C: "
+;"
+R: {cm(0,0)}{ce}{cm(10,43)}#{do}{bs}@{bs}{cm(0,0)}Illegal command ';'{cm(11,43)}
+C: "
+;"
+R: {cm(0,0)}{ce}{cm(11,43)}#{do}{bs}@{bs}{cm(0,0)}Illegal command ';'{cm(12,43)}
+C: "
+;"
+R: {cm(0,0)}{ce}{cm(12,43)}#{do}{bs}@{bs}{cm(0,0)}Illegal command ';'{cm(13,43)}
+C: "
+;"
+R: {cm(0,0)}{ce}{cm(13,43)}#{do}{bs}@{bs}{cm(0,0)}Illegal command ';'{cm(14,43)}
+C: "
+;"
+R: {cm(0,0)}{ce}{cm(14,43)}#{do}{bs}@{bs}{cm(0,0)}Illegal command ';'{cm(15,43)}
+C: "
+;"
+R: {cm(0,0)}You faint{ce}{cm(15,43)}#{cm(0,9)}{cm(16,43)}@{bs}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(16,43)}{cm(0,0)}Illegal command ';'{cm(16,43)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(16,42)}@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(16,42)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(16,41)}@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(16,41)}
+C: ";"
+R: {cm(0,0)}You faint{ce}{cm(16,41)}#{cm(0,9)}{cm(16,40)}@{bs}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(16,40)}{cm(0,0)}Illegal command ';'{cm(16,40)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(16,39)}@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(16,39)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(16,38)}@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(16,38)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(16,37)}@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(16,37)}
+C: ";"
+R: {cm(0,0)}You faint{ce}{cm(16,37)}#{cm(0,9)}{cm(16,36)}@{bs}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(16,36)}{cm(0,0)}Illegal command ';'{cm(16,36)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(16,35)}@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(16,35)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(16,34)}@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(16,34)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(16,33)}@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(16,33)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(16,32)}@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(16,32)}
+C: ";"
+R: {cm(0,0)}You faint{ce}{cm(16,32)}#{cm(0,9)}{cm(16,31)}@{bs}{do}{bs}S{up}{bs}S{do}{bs}H{up}{cm(0,9)}--More--
+C: " ;"
+R: {cr}The snake misses {bs}{cm(16,31)}{cm(0,16)}--More--
+C: " ;"
+R: {cm(0,16)}{ce}{cm(16,31)}{cm(0,16)}--More--
+C: " ;"
+R: {cm(0,10)}hit{ce}{cm(23,28)}6{cm(16,31)}{cm(0,13)}--More--
+C: " ;"
+R: {cm(0,10)}misses{ce}{cm(16,31)}{cm(0,16)}--More--
+C: " ;"
+R: {cm(0,16)}{ce}{cm(16,31)}{cm(0,16)}--More--
+C: " ;"
+R: {cr}You can move again{ce}--More--
+C: " ;"
+R: {cr}The snake misses{ce}{cm(16,31)}{cm(0,0)}Illegal command ';'{cm(16,31)}
+C: "1h;"
+R: {cm(0,0)}{ce}You hit.  The snake misses{cm(16,31)}{cm(0,0)}Illegal command ';'{ce}{cm(16,31)}
+C: "1h;"
+R: {cm(0,0)}{ce}You miss.  The snake hit{cm(23,28)}4{cm(16,31)}{cm(0,0)}Illegal command ';'{ce}{cm(16,31)}
+C: "1h;"
+R: {cm(0,0)}{ce}You hit.  Defeated the snake{cm(16,30)}#{cm(0,28)}{cm(16,30)}H{do}{bs}#{cm(23,66)}7{cm(16,31)}{cm(0,0)}Illegal command ';'{ce}{cm(16,31)}
+C: "1h;"
+R: {cm(0,0)}{ce}You hit.  Defeated the hobgoblin{cm(16,30)}#{cm(0,32)}--More--
+C: " ;"
+R: {cm(0,4)}faint{ce}{cm(23,65)}90{cm(16,31)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(16,31)}{cm(0,0)}Illegal command ';'{cm(16,31)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(23,28)}5{cm(16,31)}{cm(0,0)}Illegal command ';'{cm(16,31)}
+C: "s;"
+R: {cm(0,0)}You faint{ce}{cm(16,31)}{cm(23,28)}6{cm(16,31)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(16,31)}{cm(0,0)}Illegal command ';'{cm(16,31)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(16,30)}@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(16,30)}
+C: "
+;"
+R: {cm(0,0)}You faint{ce}{cm(16,30)}#{cm(0,9)}{cm(17,30)}@{bs}{cm(23,28)}7{cm(17,30)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(17,30)}{cm(0,0)}Illegal command ';'{cm(17,30)}
+C: "2j;"
+R: {cm(0,0)}{ce}You faint{cm(17,30)}#{cm(19,29)}...{cm(0,9)}{cm(19,30)}@{cm(20,29)}...{cm(19,30)}{cm(23,28)}8{cm(19,30)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(19,30)}{cm(0,0)}Illegal command ';'{cm(19,30)}
+C: "1n;"
+R: {cm(0,0)}{ce}{cm(19,29)} ...{cm(20,29)} .@.{cm(21,30)}...{cm(20,31)}{cm(0,0)}Illegal command ';'{cm(20,31)}
+C: "3l;"
+R: {cm(0,0)}{ce}{cm(19,30)}   ...{cm(20,30)}   .@.{cm(21,30)}   ...{cm(20,34)}{cm(0,0)}Illegal command ';'{cm(20,34)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(19,33)} ...{cm(20,33)} .@.{cm(21,33)} ...{cm(20,35)}{cm(0,0)}Illegal command ';'{cm(20,35)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(19,34)} ...{cm(20,34)} .@.{cm(21,34)} ...{cm(20,36)}{cm(0,0)}Illegal command ';'{cm(20,36)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(19,35)} ...{cm(20,35)} .@.{cm(21,35)} ...{cm(20,37)}{cm(0,0)}Illegal command ';'{cm(20,37)}
+C: "1l;"
+R: {cm(0,0)}{ce}You faint{cm(20,37)}.{cm(0,9)}{cm(19,36)} ...{cm(20,36)} .@.{cm(21,36)} ...{cm(20,38)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(20,38)}{cm(0,0)}Illegal command ';'{cm(20,38)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(19,37)} ...{cm(20,37)} .@.{cm(21,37)} ...{cm(20,39)}{cm(0,0)}Illegal command ';'{cm(20,39)}
+C: "1l;"
+R: {cm(0,0)}{ce}You faint{cm(20,39)}.{cm(0,9)}{cm(19,38)} ...{cm(20,38)} .@.{cm(21,38)} ...{cm(20,40)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(0,4)}faint{ce}{cm(20,40)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(0,4)}faint{ce}{cm(20,40)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(0,4)}faint{ce}{cm(20,40)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(0,4)}faint{ce}{cm(20,40)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(20,40)}{cm(0,0)}Illegal command ';'{cm(20,40)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(19,39)} ...{cm(20,39)} .@.{cm(21,39)} ...{cm(20,41)}{cm(0,0)}Illegal command ';'{cm(20,41)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(19,40)} ...{cm(20,40)} .@.{cm(21,40)} ...{cm(20,42)}{cm(0,0)}Illegal command ';'{cm(20,42)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(19,41)} ...{cm(20,41)} .@.{cm(21,41)} ...{cm(20,43)}{cm(0,0)}Illegal command ';'{cm(20,43)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(19,42)} ...{cm(20,42)} .@){cm(21,42)} ...{cm(20,44)}{cm(0,0)}Illegal command ';'{cm(20,44)}
+C: "1l;"
+R: {cm(0,0)}{ce}A spear (h){cm(20,44)}..{cm(0,11)}{cm(19,43)} ...{cm(20,43)} .@.{cm(21,43)} ...{cm(20,45)}{cm(0,0)}Illegal command ';'{cm(20,45)}
+C: "1l;"
+R: {cm(0,0)}{ce}You faint{cm(20,45)}.{cm(0,9)}{cm(19,44)} ...{cm(20,44)} .@.{cm(21,44)} ...{cm(20,46)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(20,46)}{cm(0,0)}Illegal command ';'{cm(20,46)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(19,45)} ..|{cm(20,45)} .@|{cm(21,45)} ..+{cm(20,47)}{cm(0,0)}Illegal command ';'{cm(20,47)}
+C: "1j;"
+R: {cm(0,0)}{ce}{cm(19,46)}  {do}{bs}.{do}{bs}@{cm(22,46)}---{cm(21,47)}{cm(0,0)}Illegal command ';'{cm(21,47)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(20,46)} {do}{bs} .@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(21,48)}
+C: ";"
+R: {cm(0,0)}You faint{ce}{cm(20,47)} {do}{bs} +##{cm(0,9)}--More--
+C: " ;"
+R: {cm(21,51)}#{cm(0,17)}{cm(0,4)}can move again{cm(21,52)}@+{bs}{bs}{cm(0,0)}Illegal command ';'{cm(21,52)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(20,53)}|.{cm(21,52)}#@.{cm(22,53)}--{cm(21,53)}{cm(0,0)}Illegal command ';'{cm(21,53)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(20,55)}.{cm(21,53)}+@S{do}{bs}-{cm(21,54)}{cm(0,0)}Illegal command ';'{cm(21,54)}
+C: "h;"
+R: {cm(0,0)}{ce}{cm(20,55)} {cm(21,53)}@S {bs}{bs}{bs}{cm(0,0)}Illegal command ';'{cm(21,53)}
+C: "1l;"
+R: {cm(0,0)}{ce}You hit.  Defeated the snake{cm(21,54)} {cm(0,28)}{cm(21,54)}.{cm(23,66)}2{cm(21,53)}{cm(0,0)}Illegal command ';'{ce}{cm(21,53)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(21,53)}{cm(0,0)}Illegal command ';'{cm(21,53)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(21,53)}{cm(0,0)}Illegal command ';'{cm(21,53)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(20,55)}.{cm(21,53)}+@.{bs}{bs}{cm(0,0)}Illegal command ';'{cm(21,54)}
+C: "1u;"
+R: {cm(0,0)}{ce}{cm(19,54)}+--{cm(20,55)}@.{cm(21,54)}...{cm(20,55)}{cm(0,0)}Illegal command ';'{cm(20,55)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(19,57)}-{cm(20,54)} .@.{cm(21,54)} ...{cm(20,56)}{cm(0,0)}Illegal command ';'{cm(20,56)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(19,58)}-{cm(20,55)} .@.{cm(21,55)} ...{cm(20,57)}{cm(0,0)}Illegal command ';'{cm(20,57)}
+C: "1l;"
+R: {cm(0,0)}{ce}You faint{cm(20,57)}.{cm(0,9)}{cm(19,59)}-{cm(20,56)} .@.{cm(21,56)} ...{cm(20,58)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(20,58)}{cm(0,0)}Illegal command ';'{cm(20,58)}
+C: "1l;"
+R: {cm(0,0)}{ce}You faint{cm(20,58)}.{cm(0,9)}{cm(19,60)}-{cm(20,57)} .@.{cm(21,57)} ...{cm(20,59)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(0,4)}faint{ce}{cm(20,59)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(20,59)}{cm(0,0)}Illegal command ';'{cm(20,59)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(19,61)}-{cm(20,58)} .@.{cm(21,58)} ...{cm(20,60)}{cm(0,0)}Illegal command ';'{cm(20,60)}
+C: "1l;"
+R: {cm(0,0)}{ce}You faint{cm(20,60)}.{cm(0,9)}{cm(19,62)}-{cm(20,59)} .@.{cm(21,59)} ...{cm(20,61)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(0,4)}faint{ce}{cm(20,61)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(0,4)}faint{ce}{cm(20,61)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(20,61)}{cm(0,0)}Illegal command ';'{cm(20,61)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(19,63)}-{cm(20,60)} .@.{cm(21,60)} ...{cm(20,62)}{cm(0,0)}Illegal command ';'{cm(20,62)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(19,64)}-{cm(20,61)} .@.{cm(21,61)} ...{cm(20,63)}{cm(0,0)}Illegal command ';'{cm(20,63)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(19,65)}-{cm(20,62)} .@.{cm(21,62)} ..?{cm(20,64)}{cm(0,0)}Illegal command ';'{cm(20,64)}
+C: "1n;"
+R: {cm(0,0)}{ce}A scroll titled 'gre mei' (j){cm(20,64)}.{do}.{cm(0,29)}{cm(20,63)} ...{cm(21,63)} .@.{cm(22,64)}---{cm(21,65)}{cm(0,0)}Illegal command ';'{ce}{cm(21,65)}
+C: "1l;"
+R: {cm(0,0)}{ce}You faint{cm(21,65)}.{cm(0,9)}{cm(20,64)} ...{cm(21,64)} .@.{do}{bs}-{cm(21,66)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(21,66)}{cm(0,0)}Illegal command ';'{cm(21,66)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(20,65)} ...{cm(21,65)} .@.{do}{bs}-{cm(21,67)}{cm(0,0)}Illegal command ';'{cm(21,67)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(20,66)} ...{cm(21,66)} .@.{do}{bs}-{cm(21,68)}{cm(0,0)}Illegal command ';'{cm(21,68)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(20,67)} ...{cm(21,67)} .@.{do}{bs}-{cm(21,69)}{cm(0,0)}Illegal command ';'{cm(21,69)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(20,68)} ...{cm(21,68)} .@.{do}{bs}-{cm(21,70)}{cm(0,0)}Illegal command ';'{cm(21,70)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(20,69)} ...{cm(21,69)} .@.{do}{bs}-{cm(21,71)}{cm(0,0)}Illegal command ';'{cm(21,71)}
+C: "1l;"
+R: {cm(0,0)}{ce}You faint{cm(21,71)}.{cm(0,9)}{cm(20,70)} ...{cm(21,70)} .@.{do}{bs}-{cm(21,72)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(21,72)}{cm(0,0)}Illegal command ';'{cm(21,72)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(20,71)} ...{cm(21,71)} .@.{do}{bs}-{cm(21,73)}{cm(0,0)}Illegal command ';'{cm(21,73)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(20,72)} ...{cm(21,72)} .@*{do}{bs}-{cm(21,74)}{cm(0,0)}Illegal command ';'{cm(21,74)}
+C: "1l;"
+R: {cm(0,0)}{ce}2 gold pieces{cm(21,74)}..{cm(0,13)}{cm(20,73)} ...{cm(21,73)} .@.{do}{bs}-{cm(23,19)}3{cm(21,75)}{cm(0,0)}Illegal command ';'{cm(21,75)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(20,74)} ..|{cm(21,74)} .@|{do}{bs}-{cm(21,76)}{cm(0,0)}Illegal command ';'{cm(21,76)}
+C: "11h;"
+R: {cm(0,0)}{ce}You faint{cm(20,69)}...     {cm(21,69)}...     {cm(0,9)}--More--
+C: " ;"
+R: {cm(20,68)}... {cm(21,68)}.@. {cm(0,17)}{cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(20,64)}...    {cm(21,64)}.@.    {cm(0,26)}{cm(0,4)}faint{ce}{cm(21,65)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(21,65)}{cm(0,0)}Illegal command ';'{cm(21,65)}
+C: "1y;"
+R: {cm(0,0)}{ce}{cm(20,63)}.@. {cm(21,63)}... {cm(20,64)}{cm(0,0)}Illegal command ';'{cm(20,64)}
+C: "10h;"
+R: {cm(0,0)}{ce}You faint{cm(20,56)}...       {cm(21,56)}...       {cm(0,9)}--More--
+C: " ;"
+R: {cm(20,55)}.@. {cm(21,55)}... {cm(0,17)}{cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(20,54)}.@. {cm(21,54)}... {cm(0,26)}{cm(0,4)}faint{ce}--More--
+C: " ;"
+R: {cm(19,54)}Q{do}{bs}R{cm(0,17)}{cr}The rattlesnake hit{cm(23,28)}3{cm(20,55)}{cm(0,19)}--More--
+C: " ;"
+R: {cm(0,16)}misses{ce}{cm(20,55)}{cm(0,22)}--More--
+C: " ;"
+R: {cm(0,22)}{ce}{cm(20,55)}{cm(0,22)}--More--
+C: " ;"
+R: {cm(0,22)}{ce}{cm(20,55)}{cm(0,22)}--More--
+C: " ;"
+R: {cr}You can move again{ce}--More--
+C: " ;"
+R: {cr}The rattlesnake misses{ce}{cm(20,55)}{cm(0,0)}Illegal command ';'{ce}{cm(20,55)}
+C: "1h;"
+R: {cm(0,0)}{ce}You miss.  The rattlesnake hit--More--
+C: " ;"
+R: {cm(23,27)}28{cm(0,38)}{cm(0,4)}faint{ce}{cm(20,55)}{cm(0,9)}--More--
+C: " ;"
+R: {cr}The rattlesnake misses{cm(20,55)}{cm(0,22)}--More--
+C: " ;"
+R: {cm(0,16)}hit{ce}--More--
+C: " ;"
+R: {cr}A bite has weakened you{ce}{cm(23,28)}6{cm(23,41)}3{cm(20,55)}{cm(0,23)}--More--
+C: " ;"
+R: {cr}The rattlesnake misses{ce}{cm(20,55)}{cm(0,22)}--More--
+C: " ;"
+R: {cm(0,16)}hit{ce}--More--
+C: " ;"
+R: {cr}A bite has weakened you{ce}{cm(23,28)}4{cm(23,41)}2{cm(20,55)}{cm(0,23)}--More--
+C: " ;"
+R: {cr}The rattlesnake hit{ce}{cm(23,27)}19{cm(20,55)}{cm(0,19)}--More--
+C: " ;"
+R: {cm(0,16)}misses{ce}{cm(20,55)}{cm(0,22)}--More--
+C: " ;"
+R: {cm(0,22)}{ce}{cm(20,55)}{cm(0,22)}--More--
+C: " ;"
+R: {cm(0,22)}{ce}{cm(20,55)}{cm(0,22)}--More--
+C: " ;"
+R: {cm(0,22)}{ce}{cm(20,55)}{cm(0,22)}--More--
+C: " ;"
+R: {cm(0,16)}hit{ce}{cm(23,28)}6{cm(20,55)}{cm(0,19)}--More--
+C: " ;"
+R: {cr}You can move again{ce}--More--
+C: " ;"
+R: {cr}The rattlesnake misses{ce}{cm(20,55)}{cm(0,0)}Illegal command ';'{ce}{cm(20,55)}
+C: "1h;"
+R: {cm(0,0)}{ce}You hit.  Defeated the rattlesnake{cm(20,54)} {cm(0,34)}{cm(19,54)}O{do}{bs}Q{cm(23,64)}40{cm(20,55)}{cm(0,0)}Illegal command ';'{ce}{cm(20,55)}
+C: "1h;"
+R: {cm(0,0)}{ce}You miss.  The quagga hit{cm(23,28)}3{cm(20,55)}{cm(0,0)}Illegal command ';'{ce}{cm(20,55)}
+C: "1h;"
+R: {cm(0,0)}{ce}You hit.  The quagga hit{cm(23,28)}1{cm(20,55)}{cm(0,0)}Illegal command ';'{ce}{cm(20,55)}
+C: "1h;"
+R: {cm(0,0)}{ce}You hit.  Defeated the quagga{cm(20,54)}.{cm(0,29)}--More--
+C: " ;"
+R: {cm(19,54)}+{do}{bs}O{cm(0,37)}{cm(0,4)}faint{ce}{cm(23,65)}19{cm(20,55)}{cm(0,9)}--More--
+C: " ;"
+R: {cr}The orc misses{ce}{cm(20,55)}{cm(0,14)}--More--
+C: " ;"
+R: {cm(0,14)}{ce}{cm(20,55)}{cm(0,14)}--More--
+C: " ;"
+R: {cm(0,8)}hit{ce}{cm(23,27)} 4{cm(20,55)}{cm(0,11)}--More--
+C: " ;"
+R: {cm(0,8)}misses{ce}{cm(20,55)}{cm(0,14)}--More--
+C: " ;"
+R: {cm(0,14)}{ce}{cm(20,55)}{cm(0,14)}--More--
+C: " ;"
+R: {cm(0,14)}{ce}{cm(20,55)}{cm(0,14)}--More--
+C: " ;"
+R: {cm(0,14)}{ce}{cm(20,55)}{cm(0,14)}--More--
+C: " ;"
+R: {cm(0,14)}{ce}{cm(20,55)}{cm(0,14)}--More--
+C: " ;"
+R: {cm(0,14)}{ce}{cm(20,55)}{cm(0,14)}--More--
+C: " ;"
+R: {cm(0,14)}{ce}{cm(20,55)}{cm(0,14)}--More--
+C: " ;"
+R: {cr}You can move again{ce}--More--
+C: " ;"
+R: {cr}The orc misses{ce}{cm(20,55)}{cm(0,0)}Illegal command ';'{cm(20,55)}
+C: "1h;"
+R: {cm(0,0)}{ce}You hit.  Defeated the orc{cm(20,54)} {cm(0,26)}{cm(20,54)}.{cm(23,65)}25{cm(20,55)}{cm(0,0)}Illegal command ';'{ce}{cm(20,55)}
+C: "s;"
+R: {cm(0,0)}You faint{ce}{cm(20,55)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(23,28)}5{cm(20,55)}{cm(0,0)}Illegal command ';'{cm(20,55)}
+C: "s;"
+R: {cm(0,0)}You faint{ce}{cm(20,55)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(20,55)}{cm(0,0)}Illegal command ';'{cm(20,55)}
+C: "1h;"
+R: {cm(0,0)}{ce}{cm(19,53)}-{do}@. {do}{bs} {cm(23,28)}6{cm(20,54)}{cm(0,0)}Illegal command ';'{cm(20,54)}
+C: "1k;"
+R: {cm(0,0)}{ce}{cm(18,54)}##{cm(19,54)}@{do}{bs}.{do}{bs}  {cm(19,54)}{cm(0,0)}Illegal command ';'{cm(19,54)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(18,54)}@{do}{bs}+{do}{bs}  {cm(18,54)}{cm(0,0)}Illegal command ';'{cm(18,54)}
+C: ";"
+R: {cm(0,0)}You faint{ce}{cm(18,54)}####{cm(0,9)}--More--
+C: " ;"
+R: {cm(18,58)}#{cm(23,28)}7{cm(0,17)}{cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(18,59)}####{cm(23,28)}8{cm(0,26)}{cm(0,4)}faint{ce}--More--
+C: " ;"
+R: {cm(23,28)}9{cm(0,17)}{cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(18,63)}####{cm(23,27)}10{cm(0,26)}{cm(0,4)}faint{ce}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(17,70)}#{cm(18,67)}###@{cm(23,28)}1{cm(18,70)}{cm(0,0)}Illegal command ';'{cm(18,70)}
+C: ";"
+R: {cm(0,0)}You faint{ce}{cm(14,70)}#{do}{bs}#{do}{bs}#{cm(18,70)}#{cm(0,9)}{cm(13,70)}+{do}{bs}@{cm(23,28)}2{cm(14,70)}{cm(23,28)}3{cm(14,70)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(14,70)}{cm(0,0)}Illegal command ';'{cm(14,70)}
+C: "1k;"
+R: {cm(0,0)}{ce}{cm(12,69)}..|{cm(13,69)}-@-{cm(14,70)}#{up}{bs}{cm(0,0)}Illegal command ';'{cm(13,70)}
+C: "1k;"
+R: {cm(0,0)}{ce}{cm(11,69)}.*|{cm(12,70)}@{do}{bs}+{up}{bs}{cm(0,0)}Illegal command ';'{cm(12,70)}
+C: "1k;"
+R: {cm(0,0)}{ce}66 gold pieces{cm(11,70)}.{do}{bs}.{cm(0,14)}--More--
+C: " ;"
+R: {cm(10,69)}.Q|{cm(11,70)}@{cm(0,22)}{cr}You faint{ce}{cm(23,18)}89{cm(23,28)}4{cm(11,70)}{cm(0,9)}--More--
+C: " ;"
+R: {cr}The quagga hit{ce}{cm(23,28)}0{cm(11,70)}{cm(0,14)}--More--
+C: " ;"
+R: {cm(0,14)}{ce}{cm(23,27)} 4{cm(11,70)}{cm(0,14)}--More--
+C: " ;"
+R: {cm(0,14)}{ce}{cm(23,28)}1{cm(11,70)}{cm(0,14)}--More--
+C: " ;"
+R: {cm(0,14)}{ce}{ff}{cm(8,23)}__________{cm(9,22)}/{cm(9,33)}\{cm(10,21)}/    REST    \{cm(11,20)}/{cm(11,27)}IN{cm(11,35)}\{cm(12,19)}/{cm(12,25)}PEACE{cm(12,36)}\{cm(13,18)}/{cm(13,37)}\{cm(14,16)}Rog-O-Matic XIV for root{cm(15,18)}|{cm(15,24)}1251 Au{cm(15,37)}|{cm(16,18)}|   killed by a    |{cm(17,18)}|{cm(17,25)}quagga{cm(17,37)}|{cm(18,18)}|{cm(18,26)}2026{cm(18,37)}|{cm(19,17)}*|{cm(19,24)}*  *  *{cm(19,37)}| *{cm(20,9)}________)/\\_//(\/(/\)/\//\/|_)_______
+C: "
+
+"

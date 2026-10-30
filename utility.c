@@ -173,6 +173,25 @@ static int trylock(char *lokfil)
   return TRUE;
 }
 
+/*
+ * lock_file_wait: Like lock_file, but never waits long: try for "secs"
+ * seconds, take over a lock that old (its owner is gone or stuck), and if
+ * the lock still cannot be had return FALSE so the caller can carry on.
+ */
+int lock_file_wait(char *lokfil, int secs)
+{ int try;
+  struct stat statbuf;
+
+  for (try = 0; try <= secs; try++)
+  { if (trylock (lokfil)) return TRUE;
+    if (try < secs) sleep (1);
+  }
+  if (stat (lokfil, &statbuf) < 0) return (trylock (lokfil));
+  if (time (0) - statbuf.st_mtime >= secs && unlink (lokfil) == 0)
+    return (trylock (lokfil));
+  return FALSE;
+}
+
 int lock_file(char *lokfil, int maxtime)
 { int try;
   struct stat statbuf;

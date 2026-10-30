@@ -120,16 +120,34 @@ int dwait(int msgtype, char *f, ...)
  */
 
 void showseed (void)
+{ char buf[80];
+
+  if (getenv ("SEED") && *getenv ("SEED"))
+    saynow ("Seed %s (fixed by -S/SEED)", seedtext (buf, sizeof buf));
+  else if (rogpid > 0)
+    saynow ("Seed %s (exact: gdb -p rogpid, print dnum)",
+	    seedtext (buf, sizeof buf));
+  else
+    saynow ("Seed unknown (no rogue pid)");
+}
+
+/*
+ * seedtext: Describe Rogue's dungeon seed for a message.  Exact when it was
+ * fixed with -S/SEED; otherwise Rogue used time(NULL) + its pid, so give the
+ * two likeliest values (a second can pass before Rogue reads the clock).
+ */
+
+char *seedtext (char *buf, size_t n)
 { char *env = getenv ("SEED");
   long base = (long) starttime + (long) rogpid;
 
   if (env && *env)
-    saynow ("Seed %s (fixed by -S/SEED)", env);
+    snprintf (buf, n, "%s", env);
   else if (rogpid > 0)
-    saynow ("Seed about %ld or %ld (exact: gdb -p rogpid, print dnum)",
-	    base - 1, base);
+    snprintf (buf, n, "%ld or %ld", base - 1, base);
   else
-    saynow ("Seed unknown (no rogue pid)");
+    snprintf (buf, n, "unknown");
+  return (buf);
 }
 
 /* 

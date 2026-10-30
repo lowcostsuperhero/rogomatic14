@@ -49,6 +49,7 @@ extern void dumpdatabase(void);
 /* debug.c */
 extern int dwait(int msgtype, char *f, ...);
 extern void promptforflags(void);
+extern char *seedtext(char *buf, size_t n);
 extern void showseed(void);
 extern void sendesc(char *after);
 extern void showtombstone(void);
@@ -387,6 +388,7 @@ extern void uncritical(void);
 extern void reset_int(void);
 extern void int_exit(void (*exitproc)(int));
 extern int lock_file(char *lokfil, int maxtime);
+extern int lock_file_wait(char *lokfil, int secs);
 extern void unlock_file(char *lokfil);
 extern int stlmatch(char *big, char *small);
 

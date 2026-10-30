@@ -34,7 +34,7 @@ void add_score(char *new_line, char *vers, int ntrm)
 { 
   char  newfil[100];
   FILE *newlog;
-  int   locked, tries = 0;
+  int   locked;
 
   sprintf (lokfil, "%s %s", LOCKFILE, vers);
   sprintf (newfil, "%s/rgmdelta%s", RGMDIR, vers);
@@ -43,17 +43,15 @@ void add_score(char *new_line, char *vers, int ntrm)
   critical ();
 
   /*
-   * Lock the score file.  lock_file waits a minute and then takes over a
-   * lock older than MAXLOCK seconds, so retry a few times, then append the
-   * score without the lock (a one-line append) rather than lose it or hang
-   * on a lock we cannot remove.  Never ask the
+   * Lock the score file.  lock_file_wait waits up to 5 seconds, then takes
+   * over a stale lock; if the lock still cannot be had, append the score
+   * without it (a one-line append) rather than lose it or hang.  Never ask the
    * user: the prompt would sit unseen in stdout's buffer while curses owns
    * the screen, leaving rogomatic (and autorogomatic) waiting forever for
    * a "y" nobody knows to type.
    */
 
-  while (!(locked = lock_file (lokfil, MAXLOCK)) && ++tries < 3)
-    ;
+  locked = lock_file_wait (lokfil, 5);
 
   /* Now create a temporary to copy into */
   if ((newlog = wopen (newfil, "a")) == NULL)

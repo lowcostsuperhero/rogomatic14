@@ -714,9 +714,10 @@ void at(int r, int c)
 
 void deadrogue(void)
 { int    mh;
-  char  *killer, *killend;
+  char  *killer, *killend, seedbuf[80];
 
-  printw ("\n\nOops...");
+  /* Say which dungeon this was, so the game can be replayed with -S */
+  printw ("\n\nOops in dungeon %s...", seedtext (seedbuf, sizeof seedbuf));
   refresh ();
 
   sscanf (&screen[GOLDROW][TOMBCOL], "%18d", &Gold);
@@ -815,8 +816,18 @@ void quitrogue(char *reason,		/* A reason string for the summary line */
     }
   }
 
-  /* Wait for Rogue to die */
-  wait ((int *) NULL);
+  /* Wait for Rogue to die, but never forever */
+  { int tries, st;
+    for (tries = 0; tries < 100; tries++)	/* up to 10 seconds */
+    { pid_t w = waitpid (-1, &st, WNOHANG);
+      if (w != 0) break;			/* reaped, or no child left */
+      usleep (100000);
+    }
+    if (tries == 100 && rogpid > 0)
+    { kill (rogpid, SIGKILL);
+      waitpid (-1, &st, 0);
+    }
+  }
 }
 
 /*

@@ -142,6 +142,10 @@ Try different seeds in a loop to find one that freezes:
 for s in $(seq 1 200); do timeout 120 rogomatic -S $s >/dev/null || echo "seed $s"; done
 ```
 
+When a game ends, the "Oops in dungeon N or M..." line under the tombstone
+names the two likeliest seeds (one if `-S` was used); replay with
+`rogomatic -S N`.
+
 Press `^C` to drop into interactive mode, then `Z` to show the seed (exact
 with `-S`, otherwise start time + Rogue pid, give or take a second).
 
