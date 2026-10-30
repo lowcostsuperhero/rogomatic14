@@ -46,10 +46,12 @@ int   rfrogue, rtrogue;
 
 static void usage(FILE *f)
 { fprintf (f,
-"Usage: rogomatic [options] [-f rogue] [-S seed] [-U usec]\n"
+"Usage: rogomatic [options] [-f rogue] [-S seed] [-U usec] [-a secs]\n"
 "       rogomatic -p [logfile]        replay a log file\n"
 "       rogomatic [saved-game-file]\n"
 "\n"
+"  -a secs   seconds of silence from Rogue before rogomatic resynchronizes\n"
+"            (default %g; 0 = never; fractions allowed)\n"
 "  -c        cheat: use trap arrows\n"
 "  -e        echo the game to the log file (roguelog)\n"
 "  -E        Emacs mode\n"
@@ -67,7 +69,7 @@ static void usage(FILE *f)
 "  -w        watched mode\n"
 "\n"
 "While playing: ^C enters interactive mode (? lists commands, Z shows the\n"
-"seed, Q quits).\n", (int) USLEEP);
+"seed, Q quits).\n", ROGTIMEOUT / 1000.0, (int) USLEEP);
 }
 
 int main(int argc, char *argv[])
@@ -77,7 +79,9 @@ int main(int argc, char *argv[])
   int   emacs = 0, rf = 0, terse = 0, user = 0, quitat = 2147483647;
   int   sf = 0, uf = 0;
   char  *usleeparg = "";
-  long  usleep_usec = USLEEP;
+  long  usleep_usec = USLEEP, rogue_timeout_ms = ROGTIMEOUT;
+  char  *timeoutarg = "";
+  int   af = 0;
   char  *seedarg = "";
   char  *rfile = "", *rfilearg = "", options[96];
   char  ropts[256], roguename[128], rpath[1024];
@@ -89,6 +93,7 @@ int main(int argc, char *argv[])
         case 'e': echo++;         break; /* Echo file to roguelog */
         case 'f': rf++;           break; /* Next arg is the rogue file */
         case 'S': sf++;           break; /* Next arg is the dungeon seed */
+        case 'a': af++;           break; /* Next arg is the silence timeout */
         case 'U': uf++;           break; /* Next arg is usec between sends */
         case 'H': nohalf++;       break; /* No halftime show */
         case 'h': case '?':
@@ -117,6 +122,21 @@ int main(int argc, char *argv[])
     { if (--argc) usleeparg = *++argv;
       uf = 0;
     }
+    if (af)
+    { if (--argc) timeoutarg = *++argv;
+      af = 0;
+    }
+  }
+
+  /* -a secs: seconds of silence from Rogue before resynchronizing */
+  if (*timeoutarg)
+  { char *end;
+    double secs = strtod (timeoutarg, &end);
+    if (*end || secs < 0 || secs > 3600)
+    { fprintf (stderr, "rogomatic: -a needs seconds >= 0 (0 = never)\n");
+      exit (1);
+    }
+    rogue_timeout_ms = (long) (secs * 1000.0 + 0.5);
   }
 
   /* -U usec: delay after each character sent, so the game can be watched */
@@ -173,9 +193,9 @@ int main(int argc, char *argv[])
 
   if (!replay && !score) quitat = findscore (rfile, "Rog-O-Matic");
 
-  sprintf (options, "%d,%d,%d,%d,%d,%d,%d,%d,%ld",
+  sprintf (options, "%d,%d,%d,%d,%d,%d,%d,%d,%ld,%ld",
            cheat, noterm, echo, nohalf, emacs, terse, user,quitat,
-           usleep_usec);
+           usleep_usec, rogue_timeout_ms);
   sprintf (roguename, "Rog-O-Matic %s for %s", RGMVER, getname ());
   sprintf (ropts, "name=%s,%s,%s,%s,%s,%s,%s,%s,%s,%s",
            roguename, "fruit=apricot", "terse", "noflush", "noask",

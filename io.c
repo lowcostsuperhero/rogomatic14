@@ -69,11 +69,19 @@ int   head = 0, tail = 0;
  * it.  But curses writes nothing when a message repaints exactly what is
  * already on the screen, so the marker can be missing and both programs
  * then wait on each other forever.  If Rogue stays silent for
- * ROGUE_TIMEOUT seconds we resynchronize: dismiss any --More--, escape
+ * rogue_timeout_ms (-a secs) we resynchronize: dismiss any --More--, escape
  * any prompt, force a redraw, and send fresh markers.
  */
-# define ROGUE_TIMEOUT       5	/* seconds of silence before recovery */
-# define MAX_CONSEC_TIMEOUTS 10	/* silent this many times in a row: give up */
+# define MAX_CONSEC_TIMEOUTS 20	/* silent this many times in a row: give up */
+
+/* Arm (ms > 0) or cancel (ms == 0) the one-shot silence timer */
+static void set_timer(long ms)
+{ struct itimerval it;
+  it.it_interval.tv_sec = it.it_interval.tv_usec = 0;
+  it.it_value.tv_sec = ms / 1000;
+  it.it_value.tv_usec = (ms % 1000) * 1000;
+  setitimer (ITIMER_REAL, &it, NULL);
+}
 
 static sigjmp_buf jmp_point;
 static volatile sig_atomic_t jmp_ready = 0;
@@ -92,7 +100,7 @@ static void getrogue_body(char *waitstr, int onat);
  */
 
 void getrogue_abort(void)
-{ alarm (0);
+{ set_timer (0);
   jmp_ready = 0;
   in_getrogue = 0;
 }
@@ -605,13 +613,13 @@ int getroguetoken(void)
     return (getlogtoken());
 
   /* Only the first character is timed; the rest of a token follows at once */
-  if (in_getrogue && !replaying)
+  if (in_getrogue && !replaying && rogue_timeout_ms > 0)
   { jmp_ready = 1;
-    alarm (ROGUE_TIMEOUT);
+    set_timer (rogue_timeout_ms);
   }
   ch = GETROGUECHAR;
   if (jmp_ready)
-  { alarm (0);
+  { set_timer (0);
     jmp_ready = 0;
     consec_timeouts = 0;
   }

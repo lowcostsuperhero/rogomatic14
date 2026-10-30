@@ -116,6 +116,7 @@ extern int redhands;		/* True if our hands are red */
 extern int replaying;		/* True if replaying old game */
 extern int revvideo;		/* True if in rev. video mode */
 extern int rightring;		/* Index of our right ring */
+extern long rogue_timeout_ms;		/* Silence before resync (0 = never) */
 extern long usleep_usec;		/* Delay after each character sent */
 extern int rogpid;		/* Process id of Rogue process */
 extern time_t starttime;		/* Start time of this player process */

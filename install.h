@@ -132,6 +132,12 @@
 
 /* Pause after each character sent to Rogue, so the game can be watched.
  * Override at run time with rogomatic -U usec (0 = full speed). */
+/* Default seconds of silence from Rogue before rogomatic resynchronizes
+ * (milliseconds here).  Override at run time with rogomatic -a secs. */
+# ifndef ROGTIMEOUT
+# define ROGTIMEOUT 1000
+# endif
+
 # ifndef USLEEP
 # define USLEEP 14000
 # endif

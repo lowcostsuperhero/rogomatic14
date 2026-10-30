@@ -95,6 +95,11 @@ Rogue's error output goes to `$TMPDIR/rogomatic-rogue.UID.err` (`/tmp` if
 TMPDIR is unset) so that Rogue cannot change your terminal modes; look
 there if Rogue fails to start.
 
+If Rogue stays silent for 1 second, rogomatic assumes both programs are
+waiting on each other and resynchronizes (this is the brief pause you may see
+now and then).  `rogomatic -a secs` changes the wait (fractions are fine;
+`-a 0` never gives up waiting; `make ROGTIMEOUT=ms` changes the default).
+
 `rogomatic -h` lists all options (the old no-halftime flag is now `-H`).
 
 Rogomatic pauses 14 ms after each character it sends to Rogue so the game
