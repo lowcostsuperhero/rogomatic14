@@ -861,7 +861,7 @@ void startlesson(void)
   critical ();				/* Disable interrupts */
 
   /* Serialize access to the gene pool */
-  if (lock_file (genelock, MAXLOCK))	/* Lock the gene pool */
+  if (lock_file_wait (genelock, 5))	/* Lock the gene pool */
   { if (openlog (genelog) == NULL)	/* Open the gene log file */
       saynow ("Could not open file %s", genelog);
     if (! readgenes (genepool))		/* Read the gene pool */
@@ -895,7 +895,7 @@ void endlesson(void)
        stlmatch (termination, "callidus")))
   { critical ();			/* Disable interrupts */
 
-    if (lock_file (genelock, MAXLOCK))	/* Lock the score file */
+    if (lock_file_wait (genelock, 5))	/* Lock the score file */
     { openlog (genelog);		/* Open the gene log file */
       if (readgenes (genepool))		/* Read the gene pool */
       { evalknobs (geneid,Gold,Level);	/* Add the trial to the pool */

@@ -88,7 +88,7 @@ int dumpscore(char *vers)
   /* On interrupts we must relinquish control of the score file */
   int_exit (intrupscore);
 
-  if (lock_file (lokfil, MAXLOCK) == 0)
+  if (lock_file_wait (lokfil, 5) == 0)
   { printf ("Score file busy.\n");
     exit (1);
   }

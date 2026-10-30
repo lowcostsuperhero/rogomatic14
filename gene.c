@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
   sprintf (genepool, "%s/GenePool%d", RGMDIR, version);
 
   critical ();				/* Disable interrupts */
-  if (lock_file (genelock, MAXLOCK))
+  if (lock_file_wait (genelock, 5))
   { if (init) 
     { rogo_srand (seed);			/* Set the random number generator */
       openlog (genelog);		/* Open the gene log file */

@@ -92,7 +92,7 @@ void saveltm(int score)
   critical ();
 
   /* Only write out the new results if we can get write access */
-  if (lock_file (LOCKFILE, MAXLOCK))
+  if (lock_file_wait (LOCKFILE, 5))
   { if ((ltmfil = wopen (ltmnam, "w")) == NULL)
     { dwait (D_WARNING, "Can't write long term memory file '%s'...", ltmnam); }
     else
@@ -139,7 +139,7 @@ void restoreltm(void)
   critical ();
 
   /* Only read the long term memory if we can get access */
-  if (lock_file (LOCKFILE, MAXLOCK))
+  if (lock_file_wait (LOCKFILE, 5))
   { if (fexists (ltmnam))
       readltm ();
     else 
