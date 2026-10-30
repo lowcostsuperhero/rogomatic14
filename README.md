@@ -7,13 +7,12 @@ documentation is in `README`.
 
 ## Heritage
 
-This is a modernized continuation of Rog-O-Matic XIV, derived from
-[rogueforge/rogomatic14](https://github.com/rogueforge/rogomatic14)
-(snapshot 06e103a3c2c11acc6c4351f650d6cd137cb59aac).  It is not a GitHub
-fork, but the original authors' copyright and licence (`COPYING`,
-`LICENSE`) apply unchanged.  It plays the Rogue built from the companion
+This is a modernized continuation of Rog-O-Matic XIV, forked from
+[rogueforge/rogomatic14](https://github.com/rogueforge/rogomatic14), on top
+of its commit 06e103a3c2c11acc6c4351f650d6cd137cb59aac.  The original
+authors' copyright and licence (`COPYING`, `LICENSE`) apply unchanged.  It
+plays the Rogue built from the companion
 [rogue5.4](https://github.com/lowcostsuperhero/rogue5.4) repository.
-
 
 ## Prerequisites
 
