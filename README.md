@@ -101,8 +101,9 @@ autorogomatic -U 0 -a 2        # full speed, 2 s silence timeout
 It runs `rogomatic -H -U 1000 -a 1` repeatedly: `-U` is the pause in
 microseconds after each character sent to Rogue, `-a` is the seconds of
 silence from Rogue before rogomatic resynchronizes.  `autorogomatic -H`
-win or after the `-r` games, and never gives up on failed games (it logs them to `RGMDIR/autorogomatic.log` and plays on).  Wins are looked for in
-win, and gives up after 10 failed games in a row.  Wins are looked for in
+leaves out rogomatic's `-H`, so the halftime show plays.  It stops after a
+win or after the `-r` games, and never gives up on failed games (it logs
+them to `RGMDIR/autorogomatic.log` and plays on).  Wins are looked for in
 the score files in `RGMDIR` (set the `RGMDIR` environment variable if the
 data directory is not the installed one); `ROGOMATIC` selects the
 rogomatic program.
