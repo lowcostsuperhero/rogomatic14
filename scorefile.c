@@ -32,10 +32,9 @@ static char lokfil[100];
 
 void add_score(char *new_line, char *vers, int ntrm)
 { 
-  int   wantscore = 1;
-  int   ch;
   char  newfil[100];
   FILE *newlog;
+  int   locked, tries = 0;
 
   sprintf (lokfil, "%s %s", LOCKFILE, vers);
   sprintf (newfil, "%s/rgmdelta%s", RGMDIR, vers);
@@ -43,22 +42,19 @@ void add_score(char *new_line, char *vers, int ntrm)
   /* Defer interrupts while mucking with the score file */
   critical ();
 
-  /* 
-   * Lock the score file. If lock_file fails, asks the user whether he
-   * wishes to wait. If so, then try lock_file five times and then ask
-   * again.
+  /*
+   * Lock the score file.  lock_file waits a minute and then takes over a
+   * lock older than MAXLOCK seconds, so retry a few times, then append the
+   * score without the lock (a one-line append) rather than lose it or hang
+   * on a lock we cannot remove.  Never ask the
+   * user: the prompt would sit unseen in stdout's buffer while curses owns
+   * the screen, leaving rogomatic (and autorogomatic) waiting forever for
+   * a "y" nobody knows to type.
    */
-  
-  while (lock_file (lokfil, MAXLOCK) == 0)
-    if (--wantscore < 1 && !ntrm)
-    { printf ("The score file is busy, do you wish to wait? [y/n] ");
-      while ((ch = getchar ()) != 'y' && ch != 'n' && ch != EOF);
-      if (ch == 'y')
-        wantscore = 5;
-      else
-      { uncritical (); return; }
-    }
-  
+
+  while (!(locked = lock_file (lokfil, MAXLOCK)) && ++tries < 3)
+    ;
+
   /* Now create a temporary to copy into */
   if ((newlog = wopen (newfil, "a")) == NULL)
   { printf ("\nUnable to write %s\n", newfil); }
@@ -70,7 +66,7 @@ void add_score(char *new_line, char *vers, int ntrm)
   /* Write the score to the end of the delta file */
 
   /* Now close the file, relinquish control of scorefile, and exit */
-  unlock_file (lokfil);
+  if (locked) unlock_file (lokfil);
   uncritical ();
 }
 

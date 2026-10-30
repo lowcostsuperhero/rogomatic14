@@ -1,0 +1,24 @@
+Rogomatic Game Log
+
+
+C: " ;"
+R: {cm(0,4)}zombie misses{ce}{cm(14,69)}{cm(0,0)}Illegal command ';'{cm(14,69)}
+C: "v;"
+R: {cm(0,0)}Version 5.4.5. (mctesq was here){cm(14,69)}{cm(0,0)}Illegal command ';'{ce}{cm(14,69)}
+C: "1j;"
+R: {cm(0,0)}{ce}You hit.  The rattlesnake misses--More--
+C: " ;"
+R: {cr}The zombie misses{ce}{cm(14,69)}{cm(0,0)}Illegal command ';'{cm(14,69)}
+C: "1j;"
+R: {cm(0,0)}{ce}You hit.  Defeated the rattlesnake{cm(15,69)}#{cm(0,34)}--More--
+C: " ;"
+R: {cr}The zombie misses{ce}{cm(23,64)}300{cm(14,69)}{cm(0,0)}Illegal command ';'{cm(14,69)}
+C: "1j;"
+R: {cm(0,0)}{ce}{cm(13,69)}+{do}{bs}Z{do}{bs}@{bs}{cm(0,0)}Illegal command ';'{cm(15,69)}
+C: "14h;"
+R: {cm(0,0)}{ce}You faint{cm(14,69)}#{cm(15,67)}Z##{cm(0,9)}--More--
+C: " ;"
+R: {cm(15,66)}@{cm(0,17)}{cr}The zombie hit{ce}{ff}{cm(8,23)}__________{cm(9,22)}/{cm(9,33)}\{cm(10,21)}/    REST    \{cm(11,20)}/{cm(11,27)}IN{cm(11,35)}\{cm(12,19)}/{cm(12,25)}PEACE{cm(12,36)}\{cm(13,18)}/{cm(13,37)}\{cm(14,16)}Rog-O-Matic XIV for root{cm(15,18)}|{cm(15,24)}1457 Au{cm(15,37)}|{cm(16,18)}|   killed by a    |{cm(17,18)}|{cm(17,25)}zombie{cm(17,37)}|{cm(18,18)}|{cm(18,26)}2026{cm(18,37)}|{cm(19,17)}*|{cm(19,24)}*  *  *{cm(19,37)}| *{cm(20,9)}________)/\\_//(\/(/\)/\//\/|_)_______
+C: "
+
+"

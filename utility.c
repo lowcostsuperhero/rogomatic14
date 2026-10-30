@@ -165,22 +165,30 @@ void int_exit(void (*exitproc)(int))
 
 # define NOWRITE 0
 
+/* trylock: create the lock file; fails if it exists.  Closes the fd. */
+static int trylock(char *lokfil)
+{ int fd = open (lokfil, O_WRONLY | O_CREAT | O_EXCL, NOWRITE);
+  if (fd < 0) return FALSE;
+  close (fd);
+  return TRUE;
+}
+
 int lock_file(char *lokfil, int maxtime)
 { int try;
   struct stat statbuf;
 
   start:
-  if (creat (lokfil, NOWRITE) > 0)
+  if (trylock (lokfil))
     return TRUE;
 
   for (try = 0; try < 60; try++)
   { sleep (1);
-    if (creat (lokfil, NOWRITE) > 0)
+    if (trylock (lokfil))
       return TRUE;
   }
 
   if (stat (lokfil, &statbuf) < 0)
-  { (void) creat (lokfil, NOWRITE);
+  { (void) trylock (lokfil);
     return TRUE;
   }
 

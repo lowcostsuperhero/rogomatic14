@@ -1,0 +1,726 @@
+Rogomatic Game Log
+
+
+C: "v;"
+R: {cm(0,0)}Version 5.4.5. (mctesq was here){cm(19,9)}{cm(0,0)}Illegal command ';'{ce}{cm(19,9)}
+C: ">;"
+R: {ff}{cm(11,68)}...{cm(12,68)}.@.{cm(13,68)}---{cm(23,0)}Level: 18  Gold: 3585   Hp: 23(66)  Str: 11(16)  Arm: 7   Exp: 9/1603{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "i;"
+R: {cm(0,0)}b) -2 ring mail [1]--More--
+C: " ;"
+R: {cr}f) -3 scale mail [1]{ce}--More--
+C: " ;"
+R: {cr}k) +1 banded mail [7] (being worn)--More--
+C: " ;"
+R: {cr}o{cm(0,6)}plate mail [8]{ce}--More--
+C: " ;"
+R: {cr}c) A +2,+2 mace (weapon in hand)--More--
+C: " ;"
+R: {cr}d{cm(0,6)}1,+0 short bow{ce}--More--
+C: " ;"
+R: {cr}e) 32 +0,+0 arrows{ce}--More--
+C: " ;"
+R: {cr}g) A wand of polymorph [2](silicon)--More--
+C: " ;"
+R: {cr}j) 2 scrolls of remove curse{ce}--More--
+C: " ;"
+R: {cr}h{cm(0,16)}identify scroll{ce}--More--
+C: " ;"
+R: {cr}m) A{cm(0,11)} titled 'monprok dalf fidwahturs xoconpot'--More--
+C: " ;"
+R: {cr}n{cm(0,20)}botklimic vlysnesef ti arze'{ce}--More--
+C: " ;"
+R: {cr}i) 4 rations of food{ce}--More--
+C: " ;"
+R: {cr}p) An apricot{ce}--More--
+C: " ;"
+R: {cr}l) A blue potion{ce}--More--
+C: " ;"
+R: {cr}a) A potion of poison(aquamarine){cm(12,69)}{cm(0,0)}Illegal command ';'{ce}{cm(12,69)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(23,29)}4{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}6{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}8{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}9{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,28)}31{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}3{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}4{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}6{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}7{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}8{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,28)}40{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}2{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}3{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}5{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}6{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}7{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}8{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}9{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,28)}51{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}2{cm(12,69)}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1u;"
+R: {cm(0,0)}{ce}{cm(10,69)}...{cm(11,68)} .@.{cm(12,68)} ...{cm(11,70)}{cm(0,0)}Illegal command ';'{cm(11,70)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(11,70)}{cm(0,0)}Illegal command ';'{cm(11,70)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(23,29)}4{cm(11,70)}{cm(0,0)}Illegal command ';'{cm(11,70)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(10,69)} ...{cm(11,69)} .@.{cm(12,69)} ...{cm(11,71)}{cm(0,0)}Illegal command ';'{cm(11,71)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(11,71)}{cm(0,0)}Illegal command ';'{cm(11,71)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(23,29)}6{cm(11,71)}{cm(0,0)}Illegal command ';'{cm(11,71)}
+C: "1n;"
+R: {cm(0,0)}{ce}{cm(10,70)}   {cm(11,70)} ..|{cm(12,70)} .@|{cm(13,71)}---{cm(12,72)}{cm(0,0)}Illegal command ';'{cm(12,72)}
+C: "1y;"
+R: {cm(0,0)}{ce}{cm(10,70)}...{cm(11,70)}.@{cm(12,70)}...{cm(11,71)}{cm(0,0)}Illegal command ';'{cm(11,71)}
+C: "1y;"
+R: {cm(0,0)}{ce}{cm(9,69)}...{cm(10,69)}.@. {cm(11,69)}... {cm(12,70)}   {cm(23,29)}8{cm(10,70)}{cm(0,0)}Illegal command ';'{cm(10,70)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,70)}{cm(0,0)}Illegal command ';'{cm(10,70)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,70)}{cm(0,0)}Illegal command ';'{cm(10,70)}
+C: "1k;"
+R: {cm(0,0)}{ce}{cm(8,69)}--+{cm(9,70)}@{do}{bs}.{cm(11,69)}   {cm(23,28)}60{cm(9,70)}{cm(0,0)}Illegal command ';'{cm(9,70)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(8,72)}-{cm(9,69)} .@.{cm(10,69)} ...{cm(9,71)}{cm(0,0)}Illegal command ';'{cm(9,71)}
+C: "1b;"
+R: {cm(0,0)}{ce}{cm(9,69)}... {cm(10,69)}.@. {cm(11,69)}...{cm(10,70)}{cm(0,0)}Illegal command ';'{cm(10,70)}
+C: "1j;"
+R: {cm(0,0)}{ce}{cm(9,69)}   {cm(10,70)}.{do}{bs}@{cm(12,69)}...{cm(23,29)}1{cm(11,70)}{cm(0,0)}Illegal command ';'{cm(11,70)}
+C: "1b;"
+R: {cm(0,0)}{ce}{cm(10,69)}   {cm(11,68)}... {cm(12,68)}.@. {bs}{bs}{bs}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1y;"
+R: {cm(0,0)}{ce}{cm(10,67)}...{cm(11,67)}.@. {cm(12,67)}... {cm(11,68)}{cm(0,0)}Illegal command ';'{cm(11,68)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(23,29)}3{cm(11,68)}{cm(0,0)}Illegal command ';'{cm(11,68)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(11,68)}{cm(0,0)}Illegal command ';'{cm(11,68)}
+C: "1y;"
+R: {cm(0,0)}{ce}{cm(9,66)}...{cm(10,66)}.@. {cm(11,66)}... {cm(12,67)}   {cm(10,67)}{cm(0,0)}Illegal command ';'{cm(10,67)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(23,29)}4{cm(10,67)}{cm(0,0)}Illegal command ';'{cm(10,67)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,67)}{cm(0,0)}Illegal command ';'{cm(10,67)}
+C: "1b;"
+R: {cm(0,0)}{ce}{cm(9,66)}   {cm(10,65)}*.. {cm(11,65)}.@. {cm(12,65)}...{cm(11,66)}{cm(0,0)}Illegal command ';'{cm(11,66)}
+C: "1y;"
+R: {cm(0,0)}{ce}62 gold pieces{cm(10,65)}.{do}.{cm(0,14)}{cm(9,64)}...{cm(10,64)}.@. {cm(11,64)}... {cm(12,65)}   {cm(23,18)}647{cm(23,29)}6{cm(10,65)}{cm(0,0)}Illegal command ';'{cm(10,65)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,65)}{cm(0,0)}Illegal command ';'{cm(10,65)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(10,65)}{cm(0,0)}Illegal command ';'{cm(10,65)}
+C: "1b;"
+R: {cm(0,0)}{ce}{cm(9,64)}   {cm(10,63)}... {cm(11,63)}.@. {cm(12,63)}...{cm(11,64)}{cm(0,0)}Illegal command ';'{cm(11,64)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(11,64)}{cm(0,0)}Illegal command ';'{cm(11,64)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(11,64)}{cm(0,0)}Illegal command ';'{cm(11,64)}
+C: "1b;"
+R: {cm(0,0)}{ce}{cm(10,63)}   {cm(11,62)}... {cm(12,62)}.@. {cm(13,62)}---{cm(12,63)}{cm(0,0)}Illegal command ';'{cm(12,63)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(12,63)}{cm(0,0)}Illegal command ';'{cm(12,63)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(12,63)}{cm(0,0)}Illegal command ';'{cm(12,63)}
+C: "1y;"
+R: {cm(0,0)}{ce}{cm(10,61)}...{cm(11,61)}.@. {cm(12,61)}... {cm(11,62)}{cm(0,0)}Illegal command ';'{cm(11,62)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(11,62)}{cm(0,0)}Illegal command ';'{cm(11,62)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(11,62)}{cm(0,0)}Illegal command ';'{cm(11,62)}
+C: "1k;"
+R: {cm(0,0)}{ce}{cm(9,61)}...{cm(10,62)}@{do}{bs}.{cm(12,61)}   {cm(10,62)}{cm(0,0)}Illegal command ';'{cm(10,62)}
+C: "1b;"
+R: {cm(0,0)}{ce}{cm(9,61)}   {cm(10,60)}... {cm(11,60)}.@. {cm(12,60)}...{cm(11,61)}{cm(0,0)}Illegal command ';'{cm(11,61)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(11,61)}{cm(0,0)}Illegal command ';'{cm(11,61)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(11,61)}{cm(0,0)}Illegal command ';'{cm(11,61)}
+C: "1b;"
+R: {cm(0,0)}{ce}{cm(10,60)}   {cm(11,59)}... {cm(12,59)}.@. {cm(13,59)}+--{cm(12,60)}{cm(0,0)}Illegal command ';'{cm(12,60)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(12,60)}{cm(0,0)}Illegal command ';'{cm(12,60)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(12,60)}{cm(0,0)}Illegal command ';'{cm(12,60)}
+C: "1y;"
+R: {cm(0,0)}{ce}{cm(10,58)}|..{cm(11,58)}|@. {cm(12,58)}|.. {cm(11,59)}{cm(0,0)}Illegal command ';'{cm(11,59)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(11,59)}{cm(0,0)}Illegal command ';'{cm(11,59)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(11,59)}{cm(0,0)}Illegal command ';'{cm(11,59)}
+C: "1k;"
+R: {cm(0,0)}{ce}{cm(9,58)}|..{cm(10,59)}@{do}{bs}.{do}{bs}  {cm(10,59)}{cm(0,0)}Illegal command ';'{cm(10,59)}
+C: "1j;"
+R: {cm(0,0)}{ce}{cm(9,59)}  {cm(10,59)}.{do}{bs}@{do}{bs}..{cm(11,59)}{cm(0,0)}Illegal command ';'{cm(11,59)}
+C: "1j;"
+R: {cm(0,0)}{ce}{cm(10,59)}  {cm(11,59)}.{do}{bs}@{cm(13,58)}-{up}{cm(0,0)}Illegal command ';'{cm(12,59)}
+C: "1j;"
+R: {cm(0,0)}{ce}{cm(11,59)}  {cm(12,59)}.{do}{bs}@{do}{bs}#{up}{bs}{cm(0,0)}Illegal command ';'{cm(13,59)}
+C: "
+;"
+R: {cm(0,0)}{ce}{cm(12,59)}  {cm(13,59)}+{do}{bs}@{do}{bs}##{cm(14,59)}{cm(0,0)}Illegal command ';'{cm(14,59)}
+C: "
+;"
+R: {cm(0,0)}{ce}{cm(14,59)}#{do}{bs}@{bs}{cm(0,0)}Illegal command ';'{cm(15,59)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(15,59)}##@{do}{bs}#{up}{bs}{cm(0,0)}Illegal command ';'{cm(15,61)}
+C: "
+;"
+R: {cm(0,0)}{ce}{cm(15,61)}#{do}{bs}@{do}{bs}+{up}{bs}{cm(0,0)}Illegal command ';'{cm(16,61)}
+C: "1j;"
+R: {cm(0,0)}{ce}{cm(16,61)}#{cm(17,60)}-@-{cm(18,60)}..|{cm(17,61)}{cm(0,0)}Illegal command ';'{cm(17,61)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(17,61)}{cm(0,0)}Illegal command ';'{cm(17,61)}
+C: "s;"
+R: {cm(0,0)}The medusa's gaze has confused you{cm(18,60)}M{cm(0,34)}{cm(17,61)}{cm(0,0)}Illegal command ';'{ce}{cm(17,61)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(18,60)}.M{up}{bs}{cm(0,0)}Illegal command ';'{cm(17,61)}
+C: "1j;"
+R: {cm(0,0)}{ce}{cm(16,61)}@{do}{bs}M{cm(18,60)}  {cm(16,61)}{cm(0,0)}Illegal command ';'{cm(16,61)}
+C: "1j;"
+R: {cm(0,0)}{ce}You miss.  The medusa hit{cm(23,28)}44{cm(16,61)}{cm(0,0)}Illegal command ';'{ce}{cm(16,61)}
+C: "1j;"
+R: {cm(0,0)}{ce}{cm(15,61)}@{do}{bs}M{do}{bs}+{cm(15,61)}{cm(0,0)}Illegal command ';'{cm(15,61)}
+C: "1j;"
+R: {cm(0,0)}{ce}{cm(15,60)}@M{do}{bs}#{cm(23,29)}6{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1l;"
+R: {cm(0,0)}{ce}You hit.  The medusa hit{cm(23,28)}21{cm(15,60)}{cm(0,0)}Illegal command ';'{ce}{cm(15,60)}
+C: "zlg;"
+R: {cm(0,0)}{ce}Zap with what? (* for list):{cm(0,29)}{cr}The medusa hit{ce}{cm(23,28)} 6{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "d;"
+R: {cm(0,0)}Drop what? (* for list):{cm(0,25)}{cr}';' is not a valid item {bs}--More--
+C: " "
+R: {cr}Drop what? (* for list):
+C: "m;"
+R: {ce}{cm(0,25)}{cm(0,4)}ped a scroll titled 'monprok dalf fidwahturs xoconpot'{cm(15,60)}{cm(0,0)}Illegal command ';'{ce}{cm(15,60)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(23,29)}7{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(23,29)}9{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(23,28)}10{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(23,29)}1{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "s;"
+R: {cm(0,0)}You feel less confused now{cm(15,60)}{cm(0,0)}Illegal command ';'{ce}{cm(15,60)}
+C: "1l;"
+R: {cm(0,0)}{ce}You miss{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1l;"
+R: {cm(0,0)}{ce}You miss{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1l;"
+R: {cm(0,0)}{ce}You miss{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1l;"
+R: {cm(0,0)}{ce}You miss{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1l;"
+R: {cm(0,0)}{ce}You hit{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1l;"
+R: {cm(0,0)}{ce}You miss{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1l;"
+R: {cm(0,0)}{ce}You hit{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1l;"
+R: {cm(0,0)}{ce}You hit{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1l;"
+R: {cm(0,0)}{ce}You hit.  Defeated the medusa{cm(15,61)}:{cm(0,29)}{cm(23,66)}82{cm(15,60)}{cm(0,0)}Illegal command ';'{ce}{cm(15,60)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(23,29)}3{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1l;"
+R: {cm(0,0)}{ce}5 rations of food (i){cm(15,60)}?#{cm(0,21)}{cm(15,61)}@{bs}{cm(0,0)}Illegal command ';'  {bs}{bs}{cm(15,61)}
+C: "mh;"
+R: {cm(0,0)}{ce}Moved onto a scroll titled 'monprok dalf fidwahturs xoconpot'{cm(15,61)}#{cm(0,61)}{cm(15,60)}@{bs}{cm(0,0)}Illegal command ';'{ce}{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}5{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}6{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}8{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,28)}20{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}1{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}3{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}4{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}6{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}7{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}9{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,28)}30{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}1{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}3{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}5{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}6{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}8{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}9{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,28)}41{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}3{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}4{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}Getting hungry{cm(23,29)}5{cm(23,71)}Hungry{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "ei;"
+R: {cm(0,0)}Eat what? (* for list):{cm(0,24)}{cr}Yum, that tasted good  {bs}{bs}{cm(23,71)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'  {bs}{bs}{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}6{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}8{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,28)}50{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1s;"
+R: {cm(0,0)}{ce}{cm(23,29)}2{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(15,60)}?@{bs}{cm(0,0)}Illegal command ';'{cm(15,61)}
+C: "
+;"
+R: {cm(0,0)}{ce}{cm(15,61)}#{do}{bs}@{bs}{cm(0,0)}Illegal command ';'{cm(16,61)}
+C: "1j;"
+R: {cm(0,0)}{ce}{cm(16,61)}#{do}{bs}@{cm(18,60)}..{cm(23,29)}3{cm(17,61)}{cm(0,0)}Illegal command ';'{cm(17,61)}
+C: "1j;"
+R: {cm(0,0)}{ce}{cm(17,61)}+{do}{bs}@{cm(19,60)}..|{cm(18,61)}{cm(0,0)}Illegal command ';'{cm(18,61)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(18,61)}{cm(0,0)}Illegal command ';'{cm(18,61)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(23,29)}5{cm(18,61)}{cm(0,0)}Illegal command ';'{cm(18,61)}
+C: "1b;"
+R: {cm(0,0)}{ce}{cm(18,59)}...{cm(19,59)}.@{cm(20,59)}...{cm(19,60)}{cm(0,0)}Illegal command ';'{cm(19,60)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(19,60)}{cm(0,0)}Illegal command ';'{cm(19,60)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(23,29)}7{cm(19,60)}{cm(0,0)}Illegal command ';'{cm(19,60)}
+C: "1b;"
+R: {cm(0,0)}{ce}{cm(18,59)}   {cm(19,58)}... {cm(20,58)}.@. {cm(21,58)}...{cm(20,59)}{cm(0,0)}Illegal command ';'{cm(20,59)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(19,58)} ...{cm(20,58)} .@.{cm(21,58)} ...{cm(20,60)}{cm(0,0)}Illegal command ';'{cm(20,60)}
+C: "1h;"
+R: {cm(0,0)}{ce}{cm(19,58)}... {cm(20,58)}.@. {cm(21,58)}... {cm(23,29)}9{cm(20,59)}{cm(0,0)}Illegal command ';'{cm(20,59)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(20,59)}{cm(0,0)}Illegal command ';'{cm(20,59)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(20,59)}{cm(0,0)}Illegal command ';'{cm(20,59)}
+C: "1y;"
+R: {cm(0,0)}{ce}{cm(18,57)}...{cm(19,57)}.@. {cm(20,57)}... {cm(21,58)}   {cm(23,28)}60{cm(19,58)}{cm(0,0)}Illegal command ';'{cm(19,58)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(19,58)}{cm(0,0)}Illegal command ';'{cm(19,58)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(19,58)}{cm(0,0)}Illegal command ';'{cm(19,58)}
+C: "1b;"
+R: {cm(0,0)}{ce}{cm(18,57)}   {cm(19,56)}... {cm(20,56)}.@. {cm(21,56)}...{cm(23,29)}1{cm(20,57)}{cm(0,0)}Illegal command ';'{cm(20,57)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(20,57)}{cm(0,0)}Illegal command ';'{cm(20,57)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(20,57)}{cm(0,0)}Illegal command ';'{cm(20,57)}
+C: "1y;"
+R: {cm(0,0)}{ce}{cm(18,55)}|..{cm(19,55)}|@. {cm(20,55)}|.. {cm(21,56)}   {cm(23,29)}3{cm(19,56)}{cm(0,0)}Illegal command ';'{cm(19,56)}
+C: "1j;"
+R: {cm(0,0)}{ce}{cm(18,56)}  {cm(19,56)}.{do}{bs}@{cm(21,55)}|..{cm(20,56)}{cm(0,0)}Illegal command ';'{cm(20,56)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(19,58)}.{cm(20,56)}.@.{do}{bs}.{cm(20,57)}{cm(0,0)}Illegal command ';'{cm(20,57)}
+C: "1u;"
+R: {cm(0,0)}{ce}{cm(18,57)}...{cm(19,56)} .@.{cm(20,56)} ...{cm(21,56)}   {cm(23,29)}5{cm(19,58)}{cm(0,0)}Illegal command ';'{cm(19,58)}
+C: "1n;"
+R: {cm(0,0)}{ce}{cm(18,57)}   {cm(19,57)} ...{cm(20,57)} .@.{cm(21,58)}...{cm(20,59)}{cm(0,0)}Illegal command ';'{cm(20,59)}
+C: "1u;"
+R: {cm(0,0)}{ce}{cm(18,59)}...{cm(19,58)} .@.{cm(20,58)} ...{cm(21,58)}   {cm(19,60)}{cm(0,0)}Illegal command ';'{cm(19,60)}
+C: "1u;"
+R: {cm(0,0)}{ce}{cm(18,59)} .@{cm(19,59)} .{cm(20,59)}   {cm(23,29)}6{cm(18,61)}{cm(0,0)}Illegal command ';'{cm(18,61)}
+C: "1k;"
+R: {cm(0,0)}{ce}{cm(17,61)}@{do}{bs}.{cm(19,60)}  {cm(17,61)}{cm(0,0)}Illegal command ';'{cm(17,61)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(16,61)}@{do}{bs}+{cm(18,60)}  {cm(16,61)}{cm(0,0)}Illegal command ';'{cm(16,61)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(15,61)}@{do}{bs}#{up}{bs}{cm(0,0)}Illegal command ';'{cm(15,61)}
+C: ";"
+R: {cm(0,0)}The scroll turns to dust as you pick it up{cm(15,60)}##{cm(0,42)}--More--
+C: " ;"
+R: {cm(15,59)}A@{cm(0,50)}{cm(0,4)}aquator hit{ce}--More--
+C: " ;"
+R: {cr}Your armor weakens{ce}{cm(23,54)}6{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1h;"
+R: {cm(0,0)}{ce}You hit.  The aquator hit--More--
+C: " ;"
+R: {cm(0,3)}r armor weakens{ce}{cm(23,54)}5{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1h;"
+R: {cm(0,0)}{ce}You hit.  The aquator hit--More--
+C: " ;"
+R: {cm(0,3)}r armor weakens{ce}{cm(23,54)}4{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1h;"
+R: {cm(0,0)}{ce}You miss.  The aquator hit--More--
+C: " ;"
+R: {cm(0,3)}r armor weakens{ce}{cm(23,54)}3{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "1h;"
+R: {cm(0,0)}{ce}You hit.  Defeated the aquator{cm(15,59)}#{cm(0,30)}{cm(23,67)}47{cm(15,60)}{cm(0,0)}Illegal command ';'{ce}{cm(15,60)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(15,60)}{cm(0,0)}Illegal command ';'{cm(15,60)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(15,59)}@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(15,59)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(14,59)}@{do}{bs}#{up}{bs}{cm(0,0)}Illegal command ';'{cm(14,59)}
+C: "1k;"
+R: {cm(0,0)}{ce}{cm(12,59)}..{cm(13,59)}@{do}{bs}#{up}{bs}{cm(0,0)}Illegal command ';'{cm(13,59)}
+C: "1k;"
+R: {cm(0,0)}{ce}{cm(11,59)}..{cm(12,59)}@{do}{bs}+{up}{bs}{cm(0,0)}Illegal command ';'{cm(12,59)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(11,61)}.{cm(12,59)}.@.{bs}{bs}{cm(0,0)}Illegal command ';'{cm(12,60)}
+C: "1u;"
+R: {cm(0,0)}{ce}{cm(10,60)}...{cm(11,59)} .@.{cm(12,59)} ...{cm(11,61)}{cm(0,0)}Illegal command ';'{cm(11,61)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(10,60)} ...{cm(11,60)} .@.{cm(12,60)} ...{cm(11,62)}{cm(0,0)}Illegal command ';'{cm(11,62)}
+C: "1n;"
+R: {cm(0,0)}{ce}{cm(10,61)}   {cm(11,61)} ...{cm(12,61)} .@.{bs}{bs}{cm(0,0)}Illegal command ';'{cm(12,63)}
+C: "1u;"
+R: {cm(0,0)}{ce}{cm(10,63)}...{cm(11,62)} .@.{cm(12,62)} ...{cm(11,64)}{cm(0,0)}Illegal command ';'{cm(11,64)}
+C: "1u;"
+R: {cm(0,0)}{ce}{cm(9,64)}...{cm(10,63)} .@.{cm(11,63)} ...{cm(12,63)}   {cm(10,65)}{cm(0,0)}Illegal command ';'{cm(10,65)}
+C: "1n;"
+R: {cm(0,0)}{ce}{cm(9,64)}   {cm(10,64)} ...{cm(11,64)} .@.{cm(12,65)}...{cm(11,66)}{cm(0,0)}Illegal command ';'{cm(11,66)}
+C: "1u;"
+R: {cm(0,0)}{ce}{cm(9,66)}...{cm(10,65)} .@.{cm(11,65)} ...{cm(12,65)}   {cm(10,67)}{cm(0,0)}Illegal command ';'{cm(10,67)}
+C: "1n;"
+R: {cm(0,0)}{ce}{cm(9,66)}   {cm(10,66)} ...{cm(11,66)} .@.{cm(12,67)}...{cm(11,68)}{cm(0,0)}Illegal command ';'{cm(11,68)}
+C: "1n;"
+R: {cm(0,0)}{ce}{cm(10,67)}   {cm(11,67)} ...{cm(12,67)} .@.{bs}{bs}{cm(0,0)}Illegal command ';'{cm(12,69)}
+C: "1u;"
+R: {cm(0,0)}{ce}{cm(10,69)}...{cm(11,68)} .@.{cm(12,68)} ...{cm(11,70)}{cm(0,0)}Illegal command ';'{cm(11,70)}
+C: "1k;"
+R: {cm(0,0)}{ce}{cm(9,69)}...{cm(10,70)}@{do}{bs}.{cm(12,69)}   {cm(10,70)}{cm(0,0)}Illegal command ';'{cm(10,70)}
+C: "1u;"
+R: {cm(0,0)}{ce}{cm(9,69)} .@.{cm(10,69)} ...{cm(11,69)}   {cm(9,71)}{cm(0,0)}Illegal command ';'{cm(9,71)}
+C: "1k;"
+R: {cm(0,0)}{ce}{cm(7,70)}##{do}{bs}@{do}{bs}.{cm(10,70)}   {cm(8,71)}{cm(0,0)}Illegal command ';'{cm(8,71)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(7,71)}@{do}{bs}+{cm(9,70)}   {cm(7,71)}{cm(0,0)}Illegal command ';'{cm(7,71)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(7,69)}#@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(7,70)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(7,68)}#@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(7,69)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(7,67)}#@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(7,68)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(7,66)}#@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(7,67)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(7,65)}#@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(7,66)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(7,65)}@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(7,65)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(7,65)}{cm(0,0)}Illegal command ';'{cm(7,65)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(7,65)}{cm(0,0)}Illegal command ';'{cm(7,65)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(7,65)}{cm(0,0)}Illegal command ';'{cm(7,65)}
+C: "s;"
+R: {cm(0,0)}A secret door{ce}{cm(6,65)}+{do}{bs}{cm(0,0)}Illegal command ';'{cm(7,65)}
+C: "1k;"
+R: {cm(0,0)}{ce}{cm(5,64)}|..{cm(6,64)}-@-{cm(7,65)}#{up}{bs}{cm(0,0)}Illegal command ';'{cm(6,65)}
+C: "s;"
+R: {cm(0,0)}A poison dart trap {bs}{cm(5,65)}^{do}{bs}{cm(0,0)}Illegal command ';'{cm(6,65)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(6,65)}{cm(0,0)}Illegal command ';'{cm(6,65)}
+C: "1k;"
+R: {cm(0,0)}{ce}A small dart just hit you in the shoulder{cm(4,64)}|..{cm(5,65)}@{do}{bs}+{cm(23,29)}3{cm(5,65)}{cm(0,0)}Illegal command ';'{ce}{cm(5,65)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(5,65)}{cm(0,0)}Illegal command ';'{cm(5,65)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(5,65)}{cm(0,0)}Illegal command ';'{cm(5,65)}
+C: "1u;"
+R: {cm(0,0)}{ce}{cm(3,65)}.:.{cm(4,66)}@.{cm(5,65)}^..{cm(23,29)}5{cm(4,66)}{cm(0,0)}Illegal command ';'{cm(4,66)}
+C: "1k;"
+R: {cm(0,0)}{ce}5 rations of food (i){cm(3,66)}.{do}{bs}.{cm(0,21)}{cm(2,65)}..F{cm(3,66)}@{cm(5,66)}  {cm(3,66)}{cm(0,0)}Illegal command ';'  {bs}{bs}{cm(3,66)}
+C: "1u;"
+R: {cm(0,0)}{ce}You miss.  The venus flytrap hit{cm(23,29)}4{cm(3,66)}{cm(0,0)}Illegal command ';'{ce}{cm(3,66)}
+C: "1u;"
+R: {cm(0,0)}{ce}You hit.  The venus flytrap hit{cm(23,29)}3{cm(3,66)}{cm(0,0)}Illegal command ';'{ce}{cm(3,66)}
+C: "1u;"
+R: {cm(0,0)}{ce}You hit.  The venus flytrap hit{cm(23,29)}2{cm(3,66)}{cm(0,0)}Illegal command ';'{ce}{cm(3,66)}
+C: "1u;"
+R: {cm(0,0)}{ce}You miss.  The venus flytrap hit{cm(23,29)}1{cm(3,66)}{cm(0,0)}Illegal command ';'{ce}{cm(3,66)}
+C: "1u;"
+R: {cm(0,0)}{ce}You hit.  The venus flytrap misses{cm(23,28)}57{cm(3,66)}{cm(0,0)}Illegal command ';'{ce}{cm(3,66)}
+C: "1u;"
+R: {cm(0,0)}{ce}You hit.  The venus flytrap hit{cm(23,29)}6{cm(3,66)}{cm(0,0)}Illegal command ';'{ce}{cm(3,66)}
+C: "1u;"
+R: {cm(0,0)}{ce}You hit.  The venus flytrap hit{cm(23,29)}5{cm(3,66)}{cm(0,0)}Illegal command ';'{ce}{cm(3,66)}
+C: "1u;"
+R: {cm(0,0)}{ce}You miss.  The venus flytrap hit{cm(23,29)}4{cm(3,66)}{cm(0,0)}Illegal command ';'{ce}{cm(3,66)}
+C: "1u;"
+R: {cm(0,0)}{ce}You hit.  Defeated the venus flytrap{cm(2,67)} {cm(0,36)}{cm(2,67)}.{cm(23,66)}951{cm(3,66)}{cm(0,0)}Illegal command ';'{ce}{cm(3,66)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(3,66)}{cm(0,0)}Illegal command ';'{cm(3,66)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(23,29)}5{cm(3,66)}{cm(0,0)}Illegal command ';'{cm(3,66)}
+C: "1h;"
+R: {cm(0,0)}{ce}{cm(2,64)}|.. {cm(3,64)}|@. {do}{bs} {cm(3,65)}{cm(0,0)}Illegal command ';'{cm(3,65)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(2,67)}.{cm(3,65)}.@.{do}{bs}.{cm(3,66)}{cm(0,0)}Illegal command ';'{cm(3,66)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(2,65)} ...{cm(3,65)} .@.{cm(4,65)} ...{cm(23,29)}6{cm(3,67)}{cm(0,0)}Illegal command ';'{cm(3,67)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(3,67)}{cm(0,0)}Illegal command ';'{cm(3,67)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(3,67)}{cm(0,0)}Illegal command ';'{cm(3,67)}
+C: "1n;"
+R: {cm(0,0)}{ce}{cm(2,66)}   {cm(3,66)} ..|{cm(4,66)} .@|{cm(5,67)}..|{cm(23,29)}8{cm(4,68)}{cm(0,0)}Illegal command ';'{cm(4,68)}
+C: "1y;"
+R: {cm(0,0)}{ce}{cm(2,66)}...{cm(3,66)}.@{cm(4,66)}...{cm(5,67)}  {cm(3,67)}{cm(0,0)}Illegal command ';'{cm(3,67)}
+C: "1h;"
+R: {cm(0,0)}{ce}{cm(2,65)}... {cm(3,65)}.@. {cm(4,65)}... {cm(3,66)}{cm(0,0)}Illegal command ';'{cm(3,66)}
+C: "1h;"
+R: {cm(0,0)}{ce}{cm(2,67)} {cm(3,65)}@. {do}{bs} {cm(23,29)}9{cm(3,65)}{cm(0,0)}Illegal command ';'{cm(3,65)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(3,65)}{cm(0,0)}Illegal command ';'{cm(3,65)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(3,65)}{cm(0,0)}Illegal command ';'{cm(3,65)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(23,28)}61{cm(3,65)}{cm(0,0)}Illegal command ';'{cm(3,65)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(3,65)}{cm(0,0)}Illegal command ';'{cm(3,65)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(3,65)}{cm(0,0)}Illegal command ';'{cm(3,65)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(23,29)}2{cm(3,65)}{cm(0,0)}Illegal command ';'{cm(3,65)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(3,65)}{cm(0,0)}Illegal command ';'{cm(3,65)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(3,65)}{cm(0,0)}Illegal command ';'{cm(3,65)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(23,29)}3{cm(3,65)}{cm(0,0)}Illegal command ';'{cm(3,65)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(4,65)}U{up}{bs}{cm(0,0)}Illegal command ';'{cm(3,65)}
+C: "1j;"
+R: {cm(0,0)}{ce}You hit.  The black unicorn hit{cm(23,29)}1{cm(3,65)}{cm(0,0)}Illegal command ';'{ce}{cm(3,65)}
+C: "1j;"
+R: {cm(0,0)}{ce}You hit.  The black unicorn hit{cm(23,28)}40{cm(3,65)}{cm(0,0)}Illegal command ';'{ce}{cm(3,65)}
+C: "1j;"
+R: {cm(0,0)}{ce}You miss.  The black unicorn hit{cm(23,28)}24{cm(3,65)}{cm(0,0)}Illegal command ';'{ce}{cm(3,65)}
+C: "zjg;"
+R: {cm(0,0)}{ce}Zap with what? (* for list):{cm(0,29)}{cr}{ce}{cm(4,65)}J{up}{bs}{cm(0,0)}Illegal command ';'{cm(3,65)}
+C: "1j;"
+R: {cm(0,0)}{ce}You hit.  The jabberwock hit{cm(23,28)} 2{cm(3,65)}{cm(0,0)}Illegal command ';'{ce}{cm(3,65)}
+C: "1j;"
+R: {cm(0,0)}{ce}You hit.  The jabberwock hit{ff}{cm(8,23)}__________{cm(9,22)}/{cm(9,33)}\{cm(10,21)}/    REST    \{cm(11,20)}/{cm(11,27)}IN{cm(11,35)}\{cm(12,19)}/{cm(12,25)}PEACE{cm(12,36)}\{cm(13,18)}/{cm(13,37)}\{cm(14,16)}Rog-O-Matic XIV for root{cm(15,18)}|{cm(15,24)}3283 Au{cm(15,37)}|{cm(16,18)}|   killed by a    |{cm(17,18)}|    jabberwock    |{cm(18,18)}|{cm(18,26)}2026{cm(18,37)}|{cm(19,17)}*|{cm(19,24)}*  *  *{cm(19,37)}| *{cm(20,9)}________)/\\_//(\/(/\)/\//\/|_)_______
+C: "
+
+"
