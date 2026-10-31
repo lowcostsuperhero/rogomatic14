@@ -95,6 +95,7 @@ extern int lastwand;		/* Index of last wand */
 extern int leftring;		/* Index of our left ring */
 extern int logdigested;		/* True if game log has been read by replay */
 extern int logging;		/* True if logging game */
+extern int autologging;		/* True if logging was started automatically */
 extern int lyinginwait;		/* Did we lie in wait last turn? */
 extern int maxobj;		/* How much can we carry */
 extern int missedstairs;	/* True if we missed the stairs */

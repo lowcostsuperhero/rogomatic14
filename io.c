@@ -221,7 +221,8 @@ static void getrogue_body(char *waitstr, int onat)
     { if (*++m == 0)
       { /* More than 50 messages since last command ==> start logging */
         if (++morecount > 50 && !logging) 
-	{ toggleecho (); dwait (D_WARNING, "Started logging --More-- loop."); }
+	{ autologging = 1;	/* a diagnostic log: keep it only if the game goes wrong */
+	  toggleecho (); dwait (D_WARNING, "Started logging --More-- loop."); }
 
         /* More than 100 messages since last command ==> infinite loop */
         if (++morecount > 100) dwait (D_FATAL, "Caught in --More-- loop.");

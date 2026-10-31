@@ -203,6 +203,7 @@ int   lastwand = NONE;		/* Index of last wand */
 int   leftring = NONE;		/* Index of our left ring */
 int   logdigested = 0;		/* True if log file has been read by replay */
 int   logging = 0;		/* True if keeping record of game */
+int   autologging = 0;		/* True if logging was started automatically */
 int   lyinginwait = 0;          /* True if we waited for a monster */
 int   maxobj = 22;              /* How much can we carry */
 int   missedstairs = 0;         /* True if we searched everywhere */
@@ -738,6 +739,16 @@ int main(int argc, char *argv[])
 
     /* Close the open file */
     toggleecho ();
+
+    /*
+     * A log that rogomatic started by itself (a long run of messages) is
+     * only worth keeping if the game went wrong; otherwise do not leave a
+     * file behind in the directory the user started in.
+     */
+    if (autologging && !stlmatch (ourkiller, "fatal"))
+    { unlink (ROGUELOG);
+      exit (0);
+    }
 
     /* Rename the log file */
     if (link (ROGUELOG, lognam) == 0)
