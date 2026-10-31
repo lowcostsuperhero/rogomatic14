@@ -100,6 +100,7 @@ static void on_alarm(int sig)
  * ESC by itself.
  */
 
+/* Safety net: the rogueforge-based rogue does not need this pause, older Rogue builds swallow the marker after an ESC without it. */
 # define ESC_GAP_US 10000	/* pause between an ESC and what follows */
 
 void sendesc(char *after)
