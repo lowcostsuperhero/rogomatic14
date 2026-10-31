@@ -14,6 +14,8 @@
  */
 
 # include <stdio.h>
+# include <errno.h>
+# include <string.h>
 # include <math.h>
 # include <stdlib.h>
 # include <time.h>
@@ -258,9 +260,26 @@ int pickgenotype(void)
 }
 
 /*
+ * genewarn: Note a gene pool file problem in RGMDIR/errorgenes.  Not fatal,
+ * and nothing is printed (a curses screen may be up).
+ */
+
+static void genewarn(char *what, char *file)
+{ char fn[256];
+  int e = errno;
+  FILE *f;
+
+  snprintf (fn, sizeof fn, "%s/errorgenes", RGMDIR);
+  if ((f = wopen (fn, "a")) != NULL)
+  { fprintf (f, "%s '%s': %s\n", what, file, strerror (e));
+    fclose (f);
+  }
+}
+
+/*
  * readgenes: Open the genepool for reading, and fill the current gene pool.
- * Returns true if the file was read, and 0 if there was no fail.  Exits
- * if the file exists and cannot be read.
+ * Returns true if the file was read, and 0 if it could not be (a file that
+ * exists but cannot be opened is noted in errorgenes and treated as absent).
  */
 
 int readgenes(char *genepool)
@@ -270,10 +289,10 @@ int readgenes(char *genepool)
   FILE *gfil;
 
   if ((gfil = fopen (genepool, "r")) == NULL)
-  { if (fexists (genepool))
-      quit (1, "Cannot open file '%s'\n", genepool);
-    else
-      return (0);
+  { /* Never end a game over the learning data: note it and start afresh */
+    if (fexists (genepool))
+      genewarn ("Cannot open", genepool);
+    return (0);
   }
 
   /* Read the header line */
@@ -338,7 +357,9 @@ void writegenes(char *genepool)
 
   /* Open the gene file */
   if ((gfil = wopen (genepool, "w")) == NULL)
-    quit (1, "Cannot open file '%s'\n", genepool);
+  { genewarn ("Cannot write", genepool);
+    return;				/* this game's result is not recorded */
+  }
 
   /* Write the header line */
   fprintf (gfil, "%ld %d %d %d %d %d",
