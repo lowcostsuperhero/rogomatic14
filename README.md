@@ -1,3 +1,26 @@
+# Background
+
+Some years ago, I wanted to get Rogomatic running. The rogue and rogomatic
+source code that I found then had archaic syntax and I had to manually update 
+the malformed code fragments to make it compatible with the contemporary 
+compiler at that time. While I did manage to get both rogue and rogomatic 
+compiled, they were buggy and crashed often. I eventually gave up the effort 
+for lack of time.
+
+And then A.I. happened.
+
+So I decided to throw the whole endeavor at Claude. This respository is 
+the product of about two days worth of me pulling, compiling, running the 
+code, and reporting observed bugs back to Claude for it to debug, commit, 
+and push its fixes back into this repository. This rogomatic, under the 
+control of autorogomatic, has now been executed thousands of times with 
+no errors.
+
+All changes to code committed to this repository were effected by Claude. 
+I contributed absolutely no coding effort at all.
+
+One could say I am right impressed by what Claude did.
+
 # Rog-O-Matic XIV (modernized)
 
 Rog-O-Matic, the program that plays Rogue, built for current systems with
