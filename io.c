@@ -184,6 +184,25 @@ static void getrogue_body(char *waitstr, int onat)
     }
     ch = getroguetoken ();
 
+    /*
+     * End of file: Rogue has died or exited without showing a tombstone.
+     * Without this the loop re-read EOF forever, spinning at 100% CPU and
+     * writing a never-ending game log.  Record how it died and stop.
+     */
+    if (ch == EOF && !replaying)
+    { int st = 0;
+      pid_t w = (rogpid > 0) ? waitpid (rogpid, &st, WNOHANG) : 0;
+
+      if (w == rogpid && WIFSIGNALED (st))
+        dwait (D_WARNING, "Rogue killed by signal %d", WTERMSIG (st));
+      else if (w == rogpid)
+        dwait (D_WARNING, "Rogue exited with status %d", WEXITSTATUS (st));
+      else
+        dwait (D_WARNING, "Rogue closed its output");
+      playing = 0;
+      return;
+    }
+
     /* If message ends in "(* for list): ", call terpmes */
     if (ch == *q) { if (*++q == 0) terpmes (); }
     else q = "(* for list): ";
@@ -684,6 +703,7 @@ int getroguetoken(void)
       case TA_TOK: fprintf (fecho, "{ta}");                   break;
       case UP_TOK: fprintf (fecho, "{up}");                   break;
       case ER_TOK: fprintf (fecho, "{ERRESC}");               break;
+      case EOF:    fprintf (fecho, "{EOF}");                  break;
       default:     fprintf (fecho, "{ERR%o}", ch);
                    ch = ER_TOK;
     }
