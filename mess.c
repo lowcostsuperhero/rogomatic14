@@ -114,6 +114,7 @@ void parsemsg(char *mess, char *mend)
       else if (MATCH("a poisoned dart killed you")) ;
       else if (MATCH("a poison dart trap")) nametrap (DARTRAP,NEAR);
       else if (MATCH("a rust trap")) nametrap (WATERAP,NEAR);
+      else if (MATCH("a secret door")) ;	/* found by searching; the map shows it */
       else if (MATCH("a gush of water hits you on the head")) gushed++;
       else if (MATCH("a sting has weakened you")) ;
       else if (MATCH("a bite has weakened you")) ;
