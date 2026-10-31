@@ -322,8 +322,9 @@ static void getrogue_body(char *waitstr, int onat)
 
       default: 
         if (ch < ' ')
-        { saynow ("Unknown character '\\%o'--more--", ch);
-          waitforspace (); 
+        { /* Never wait for a key here: an unattended game would sit
+           * forever (a stray bell or control character is harmless). */
+          saynow ("Unknown character '\\%o' ignored", ch);
         }
         else if (row) 
         { at (row, col);
@@ -656,9 +657,8 @@ int getroguetoken(void)
       case SE_CHR: ch = SE_TOK; break;
       case SO_CHR: ch = SO_TOK; break;
       case UP_CHR: ch = UP_TOK; break;
-      default: saynow ("Unknown sequence ESC-%s --More--", unctrl(ch));
-               waitforspace ();
-               ch = ER_TOK;
+      default: saynow ("Unknown sequence ESC-%s ignored", unctrl(ch));
+               ch = ER_TOK;	/* never wait for a key: see above */
     }
   }
 

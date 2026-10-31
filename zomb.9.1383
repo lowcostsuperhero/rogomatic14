@@ -1,0 +1,603 @@
+Rogomatic Game Log
+
+
+C: " ;"
+R: {cr}The rattlesnake misses{ce}--More--
+C: " ;"
+R: {cr}You faint{ce}{cm(11,39)}{cm(0,9)}--More--
+C: " ;"
+R: {cr}The rattlesnake misses{cm(11,39)}{cm(0,22)}--More--
+C: " ;"
+R: {cm(0,22)}{ce}{cm(11,39)}{cm(0,22)}--More--
+C: " ;"
+R: {cm(0,22)}{ce}{cm(11,39)}{cm(0,22)}--More--
+C: " ;"
+R: {cm(0,22)}{ce}{cm(11,39)}{cm(0,22)}--More--
+C: " ;"
+R: {cm(0,22)}{ce}{cm(11,39)}{cm(0,22)}--More--
+C: " ;"
+R: {cr}You can move again{ce}--More--
+C: " ;"
+R: {cr}The rattlesnake misses{ce}{cm(11,39)}{cm(0,0)}Illegal command ';'{ce}{cm(11,39)}
+C: "v;"
+R: {cm(0,0)}Version 5.4.5. (mctesq was here){cm(11,39)}{cm(0,0)}Illegal command ';'{ce}{cm(11,39)}
+C: "1h;"
+R: {cm(0,0)}{ce}You hit.  The rattlesnake misses{cm(11,39)}{cm(0,0)}Illegal command ';'{ce}{cm(11,39)}
+C: "1h;"
+R: {cm(0,0)}{ce}You miss.  The rattlesnake hit--More--
+C: " ;"
+R: {cr}A bite has weakened you{ce}{cm(23,28)}7{cm(23,40)} 9{cm(11,39)}{cm(0,0)}Illegal command ';'{ce}{cm(11,39)}
+C: "1h;"
+R: {cm(0,0)}{ce}You hit.  Defeated the rattlesnake{cm(11,38)}.{cm(0,34)}{cm(23,65)}9{cm(11,39)}{cm(0,0)}Illegal command ';'{ce}{cm(11,39)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(11,39)}{cm(0,0)}Illegal command ';'{cm(11,39)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(11,39)}{cm(0,0)}Illegal command ';'{cm(11,39)}
+C: "1h;"
+R: {cm(0,0)}{ce}You faint{cm(11,39)}.{cm(0,9)}{cm(11,38)}@{bs}{cm(23,28)}8{cm(11,38)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(0,4)}faint{ce}{cm(11,38)}{cm(23,28)}9{cm(11,38)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(11,38)}{cm(0,0)}Illegal command ';'{cm(11,38)}
+C: "1y;"
+R: {cm(0,0)}{ce}You faint{cm(11,38)}.{cm(0,9)}{cm(10,37)}@{bs}{cm(23,27)}20{cm(10,37)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(10,37)}{cm(0,0)}Illegal command ';'{cm(10,37)}
+C: "2k;"
+R: {cm(0,0)}{ce}You faint{cm(10,37)}.{cm(0,9)}--More--
+C: " ;"
+R: {cm(9,37)}@{cm(23,28)}1{cm(0,17)}{cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(0,4)}faint{ce}--More--
+C: " ;"
+R: {cm(23,28)}2{cm(0,17)}{cm(0,4)}can move again{cm(8,37)}@{do}{bs}+{up}{bs}{cm(0,0)}Illegal command ';'{cm(8,37)}
+C: "6l;"
+R: {cm(0,0)}{ce}You faint{cm(8,37)}#{cm(0,9)}--More--
+C: " ;"
+R: {cm(8,39)}@{cm(23,28)}3{cm(0,17)}{cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(0,4)}faint{ce}--More--
+C: " ;"
+R: {cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(8,39)}##@{cm(23,28)}4{cm(0,26)}{cm(0,4)}faint{ce}--More--
+C: " ;"
+R: {cm(23,28)}5{cm(0,17)}{cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(8,41)}#@{cm(0,26)}{cm(0,4)}faint{ce}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(8,42)}#@{cm(23,28)}6{cm(8,43)}{cm(0,0)}Illegal command ';'{cm(8,43)}
+C: "4k;"
+R: {cm(0,0)}{ce}{cm(3,43)}..{cm(4,43)}@.{cm(8,43)}#{cm(4,43)}{cm(0,0)}Illegal command ';'{cm(4,43)}
+C: "1u;"
+R: {cm(0,0)}{ce}{cm(2,43)}...{cm(3,44)}@.{cm(4,43)}...{cm(3,44)}{cm(0,0)}Illegal command ';'{cm(3,44)}
+C: "5l;"
+R: {cm(0,0)}{ce}You faint{cm(2,43)}  ...{cm(3,43)}  ...{cm(4,43)}  ...{cm(0,9)}--More--
+C: " ;"
+R: {cm(2,45)} ...{cm(3,45)} .@.{cm(4,45)} ...{cm(23,28)}7{cm(0,17)}{cm(0,4)}can move again{cm(2,46)}  ...{cm(3,46)}  .@.{cm(4,46)}  ...{cm(3,49)}{cm(0,0)}Illegal command ';'{cm(3,49)}
+C: "1u;"
+R: {cm(0,0)}{ce}{cm(2,48)} .@{cm(3,48)} .{cm(4,48)}   {cm(2,50)}{cm(0,0)}Illegal command ';'{cm(2,50)}
+C: "6l;"
+R: {cm(0,0)}{ce}You faint{cm(2,49)}  {cm(3,49)}  {cm(23,28)}8{cm(0,9)}--More--
+C: " ;"
+R: {cm(2,53)}@{cm(0,17)}{cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(0,4)}faint{ce}--More--
+C: " ;"
+R: {cm(23,28)}9{cm(0,17)}{cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(0,4)}faint{ce}--More--
+C: " ;"
+R: {cm(23,27)}30{cm(0,17)}{cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(0,4)}faint{ce}--More--
+C: " ;"
+R: {cm(23,28)}1{cm(0,17)}{cm(0,4)}can move again{cm(2,53)}###@{bs}{cm(0,0)}Illegal command ';'{cm(2,56)}
+C: "1j;"
+R: {cm(0,0)}{ce}{cm(2,56)}#{do}{bs}@{cm(23,28)}2{cm(3,56)}{cm(0,0)}Illegal command ';'{cm(3,56)}
+C: "8l;"
+R: {cm(0,0)}{ce}{cm(3,56)}#{cm(3,64)}@{bs}{cm(0,0)}Illegal command ';'{cm(3,64)}
+C: "1n;"
+R: {cm(0,0)}{ce}{cm(3,64)}.{do}@{cm(23,28)}3{cm(4,65)}{cm(0,0)}Illegal command ';'{cm(4,65)}
+C: "T;"
+R: {cm(0,0)}You faint{ce}--More--
+C: " ;"
+R: {cr}Was wearing b) +1 ring mail [4]{cm(23,53)}0{cm(4,65)}{cm(23,28)}4{cm(4,65)}{cm(0,31)}--More--
+C: " ;"
+R: {cr}You can move again{ce}{cm(3,63)}H{cm(4,65)}{cm(0,0)}Illegal command ';'{cm(4,65)}
+C: "i;"
+R: {cm(0,0)}b) +1 ring mail [4]--More--
+C: " ;"
+R: {cr}i) +0 chain mail [5]{ce}--More--
+C: " ;"
+R: {cr}q{cm(0,20)}{ce}--More--
+C: " ;"
+R: {cr}c) A +1,+2 mace (weapon in hand)--More--
+C: " ;"
+R: {cr}d{cm(0,9)}0 short bow{ce}--More--
+C: " ;"
+R: {cr}e) 26 +0,+0 arrows{ce}--More--
+C: " ;"
+R: {cr}l) 13 arrows{ce}--More--
+C: " ;"
+R: {cr}n) 15{cm(0,12)}{ce}--More--
+C: " ;"
+R: {cr}k) 5 -2,+0 darts{ce}--More--
+C: " ;"
+R: {cr}o) 15 darts{ce}--More--
+C: " ;"
+R: {cr}f) A zircon ring{ce}--More--
+C: " ;"
+R: {cr}g) An agate{cm(0,16)}{ce}--More--
+C: " ;"
+R: {cr}j) A granite ring{ce}--More--
+C: " ;"
+R: {cr}m) A ruby ring{ce}--More--
+C: " ;"
+R: {cr}h) A mahogany staff{ce}--More--
+C: " ;"
+R: {cr}a) 2 black potions{ce}--More--
+C: " ;"
+R: {cr}p) A scroll titled 'sta fri'--More--
+C: " ;"
+R: {cr}r{cm(0,20)}elwexoxy orgorg'--More--
+C: " ;"
+R: {cr}s{cm(0,20)}mur lecha mung taorgsta'{cm(4,65)}{cm(0,0)}Illegal command ';'{ce}{cm(4,65)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(3,63)}+H{do}{cm(0,0)}Illegal command ';'{cm(4,65)}
+C: "1y;"
+R: {cm(0,0)}{ce}You miss.  The hobgoblin misses{cm(4,65)}{cm(0,0)}Illegal command ';'{ce}{cm(4,65)}
+C: "1y;"
+R: {cm(0,0)}{ce}You miss.  The hobgoblin hit{cm(23,27)}26{cm(4,65)}{cm(0,0)}Illegal command ';'{ce}{cm(4,65)}
+C: "1y;"
+R: {cm(0,0)}{ce}You miss.  The hobgoblin hit{cm(23,28)}0{cm(4,65)}{cm(0,0)}Illegal command ';'{ce}{cm(4,65)}
+C: ">;"
+R: {ff}{cm(17,47)}...{cm(18,47)}.@.{cm(19,47)}...{cm(23,0)}Level: 9  Gold: 1536   Hp: 20(43)  Str:  9(16)  Arm: 0   Exp: 6/299  Faint{cm(18,48)}{cm(0,0)}Illegal command ';'{cm(18,48)}
+C: "i;"
+R: {cm(0,0)}b) +1 ring mail [4]--More--
+C: " ;"
+R: {cr}i) +0 chain mail [5]{ce}--More--
+C: " ;"
+R: {cr}q{cm(0,20)}{ce}--More--
+C: " ;"
+R: {cr}c) A +1,+2 mace (weapon in hand)--More--
+C: " ;"
+R: {cr}d{cm(0,9)}0 short bow{ce}--More--
+C: " ;"
+R: {cr}e) 26 +0,+0 arrows{ce}--More--
+C: " ;"
+R: {cr}l) 13 arrows{ce}--More--
+C: " ;"
+R: {cr}n) 15{cm(0,12)}{ce}--More--
+C: " ;"
+R: {cr}k) 5 -2,+0 darts{ce}--More--
+C: " ;"
+R: {cr}o) 15 darts{ce}--More--
+C: " ;"
+R: {cr}f) A zircon ring{ce}--More--
+C: " ;"
+R: {cr}g) An agate{cm(0,16)}{ce}--More--
+C: " ;"
+R: {cr}j) A granite ring{ce}--More--
+C: " ;"
+R: {cr}m) A ruby ring{ce}--More--
+C: " ;"
+R: {cr}h) A mahogany staff{ce}--More--
+C: " ;"
+R: {cr}a) 2 black potions{ce}--More--
+C: " ;"
+R: {cr}p) A scroll titled 'sta fri'--More--
+C: " ;"
+R: {cr}r{cm(0,20)}elwexoxy orgorg'--More--
+C: " ;"
+R: {cr}s{cm(0,20)}mur lecha mung taorgsta'{cm(18,48)}{cm(0,0)}Illegal command ';'{ce}{cm(18,48)}
+C: "Wb;"
+R: {cm(0,0)}Wear what? (* for list):{cm(0,25)}{cm(0,4)}ing +1 ring mail [4]{cm(23,53)}4{cm(18,48)}{cm(0,0)}Illegal command ';'{ce}{cm(18,48)}
+C: "i;"
+R: {cm(0,0)}b) +1 ring mail [4] (being worn)--More--
+C: " ;"
+R: {cr}i) +0 chain mail [5]{ce}--More--
+C: " ;"
+R: {cr}q{cm(0,20)}{ce}--More--
+C: " ;"
+R: {cr}c) A +1,+2 mace (weapon in hand)--More--
+C: " ;"
+R: {cr}d{cm(0,9)}0 short bow{ce}--More--
+C: " ;"
+R: {cr}e) 26 +0,+0 arrows{ce}--More--
+C: " ;"
+R: {cr}l) 13 arrows{ce}--More--
+C: " ;"
+R: {cr}n) 15{cm(0,12)}{ce}--More--
+C: " ;"
+R: {cr}k) 5 -2,+0 darts{ce}--More--
+C: " ;"
+R: {cr}o) 15 darts{ce}--More--
+C: " ;"
+R: {cr}f) A zircon ring{ce}--More--
+C: " ;"
+R: {cr}g) An agate{cm(0,16)}{ce}--More--
+C: " ;"
+R: {cr}j) A granite ring{ce}--More--
+C: " ;"
+R: {cr}m) A ruby ring{ce}--More--
+C: " ;"
+R: {cr}h) A mahogany staff{ce}--More--
+C: " ;"
+R: {cr}a) 2 black potions{ce}--More--
+C: " ;"
+R: {cr}p) A scroll titled 'sta fri'--More--
+C: " ;"
+R: {cr}r{cm(0,20)}elwexoxy orgorg'--More--
+C: " ;"
+R: {cr}s{cm(0,20)}mur lecha mung taorgsta'{cm(18,48)}{cm(0,0)}Illegal command ';'{ce}{cm(18,48)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(18,48)}{cm(0,0)}Illegal command ';'{cm(18,48)}
+C: "1u;"
+R: {cm(0,0)}{ce}{cm(16,48)}-+-{cm(17,47)} .@.{cm(18,47)} ...{cm(19,47)}   {cm(17,49)}{cm(0,0)}Illegal command ';'{cm(17,49)}
+C: "2b;"
+R: {cm(0,0)}{ce}You faint{cm(17,47)}... {cm(18,47)}... {cm(19,47)}...{cm(0,9)}{cm(17,47)}   {cm(18,46)}... {cm(19,46)}.@. {cm(20,46)}...{cm(19,47)}{cm(23,28)}1{cm(19,47)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(19,47)}{cm(0,0)}Illegal command ';'{cm(19,47)}
+C: "1h;"
+R: {cm(0,0)}{ce}You faint{cm(19,47)}.{cm(0,9)}{cm(18,45)}... {cm(19,45)}.@. {cm(20,45)}... {cm(23,28)}2{cm(19,46)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(19,46)}{cm(0,0)}Illegal command ';'{cm(19,46)}
+C: "1y;"
+R: {cm(0,0)}{ce}{cm(17,44)}...{cm(18,44)}.@. {cm(19,44)}... {cm(20,45)}   {cm(18,45)}{cm(0,0)}Illegal command ';'{cm(18,45)}
+C: "1b;"
+R: {cm(0,0)}{ce}{cm(17,44)}   {cm(18,43)}... {cm(19,43)}.@. {cm(20,43)}...{cm(19,44)}{cm(0,0)}Illegal command ';'{cm(19,44)}
+C: "1h;"
+R: {cm(0,0)}{ce}You faint{cm(19,44)}.{cm(0,9)}{cm(18,42)}... {cm(19,42)}.@. {cm(20,42)}... {cm(19,43)}{cm(23,28)}3{cm(19,43)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(23,28)}4{cm(19,43)}{cm(0,0)}Illegal command ';'{cm(19,43)}
+C: "1y;"
+R: {cm(0,0)}{ce}{cm(17,41)}|..{cm(18,41)}|@. {cm(19,41)}|.. {cm(20,42)}   {cm(18,42)}{cm(0,0)}Illegal command ';'{cm(18,42)}
+C: "1n;"
+R: {cm(0,0)}{ce}You faint{cm(18,42)}.{cm(0,9)}{cm(17,42)}  {do}.{cm(19,43)}@.{cm(20,42)}...{cm(19,43)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(19,43)}{cm(0,0)}Illegal command ';'{cm(19,43)}
+C: "1j;"
+R: {cm(0,0)}{ce}{cm(18,42)}   {cm(19,43)}.{do}{bs}@{cm(21,42)}/..{cm(20,43)}{cm(0,0)}Illegal command ';'{cm(20,43)}
+C: "1b;"
+R: {cm(0,0)}{ce}A copper wand (t){cm(20,43)}.{cm(21,42)}.{cm(0,17)}{cm(19,42)}   {cm(20,41)}|.. {cm(21,41)}|@. {cm(22,41)}---{cm(21,42)}{cm(0,0)}Illegal command ';'{cm(21,42)}
+C: "3u;"
+R: {cm(0,0)}{ce}{cm(17,44)}...{cm(18,44)}.@.{cm(19,44)}...{cm(20,42)}  {cm(21,42)}  {cm(23,28)}5{cm(18,45)}{cm(0,0)}Illegal command ';'{cm(18,45)}
+C: "1n;"
+R: {cm(0,0)}{ce}You faint{cm(18,45)}.{cm(0,9)}{cm(17,44)}   {cm(18,44)} ...{cm(19,44)} .@.{cm(20,45)}...{cm(19,46)}{cm(23,28)}6{cm(19,46)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(19,46)}{cm(0,0)}Illegal command ';'{cm(19,46)}
+C: "1j;"
+R: {cm(0,0)}{ce}You faint{cm(19,46)}.{cm(0,9)}{cm(18,45)}   {cm(20,46)}@{cm(21,45)}...{cm(20,46)}{cm(23,28)}7{cm(20,46)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(20,46)}{cm(0,0)}Illegal command ';'{cm(20,46)}
+C: "2u;"
+R: {cm(0,0)}{ce}{cm(17,47)}...{cm(18,47)}.@.{cm(19,45)}  ...{cm(20,45)}   {cm(21,45)}   {cm(23,28)}8{cm(18,48)}{cm(0,0)}Illegal command ';'{cm(18,48)}
+C: "1n;"
+R: {cm(0,0)}{ce}{cm(17,47)}   {cm(18,47)} ...{cm(19,47)} .@.{cm(20,48)}...{cm(19,49)}{cm(0,0)}Illegal command ';'{cm(19,49)}
+C: "1j;"
+R: {cm(0,0)}{ce}{cm(18,48)}   {cm(19,49)}.{do}{bs}@{cm(21,48)}...{cm(20,49)}{cm(0,0)}Illegal command ';'{cm(20,49)}
+C: "1u;"
+R: {cm(0,0)}{ce}{cm(18,49)}..|{cm(19,48)} .@|{cm(20,48)} ..|{cm(21,48)}   {cm(19,50)}{cm(0,0)}Illegal command ';'{cm(19,50)}
+C: "1k;"
+R: {cm(0,0)}{ce}{cm(17,49)}..|{cm(18,50)}@{do}{bs}.{cm(20,49)}  {cm(18,50)}{cm(0,0)}Illegal command ';'{cm(18,50)}
+C: "2j;"
+R: {cm(0,0)}{ce}{cm(17,49)}  {cm(18,49)}  {cm(20,49)}.@{cm(21,49)}..+{cm(20,50)}{cm(0,0)}Illegal command ';'{cm(20,50)}
+C: "2k;"
+R: {cm(0,0)}{ce}You faint{cm(18,49)}..{cm(20,50)}.{cm(21,49)}  {cm(0,9)}{cm(17,49)}..{do}{bs}@{cm(20,49)}  {cm(18,50)}{cm(23,28)}9{cm(18,50)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(18,50)}{cm(0,0)}Illegal command ';'{cm(18,50)}
+C: "1y;"
+R: {cm(0,0)}{ce}{cm(17,48)}.@{cm(18,48)}...{cm(19,49)}  {cm(23,27)}30{cm(17,49)}{cm(0,0)}Illegal command ';'{cm(17,49)}
+C: "1k;"
+R: {cm(0,0)}{ce}{cm(15,48)}##{do}{bs}@{do}{bs}.{cm(18,48)}   {cm(16,49)}{cm(0,0)}Illegal command ';'{cm(16,49)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(15,49)}@{do}{bs}+{cm(17,48)}   {cm(15,49)}{cm(0,0)}Illegal command ';'{cm(15,49)}
+C: ";"
+R: {cm(0,0)}You faint{ce}{cm(15,49)}#{cm(0,9)}{cm(15,47)}#@{bs}{cm(23,28)}1{cm(15,48)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(15,48)}{cm(0,0)}Illegal command ';'{cm(15,48)}
+C: ";"
+R: {cm(0,0)}You faint{ce}{cm(15,48)}#{cm(0,9)}{cm(15,46)}#@{bs}{cm(23,28)}2{cm(15,47)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(15,47)}{cm(0,0)}Illegal command ';'{cm(15,47)}
+C: ";"
+R: {cm(0,0)}You faint{ce}{cm(15,47)}#{cm(0,9)}{cm(15,45)}#@{bs}{cm(23,28)}3{cm(15,46)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(15,46)}{cm(0,0)}Illegal command ';'{cm(15,46)}
+C: ";"
+R: {cm(0,0)}You faint{ce}{cm(15,46)}#{cm(0,9)}{cm(15,44)}#@{bs}{cm(23,28)}4{cm(15,45)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(15,45)}{cm(0,0)}Illegal command ';'{cm(15,45)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(15,43)}#@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(15,44)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(15,42)}#@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(15,43)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(15,41)}#@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(15,42)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(15,40)}#@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(15,41)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(15,39)}#@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(15,40)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(15,38)}#@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(15,39)}
+C: ";"
+R: {cm(0,0)}You faint{ce}{cm(15,39)}#{cm(0,9)}{cm(15,37)}#@{bs}{cm(23,28)}5{cm(15,38)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(15,38)}{cm(0,0)}Illegal command ';'{cm(15,38)}
+C: ";"
+R: {cm(0,0)}You faint{ce}{cm(15,38)}#{cm(0,9)}{cm(15,36)}#@{bs}{cm(23,28)}6{cm(15,37)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(15,37)}{cm(0,0)}Illegal command ';'{cm(15,37)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(15,35)}#@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(15,36)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(15,34)}#@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(15,35)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(15,33)}#@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(15,34)}
+C: ";"
+R: {cm(0,0)}You faint{ce}{cm(15,34)}#{cm(0,9)}{cm(14,32)}#{do}{bs}#@{bs}{cm(23,28)}7{cm(15,33)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(15,33)}{cm(0,0)}Illegal command ';'{cm(15,33)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(15,32)}@#{bs}{bs}{cm(0,0)}Illegal command ';'{cm(15,32)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(13,32)}R{do}{bs}@{do}{bs}#{cm(23,28)}8{cm(14,32)}{cm(0,0)}Illegal command ';'{cm(14,32)}
+C: "j;"
+R: {cm(0,0)}{ce}{cm(13,32)}#{do}{bs}R{do}{bs}@{bs}{cm(0,0)}Illegal command ';'{cm(15,32)}
+C: "1k;"
+R: {cm(0,0)}{ce}You miss.  The rattlesnake misses{cm(15,32)}{cm(0,0)}Illegal command ';'{ce}{cm(15,32)}
+C: "1k;"
+R: {cm(0,0)}{ce}You hit.  The rattlesnake hit{cm(23,28)}2{cm(15,32)}{cm(0,0)}Illegal command ';'{ce}{cm(15,32)}
+C: "1k;"
+R: {cm(0,0)}{ce}You miss.  The rattlesnake misses{cm(15,32)}{cm(0,0)}Illegal command ';'{ce}{cm(15,32)}
+C: "1k;"
+R: {cm(0,0)}{ce}You hit.  Defeated the rattlesnake{cm(14,32)}#{cm(0,34)}{cm(23,64)}310{cm(15,32)}{cm(0,0)}Illegal command ';'{ce}{cm(15,32)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(15,32)}{cm(0,0)}Illegal command ';'{cm(15,32)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(15,32)}{cm(0,0)}Illegal command ';'{cm(15,32)}
+C: ";"
+R: {cm(0,0)}You faint{ce}{cm(12,32)}##{cm(15,32)}#{cm(0,9)}{cm(11,32)}#{do}{bs}@{bs}{cm(23,28)}3{cm(12,32)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(0,4)}faint{ce}{cm(12,32)}{cm(23,28)}4{cm(12,32)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(12,32)}{cm(0,0)}Illegal command ';'{cm(12,32)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(9,32)}@#{cm(10,32)}#{cm(12,32)}#{cm(9,32)}{cm(0,0)}Illegal command ';'{cm(9,32)}
+C: ";"
+R: {cm(0,0)}{ce}{cm(8,36)}#{cm(9,32)}###@#{cm(10,35)}#{up}{bs}{cm(0,0)}Illegal command ';'{cm(9,35)}
+C: ";"
+R: {cm(0,0)}You faint{ce}{cm(9,35)}#{cm(0,9)}{cm(9,36)}@#{cm(23,28)}5{cm(9,36)}{cm(23,28)}6{cm(9,36)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(9,36)}{cm(0,0)}Illegal command ';'{cm(9,36)}
+C: ";"
+R: {cm(0,0)}You faint{ce}{cm(9,36)}###{cm(0,9)}--More--
+C: " ;"
+R: {cm(9,39)}#{cm(23,28)}7{cm(0,17)}{cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(9,40)}########{cm(23,28)}8{cm(0,26)}{cm(0,4)}faint{ce}--More--
+C: " ;"
+R: {cm(23,28)}9{cm(0,17)}{cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(9,48)}####{cm(0,26)}{cm(0,4)}faint{ce}--More--
+C: " ;"
+R: {cm(23,27)}40{cm(0,17)}{cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(9,52)}##@+{cm(23,28)}1{cm(0,26)}{cm(0,4)}faint{ce}{cm(9,54)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(23,28)}2{cm(9,54)}{cm(0,0)}Illegal command ';'{cm(9,54)}
+C: "1l;"
+R: {cm(0,0)}{ce}You faint{cm(8,55)}-------------{cm(9,54)}#+...........|{cm(10,55)}|...........|{cm(11,55)}|.........H.|{cm(12,55)}-+-----------{cm(0,9)}{cm(9,55)}@{bs}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(9,55)}{cm(0,0)}Illegal command ';'{cm(9,55)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(9,55)}{cm(0,0)}Illegal command ';'{cm(9,55)}
+C: "1l;"
+R: {cm(0,0)}{ce}{cm(9,55)}+@{cm(23,28)}3{cm(9,56)}{cm(0,0)}Illegal command ';'{cm(9,56)}
+C: "2j;"
+R: {cm(0,0)}{ce}{cm(9,56)}.{cm(11,56)}@{bs}{cm(0,0)}Illegal command ';'{cm(11,56)}
+C: "w;"
+R: {cm(0,0)}Wield what? (* for list):{cm(0,26)}{cr}';' is not a valid item  {bs}{bs}--More--
+C: " "
+R: {cr}Wield what? (* for list):
+C: "d;"
+R: {ce}{cm(0,26)}{cm(0,5)}ing a +1,+0 short bow (d)--More--
+C: " ;"
+R: {cr}You faint{ce}{cm(11,56)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(11,56)}{cm(0,0)}Illegal command ';'{cm(11,56)}
+C: "i;"
+R: {cm(0,0)}b) +1 ring mail [4] (being worn)--More--
+C: " ;"
+R: {cr}i) +0 chain mail [5]{ce}--More--
+C: " ;"
+R: {cr}q{cm(0,20)}{ce}--More--
+C: " ;"
+R: {cr}c) A +1,+2 mace{ce}--More--
+C: " ;"
+R: {cr}d{cm(0,9)}0 short bow (weapon in hand)--More--
+C: " ;"
+R: {cr}e) 26 +0,+0 arrows{ce}--More--
+C: " ;"
+R: {cr}l) 13 arrows{ce}--More--
+C: " ;"
+R: {cr}n) 15{cm(0,12)}{ce}--More--
+C: " ;"
+R: {cr}k) 5 -2,+0 darts{ce}--More--
+C: " ;"
+R: {cr}o) 15 darts{ce}--More--
+C: " ;"
+R: {cr}f) A zircon ring{ce}--More--
+C: " ;"
+R: {cr}g) An agate{cm(0,16)}{ce}--More--
+C: " ;"
+R: {cr}j) A granite ring{ce}--More--
+C: " ;"
+R: {cr}m) A ruby ring{ce}--More--
+C: " ;"
+R: {cr}h) A mahogany staff{ce}--More--
+C: " ;"
+R: {cr}t) A copper wand{ce}--More--
+C: " ;"
+R: {cr}a) 2 black potions{ce}--More--
+C: " ;"
+R: {cr}p) A scroll titled 'sta fri'--More--
+C: " ;"
+R: {cr}r{cm(0,20)}elwexoxy orgorg'--More--
+C: " ;"
+R: {cr}s{cm(0,20)}mur lecha mung taorgsta'{cm(11,56)}{cm(0,0)}Illegal command ';'{ce}{cm(11,56)}
+C: "tll;"
+R: {cm(0,0)}{ce}Throw what? (* for list):{cm(0,26)}{cm(0,2)}e arrow hits the hobgoblin.  Defeated the hobgoblin{cm(11,65)}.{cm(0,53)}{cm(23,66)}3{cm(11,56)}{cm(0,0)}Illegal command ';'{ce}{cm(11,56)}
+C: "w;"
+R: {cm(0,0)}Wield what? (* for list):{cm(0,26)}{cr}';' is not a valid item  {bs}{bs}--More--
+C: " "
+R: {cr}Wield what? (* for list):
+C: "c;"
+R: {ce}{cm(0,26)}{cm(0,5)}ing a +1,+2 mace (c){cm(11,56)}{cm(0,0)}Illegal command ';'{ce}{cm(11,56)}
+C: "i;"
+R: {cm(0,0)}b) +1 ring mail [4] (being worn)--More--
+C: " ;"
+R: {cr}i) +0 chain mail [5]{ce}--More--
+C: " ;"
+R: {cr}q{cm(0,20)}{ce}--More--
+C: " ;"
+R: {cr}c) A +1,+2 mace (weapon in hand)--More--
+C: " ;"
+R: {cr}d{cm(0,9)}0 short bow{ce}--More--
+C: " ;"
+R: {cr}e) 26 +0,+0 arrows{ce}--More--
+C: " ;"
+R: {cr}l) 12 arrows{ce}--More--
+C: " ;"
+R: {cr}n) 15{cm(0,12)}{ce}--More--
+C: " ;"
+R: {cr}k) 5 -2,+0 darts{ce}--More--
+C: " ;"
+R: {cr}o) 15 darts{ce}--More--
+C: " ;"
+R: {cr}f) A zircon ring{ce}--More--
+C: " ;"
+R: {cr}g) An agate{cm(0,16)}{ce}--More--
+C: " ;"
+R: {cr}j) A granite ring{ce}--More--
+C: " ;"
+R: {cr}m) A ruby ring{ce}--More--
+C: " ;"
+R: {cr}h) A mahogany staff{ce}--More--
+C: " ;"
+R: {cr}t) A copper wand{ce}--More--
+C: " ;"
+R: {cr}a) 2 black potions{ce}--More--
+C: " ;"
+R: {cr}p) A scroll titled 'sta fri'--More--
+C: " ;"
+R: {cr}r{cm(0,20)}elwexoxy orgorg'--More--
+C: " ;"
+R: {cr}s{cm(0,20)}mur lecha mung taorgsta'{cm(11,56)}{cm(0,0)}Illegal command ';'{ce}{cm(11,56)}
+C: "1j;"
+R: {cm(0,0)}{ce}{cm(11,56)}.{do}{bs}@{do}{bs}#{up}{bs}{cm(0,0)}Illegal command ';'{cm(12,56)}
+C: "
+;"
+R: {cm(0,0)}You faint{ce}{cm(12,56)}+{cm(0,9)}{cm(13,56)}@{do}{bs}#{up}{bs}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(13,56)}{cm(0,0)}Illegal command ';'{cm(13,56)}
+C: "
+;"
+R: {cm(0,0)}{ce}{cm(13,56)}#{do}{bs}@{do}{bs}##{cm(14,56)}{cm(0,0)}Illegal command ';'{cm(14,56)}
+C: "
+;"
+R: {cm(0,0)}{ce}{cm(14,56)}#{do}{bs}@{bs}{cm(0,0)}Illegal command ';'{cm(15,56)}
+C: ";"
+R: {cm(0,0)}You faint{ce}{cm(15,56)}#####{cm(0,9)}--More--
+C: " ;"
+R: {cm(15,61)}#{cm(0,17)}{cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(15,62)}#####{cm(0,26)}{cm(0,4)}faint{ce}--More--
+C: " ;"
+R: {cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(15,67)}##{cm(0,26)}{cm(0,4)}faint{ce}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(15,69)}#@{bs}{cm(0,0)}Illegal command ';'{cm(15,70)}
+C: "s;"
+R: {cm(0,0)}You faint{ce}{cm(15,70)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(0,4)}faint{ce}{cm(15,70)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(15,70)}{cm(0,0)}Illegal command ';'{cm(15,70)}
+C: "s;"
+R: {cm(0,0)}You faint{ce}{cm(15,70)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again--More--
+C: " ;"
+R: {cm(0,4)}faint{ce}{cm(15,70)}{cm(0,9)}--More--
+C: " ;"
+R: {cm(0,4)}can move again{cm(15,70)}{cm(0,0)}Illegal command ';'{cm(15,70)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(15,70)}{cm(0,0)}Illegal command ';'{cm(15,70)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(15,70)}{cm(0,0)}Illegal command ';'{cm(15,70)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(15,70)}{cm(0,0)}Illegal command ';'{cm(15,70)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(15,70)}{cm(0,0)}Illegal command ';'{cm(15,70)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(15,70)}{cm(0,0)}Illegal command ';'{cm(15,70)}
+C: "s;"
+R: {cm(0,0)}{ce}{cm(15,70)}{cm(0,0)}Illegal command ';'{cm(15,70)}
+C: "s;"
+R: {cm(0,0)}A secret door{ce}--More--
+C: " ;"
+R: {cm(16,70)}Z{cm(0,21)}{cr}You faint{ce}{cm(15,70)}{cm(0,9)}--More--
+C: " ;"
+R: {cr}The zombie hit{ce}{cm(23,27)}35{cm(15,70)}{cm(0,14)}--More--
+C: " ;"
+R: {cm(0,11)}misses{ce}{cm(15,70)}{cm(0,17)}--More--
+C: " ;"
+R: {cm(0,17)}{ce}{cm(15,70)}{cm(0,17)}--More--
+C: " ;"
+R: {cm(0,17)}{ce}{cm(15,70)}{cm(0,17)}--More--
+C: " ;"
+R: {cm(0,17)}{ce}{cm(15,70)}{cm(0,17)}--More--
+C: " ;"
+R: {cm(0,17)}{ce}{cm(15,70)}{cm(0,17)}--More--
+C: " ;"
+R: {cm(0,11)}hit{ce}{cm(23,27)}28{cm(15,70)}{cm(0,14)}--More--
+C: " ;"
+R: {cm(0,11)}misses{ce}{cm(15,70)}{cm(0,17)}--More--
+C: " ;"
+R: {cm(0,11)}hit{ce}{cm(23,28)}2{cm(15,70)}{cm(0,14)}--More--
+C: " ;"
+R: {cr}You can move again{ce}--More--
+C: " ;"
+R: {cr}The zombie hit{ce}--More--
+C: " ;"
+R: {cm(23,27)}14{cm(0,22)}{cr}You faint{ce}{cm(15,70)}{cm(0,9)}--More--
+C: " ;"
+R: {cr}The zombie misses{cm(15,70)}{cm(0,17)}--More--
+C: " ;"
+R: {cm(0,11)}hit{ce}{cm(23,28)}2{cm(15,70)}{cm(0,14)}--More--
+C: " ;"
+R: {cm(0,14)}{ce}{cm(23,27)} 5{cm(15,70)}{cm(0,14)}--More--
+C: " ;"
+R: {cm(0,11)}misses{ce}{cm(15,70)}{cm(0,17)}--More--
+C: " ;"
+R: {cm(0,17)}{ce}{cm(15,70)}{cm(0,17)}--More--
+C: " ;"
+R: {cm(0,17)}{ce}{cm(15,70)}{cm(0,17)}--More--
+C: " ;"
+R: {cm(0,17)}{ce}{cm(15,70)}{cm(0,17)}--More--
+C: " ;"
+R: {cr}You can move again{ce}--More--
+C: " ;"
+R: {cr}The zombie hit{ce}{ff}{cm(8,23)}__________{cm(9,22)}/{cm(9,33)}\{cm(10,21)}/    REST    \{cm(11,20)}/{cm(11,27)}IN{cm(11,35)}\{cm(12,19)}/{cm(12,25)}PEACE{cm(12,36)}\{cm(13,18)}/{cm(13,37)}\{cm(14,16)}Rog-O-Matic XIV for root{cm(15,18)}|{cm(15,24)}1383 Au{cm(15,37)}|{cm(16,18)}|   killed by a    |{cm(17,18)}|{cm(17,25)}zombie{cm(17,37)}|{cm(18,18)}|{cm(18,26)}2026{cm(18,37)}|{cm(19,17)}*|{cm(19,24)}*  *  *{cm(19,37)}| *{cm(20,9)}________)/\\_//(\/(/\)/\//\/|_)_______
+C: "
+
+"
